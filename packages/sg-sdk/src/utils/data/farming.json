@@ -1,0 +1,136 @@
+{
+    "farming": [
+        {
+            "alloc": 0.625,
+            "stgPrice": 1.0,
+            "stgPerBlock": 17.69347839,
+            "avgBlockTime": 13.21448276,
+            "totalLiquidity": 153317174.44,
+            "totalLp": 153317174.44,
+            "totalFarmLp": 139887311.23,
+            "expectedApr": 0.188656317476879,
+            "expectedApy": 0.207625841257641
+        },
+        {
+            "alloc": 0.375,
+            "stgPrice": 1.0,
+            "stgPerBlock": 17.69347839,
+            "avgBlockTime": 13.21448276,
+            "totalLiquidity": 101315982.2,
+            "totalLp": 101315982.2,
+            "totalFarmLp": 93258064.26,
+            "expectedApr": 0.169790946495422,
+            "expectedApy": 0.185057085086306
+        },
+        {
+            "alloc": 0.50,
+            "stgPrice": 1.0,
+            "stgPerBlock": 3.226398074,
+            "avgBlockTime": 3.012068966,
+            "totalLiquidity": 97607619.86,
+            "totalLp": 97607619.86,
+            "totalFarmLp": 93257471.11,
+            "expectedApr": 0.181111494846866,
+            "expectedApy": 0.198548803859184
+        },
+        {
+            "alloc": 0.50,
+            "stgPrice": 1.0,
+            "stgPerBlock": 3.226398074,
+            "avgBlockTime": 3.012068966,
+            "totalLiquidity": 98629579.9,
+            "totalLp": 98629579.9,
+            "totalFarmLp": 93257634.57,
+            "expectedApr": 0.181111177398487,
+            "expectedApy": 0.198548423381869
+        },
+        {
+            "alloc": 0.60,
+            "stgPrice": 1.0,
+            "stgPerBlock": 2.715751784,
+            "avgBlockTime": 2.028275862,
+            "totalLiquidity": 146922409.81,
+            "totalLp": 146922409.81,
+            "totalFarmLp": 139886288.39,
+            "expectedApr": 0.181111389027651,
+            "expectedApy": 0.198548677029696
+        },
+        {
+            "alloc": 0.4,
+            "stgPrice": 1.0,
+            "stgPerBlock": 2.715751784,
+            "avgBlockTime": 2.028275862,
+            "totalLiquidity": 98629579.9,
+            "totalLp": 98629579.9,
+            "totalFarmLp": 93257634.57,
+            "expectedApr": 0.181111177389048,
+            "expectedApy": 0.198548423370556
+        },
+        {
+            "alloc": 0.65,
+            "stgPrice": 1.0,
+            "stgPerBlock": 1.966311408,
+            "avgBlockTime": 2.447586207,
+            "totalLiquidity": 100294022.17,
+            "totalLp": 100294022.17,
+            "totalFarmLp": 93257900.8,
+            "expectedApr": 0.176582893899062,
+            "expectedApy": 0.193133326133968
+        },
+        {
+            "alloc": 0.35,
+            "stgPrice": 1.0,
+            "stgPerBlock": 1.966311408,
+            "avgBlockTime": 2.447586207,
+            "totalLiquidity": 52001192.23,
+            "totalLp": 52001192.23,
+            "totalFarmLp": 46629246.97,
+            "expectedApr": 0.190164983940186,
+            "expectedApy": 0.209449120879153
+        },
+        {
+            "alloc": 0.55,
+            "stgPrice": 1.0,
+            "stgPerBlock": 6.046250777,
+            "avgBlockTime": 12.54355401,
+            "totalLiquidity": 49579046.78,
+            "totalLp": 49579046.78,
+            "totalFarmLp": 46628859.55,
+            "expectedApr": 0.17929990311952,
+            "expectedApy": 0.196379488311625
+        },
+        {
+            "alloc": 0.45,
+            "stgPrice": 1.0,
+            "stgPerBlock": 6.046250777,
+            "avgBlockTime": 12.54355401,
+            "totalLiquidity": 39989112.42,
+            "totalLp": 39989112.42,
+            "totalFarmLp": 37303139.77,
+            "expectedApr": 0.18337464465686,
+            "expectedApy": 0.20126437106555
+        },
+        {
+            "alloc": 1,
+            "stgPrice": 1.0,
+            "stgPerBlock": 0.185570952,
+            "avgBlockTime": 3.464870067,
+            "totalLiquidity": 12276336.55,
+            "totalLp": 12276336.55,
+            "totalFarmLp": 9326149.47,
+            "expectedApr": 0.181103681125416,
+            "expectedApy": 0.198539438769274
+        },
+        {
+            "alloc": 1,
+            "stgPrice": 1.0,
+            "stgPerBlock": 0.2612329751,
+            "avgBlockTime": 0.9755172414,
+            "totalLiquidity": 56995145.03,
+            "totalLp": 56995145.03,
+            "totalFarmLp": 46630045.75,
+            "expectedApr": 0.181106406036687,
+            "expectedApy": 0.198542704687349
+        }
+    ]
+}
