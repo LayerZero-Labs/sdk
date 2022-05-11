@@ -1,4 +1,4 @@
-import { ChainId } from "@layerzerolabs/core-sdk"
+import { ChainId } from "@layerzerolabs/lz-sdk"
 import { PoolId, TokenSymbol } from "../enums"
 import { Token } from "../entities/token"
 import { DAI_ADDRESS, POOL_ADDRESS, STG_ADDRESS, USDC_ADDRESS, USDT_ADDRESS } from "./addresses"

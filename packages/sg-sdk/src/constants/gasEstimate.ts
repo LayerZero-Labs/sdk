@@ -1,4 +1,4 @@
-import { ChainId } from "@layerzerolabs/core-sdk"
+import { ChainId } from "@layerzerolabs/lz-sdk"
 
 export const REVERT_REDEEM_LOCAL: { [chainId in ChainId]?: number } = {
     [ChainId.ETHEREUM]: 120000,

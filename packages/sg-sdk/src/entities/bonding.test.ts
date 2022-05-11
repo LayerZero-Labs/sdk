@@ -1,5 +1,5 @@
 import JSBI from "jsbi"
-import { ChainId } from "@layerzerolabs/core-sdk"
+import { ChainId } from "@layerzerolabs/lz-sdk"
 import { CurrencyAmount, Fraction, Token } from "."
 import { USDC, STG } from "../constants/token"
 import { Bonding } from "./bonding"

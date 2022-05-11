@@ -1,7 +1,7 @@
 import { getFarmApr, getFarmApy } from "./getFarmApy"
 import farmingData from "./data/farming.json"
 import { CurrencyAmount } from "../entities/fractions"
-import { ChainId } from "@layerzerolabs/core-sdk"
+import { ChainId } from "@layerzerolabs/lz-sdk"
 import { USDC, LPTOKEN, STG } from "../constants/token"
 import { PoolId } from "../enums"
 import JSBI from "jsbi"

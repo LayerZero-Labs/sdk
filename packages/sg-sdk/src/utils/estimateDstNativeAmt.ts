@@ -1,6 +1,6 @@
 import JSBI from "jsbi"
 import { ERC20_APPROVE, ERC20_TRANSFER, REVERT_REDEEM_LOCAL } from "../constants/gasEstimate"
-import { ChainId } from "@layerzerolabs/core-sdk"
+import { ChainId } from "@layerzerolabs/lz-sdk"
 import { CurrencyAmount, Fraction, Percent } from "../entities"
 
 export interface DstPrice {

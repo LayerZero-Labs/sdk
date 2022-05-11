@@ -1,6 +1,6 @@
 import { VotingEscrow } from "./votingEscrow"
 import { STG, VESTG } from "../constants/token"
-import { ChainId } from "@layerzerolabs/core-sdk"
+import { ChainId } from "@layerzerolabs/lz-sdk"
 import { CurrencyAmount } from "."
 import JSBI from "jsbi"
 

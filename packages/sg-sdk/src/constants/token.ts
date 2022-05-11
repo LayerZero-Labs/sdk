@@ -1,4 +1,4 @@
-import { ChainId } from "@layerzerolabs/core-sdk"
+import { ChainId } from "@layerzerolabs/lz-sdk"
 import { TokenSymbol } from "../enums/TokenSymbol"
 import { Token } from "../entities/token"
 import {

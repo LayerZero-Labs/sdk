@@ -1,6 +1,6 @@
 import { Token } from "./token"
 import { CurrencyAmount, Fraction } from "./fractions"
-import { ChainId } from "@layerzerolabs/core-sdk"
+import { ChainId } from "@layerzerolabs/lz-sdk"
 import { PoolId } from "../enums"
 import JSBI from "jsbi"
 import { SHARE_DECIMALS } from "../constants/pool"

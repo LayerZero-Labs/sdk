@@ -1,4 +1,4 @@
-import { ChainId } from "@layerzerolabs/core-sdk"
+import { ChainId } from "@layerzerolabs/lz-sdk"
 import { TokenSymbol } from "../enums"
 
 export const ROUTER_ADDRESS: { [chainId: number]: string } = {

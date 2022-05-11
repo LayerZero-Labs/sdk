@@ -1,4 +1,4 @@
-import { ChainKey, ChainId } from "@layerzerolabs/core-sdk"
+import { ChainKey, ChainId } from "@layerzerolabs/lz-sdk"
 import { PoolId } from "../enums"
 import { USDC_ADDRESS, USDT_ADDRESS, BUSD_ADDRESS } from "./addresses"
 
