@@ -1,6 +1,6 @@
 {
   "name": "@layerzerolabs/sg-sdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "BUSL-1.1",
   "description": "Stargate SDK",
   "main": "dist/index.js",
