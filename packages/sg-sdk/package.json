@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@ethersproject/address": "^5.0.2",
-    "@layerzerolabs/core-sdk": "latest",
+    "@layerzerolabs/lz-sdk": "latest",
     "big.js": "^5.2.2",
     "decimal.js-light": "^2.5.0",
     "jsbi": "^3.1.4",

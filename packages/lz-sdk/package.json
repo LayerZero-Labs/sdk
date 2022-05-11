@@ -22,10 +22,5 @@
   },
   "engines": {
     "node": ">=10"
-  },
-  "prettier": {
-    "printWidth": 120,
-    "semi": false,
-    "singleQuote": true
   }
 }
