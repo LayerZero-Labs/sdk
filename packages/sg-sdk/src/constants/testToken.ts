@@ -1,7 +1,7 @@
 import { ChainId } from "@layerzerolabs/lz-sdk"
 import { PoolId, TokenSymbol } from "../enums"
 import { Token } from "../entities/token"
-import { DAI_ADDRESS, POOL_ADDRESS, STG_ADDRESS, USDC_ADDRESS, USDT_ADDRESS } from "./addresses"
+import { DAI_ADDRESS, POOL_ADDRESS, STG_ADDRESS, USDC_ADDRESS, USDT_ADDRESS, WETH_ADDRESS } from "./addresses"
 
 export const DAI: { [chainId: number]: Token } = {
     [ChainId.RINKEBY_SANDBOX]: new Token(ChainId.RINKEBY_SANDBOX, DAI_ADDRESS[ChainId.RINKEBY_SANDBOX], 6, "DAI", "DAT"),
@@ -90,4 +90,22 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
             "STG-USDC LP"
         ),
     },
+}
+
+export const WETH: { [chainId: number]: Token } = {
+    [ChainId.RINKEBY_SANDBOX]: new Token(ChainId.RINKEBY_SANDBOX, WETH_ADDRESS[ChainId.RINKEBY_SANDBOX], 18, "WETH", "WETH"),
+    [ChainId.ARBITRUM_RINKEBY_SANDBOX]: new Token(
+        ChainId.ARBITRUM_RINKEBY_SANDBOX,
+        WETH_ADDRESS[ChainId.ARBITRUM_RINKEBY_SANDBOX],
+        18,
+        "WETH",
+        "WETH"
+    ),
+    [ChainId.OPTIMISM_KOVAN_SANDBOX]: new Token(
+        ChainId.OPTIMISM_KOVAN_SANDBOX,
+        WETH_ADDRESS[ChainId.OPTIMISM_KOVAN_SANDBOX],
+        18,
+        "WETH",
+        "WETH"
+    ),
 }
