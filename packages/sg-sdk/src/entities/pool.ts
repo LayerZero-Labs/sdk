@@ -22,6 +22,7 @@ export interface ChainPath {
     idealBalance: CurrencyAmount
     lkb: CurrencyAmount
     credit: CurrencyAmount
+    weight: number
 }
 
 export type ChainPaths = { [chainId: number]: { [poolId: number]: ChainPath } }

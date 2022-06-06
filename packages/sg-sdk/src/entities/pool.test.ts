@@ -29,6 +29,7 @@ describe("Pool", () => {
                 idealBalance: CurrencyAmount.fromRawAmount(liquidityToken, 100e6),
                 lkb: CurrencyAmount.fromRawAmount(liquidityToken, 100e6),
                 credit: CurrencyAmount.fromRawAmount(liquidityToken, 0),
+                weight: 1,
             },
         },
     }
