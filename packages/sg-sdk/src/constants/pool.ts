@@ -3,6 +3,7 @@ import { PoolId } from "../enums"
 import { USDC_ADDRESS, USDT_ADDRESS, BUSD_ADDRESS } from "./addresses"
 
 export const SHARE_DECIMALS = 6
+export const WETH_SHARE_DECIMALS = 18
 
 export const POOLS = {
     ///////// MAINNET /////////

@@ -21,6 +21,15 @@ export const ROUTER_ADDRESS: { [chainId: number]: string } = {
     [ChainId.FANTOM_TESTNET]: "0xa73b0a56B29aD790595763e71505FCa2c1abb77f",
 }
 
+export const ROUTER_ETH_ADDRESS: { [chainId: number]: string } = {
+    [ChainId.ETHEREUM]: "",
+    [ChainId.RINKEBY]: "0x296cEB4b5b4702a50e6bDd632b7e4E7BCffff1fD",
+    [ChainId.ARBITRUM]: "",
+    [ChainId.ARBITRUM_RINKEBY]: "0x8AbC3Bf9027795B727C45596e43F7647bc0C912E",
+    [ChainId.OPTIMISM]: "",
+    [ChainId.OPTIMISM_KOVAN]: "0x876A1e2818dfD5eC69Af7e1B85764cab63fd753f",
+}
+
 // Stargate Bridge.sol addresses
 export const BRIDGE_ADDRESS: { [chainId: number]: string } = {
     ...TEST.BRIDGE_ADDRESS,
