@@ -255,17 +255,12 @@ export const POOL_ADDRESS: { [tokenSymbol in TokenSymbol]: { [chainId: number]: 
     [TokenSymbol.sveSTG]: {},
     [TokenSymbol.pSTG]: {},
     [TokenSymbol.aaSTG]: {},
-    [TokenSymbol.WETH]: {
-        ...TEST.POOL_ADDRESS.WETH,
-        [ChainId.RINKEBY]: "",
-        [ChainId.ARBITRUM_RINKEBY]: "",
-        [ChainId.OPTIMISM_KOVAN]: "",
-    },
+    [TokenSymbol.WETH]: {},
     [TokenSymbol.SGETH]: {
         ...TEST.POOL_ADDRESS.SGETH,
-        [ChainId.RINKEBY]: "",
-        [ChainId.ARBITRUM_RINKEBY]: "",
-        [ChainId.OPTIMISM_KOVAN]: "",
+        [ChainId.RINKEBY]: "0x0000000000000000000000000000000000000000",
+        [ChainId.ARBITRUM_RINKEBY]: "0x0000000000000000000000000000000000000000",
+        [ChainId.OPTIMISM_KOVAN]: "0x0000000000000000000000000000000000000000",
     },
 }
 
