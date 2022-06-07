@@ -11,11 +11,11 @@ import {
     POOL_ADDRESS,
     BUSD_ADDRESS,
     WHITELIST_AUCTION_ADDRESS,
-    WETH_ADDRESS,
+    SGETH_ADDRESS,
 } from "./addresses"
 import * as TEST from "./testToken"
 import { PoolId } from "../enums"
-import { ETH_SHARE_DECIMALS } from "./pool"
+import { SGETH_SHARE_DECIMALS } from "./pool"
 
 export const BUSD: { [chainId: number]: Token } = {
     [ChainId.BSC]: new Token(ChainId.BSC, BUSD_ADDRESS[ChainId.BSC], 18, "BUSD", "BUSD Coin"),
@@ -137,7 +137,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
     [ChainId.RINKEBY]: {
         [PoolId.USDC]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDC][ChainId.RINKEBY], 6, "S*USDC", "STG-USDC LP"),
         [PoolId.USDT]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDT][ChainId.RINKEBY], 6, "S*USDT", "STG-USDT LP"),
-        [PoolId.WETH]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.WETH][ChainId.RINKEBY], ETH_SHARE_DECIMALS, "S*ETH", "STG-WETH LP"),
+        [PoolId.SGETH]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.SGETH][ChainId.RINKEBY], SGETH_SHARE_DECIMALS, "S*SGETH", "STG-SGETH LP"),
     },
     [ChainId.BSC]: {
         [PoolId.BUSD]: new Token(ChainId.BSC, POOL_ADDRESS[TokenSymbol.BUSD][ChainId.BSC], 6, "S*BUSD", "STG-BUSD LP"),
@@ -171,7 +171,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
         [PoolId.USDC]: new Token(ChainId.ARBITRUM_RINKEBY, POOL_ADDRESS[TokenSymbol.USDC][ChainId.ARBITRUM_RINKEBY], 6, "S*USDC", "STG-USDC LP"),
         [PoolId.USDT]: new Token(ChainId.ARBITRUM_RINKEBY, POOL_ADDRESS[TokenSymbol.USDT][ChainId.ARBITRUM_RINKEBY], 6, "S*USDT", "STG-USDT LP"),
         // prettier-ignore
-        [PoolId.WETH]: new Token(ChainId.ARBITRUM_RINKEBY, POOL_ADDRESS[TokenSymbol.WETH][ChainId.ARBITRUM_RINKEBY], ETH_SHARE_DECIMALS, "S*ETH", "STG-WETH LP"),
+        [PoolId.SGETH]: new Token(ChainId.ARBITRUM_RINKEBY, POOL_ADDRESS[TokenSymbol.SGETH][ChainId.ARBITRUM_RINKEBY], SGETH_SHARE_DECIMALS, "S*SGETH", "STG-SGETH LP"),
     },
     [ChainId.OPTIMISM]: {
         [PoolId.USDC]: new Token(ChainId.OPTIMISM, POOL_ADDRESS[TokenSymbol.USDC][ChainId.OPTIMISM], 6, "S*USDC", "STG-USDC LP"),
@@ -179,7 +179,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
     [ChainId.OPTIMISM_KOVAN]: {
         [PoolId.USDC]: new Token(ChainId.OPTIMISM_KOVAN, POOL_ADDRESS[TokenSymbol.USDC][ChainId.OPTIMISM_KOVAN], 6, "S*USDC", "STG-USDC LP"),
         // prettier-ignore
-        [PoolId.WETH]: new Token(ChainId.OPTIMISM_KOVAN, POOL_ADDRESS[TokenSymbol.WETH][ChainId.OPTIMISM_KOVAN], ETH_SHARE_DECIMALS, "S*ETH", "STG-WETH LP"),
+        [PoolId.SGETH]: new Token(ChainId.OPTIMISM_KOVAN, POOL_ADDRESS[TokenSymbol.SGETH][ChainId.OPTIMISM_KOVAN], SGETH_SHARE_DECIMALS, "S*SGETH", "STG-SGETH LP"),
     },
     [ChainId.FANTOM]: {
         [PoolId.USDC]: new Token(ChainId.FANTOM, POOL_ADDRESS[TokenSymbol.USDC][ChainId.FANTOM], 6, "S*USDC", "STG-USDC LP"),
@@ -189,8 +189,8 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
     },
 }
 
-export const WETH: { [chainId: number]: Token } = {
-    [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, WETH_ADDRESS[ChainId.RINKEBY], 18, "WETH", "WETH"),
-    [ChainId.ARBITRUM_RINKEBY]: new Token(ChainId.ARBITRUM_RINKEBY, WETH_ADDRESS[ChainId.ARBITRUM_RINKEBY], 18, "WETH", "WETH"),
-    [ChainId.OPTIMISM_KOVAN]: new Token(ChainId.OPTIMISM_KOVAN, WETH_ADDRESS[ChainId.OPTIMISM_KOVAN], 18, "WETH", "WETH"),
+export const SGETH: { [chainId: number]: Token } = {
+    [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, SGETH_ADDRESS[ChainId.RINKEBY], 18, "SGETH", "SGETH"),
+    [ChainId.ARBITRUM_RINKEBY]: new Token(ChainId.ARBITRUM_RINKEBY, SGETH_ADDRESS[ChainId.ARBITRUM_RINKEBY], 18, "SGETH", "SGETH"),
+    [ChainId.OPTIMISM_KOVAN]: new Token(ChainId.OPTIMISM_KOVAN, SGETH_ADDRESS[ChainId.OPTIMISM_KOVAN], 18, "SGETH", "SGETH"),
 }

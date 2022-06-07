@@ -5,11 +5,11 @@ import {
     USDT_ADDRESS,
     BUSD_ADDRESS,
     USDD_ADDRESS,
-    STARGATE_ETH_VAULT_ADDRESS
+    SGETH_ADDRESS
 } from "./addresses"
 
 export const SHARE_DECIMALS = 6
-export const ETH_SHARE_DECIMALS = 18
+export const SGETH_SHARE_DECIMALS = 18
 export const USDD_SHARE_DECIMALS = 18
 
 export const POOLS = {
@@ -68,14 +68,14 @@ export const POOLS = {
             ]
         },
 
-        [PoolId.STARGATE_ETH_VAULT]: {
+        [PoolId.SGETH]: {
             info: {
-                "sharedDecimals": ETH_SHARE_DECIMALS,
-                "address": STARGATE_ETH_VAULT_ADDRESS[ChainId.ETHEREUM]
+                "sharedDecimals": SGETH_SHARE_DECIMALS,
+                "address": SGETH_ADDRESS[ChainId.ETHEREUM]
             },
             chainPaths: [
-                {"weight" : 1, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
-                {"weight" : 1, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
+                {"weight" : 1, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.SGETH},
+                {"weight" : 1, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.SGETH},
             ]
         },
 
@@ -312,14 +312,14 @@ export const POOLS = {
             ]
         },
 
-        [PoolId.STARGATE_ETH_VAULT]: {
+        [PoolId.SGETH]: {
             info: {
-                "sharedDecimals": ETH_SHARE_DECIMALS,
-                "address": STARGATE_ETH_VAULT_ADDRESS[ChainId.ARBITRUM]
+                "sharedDecimals": SGETH_SHARE_DECIMALS,
+                "address": SGETH_ADDRESS[ChainId.ARBITRUM]
             },
             chainPaths: [
-                {"weight" : 90, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
-                {"weight" : 10, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
+                {"weight" : 90, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.SGETH},
+                {"weight" : 10, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.SGETH},
             ]
         }
     },
@@ -352,14 +352,14 @@ export const POOLS = {
             ]
         },
 
-        [PoolId.STARGATE_ETH_VAULT]: {
+        [PoolId.SGETH]: {
             info: {
-                "sharedDecimals": ETH_SHARE_DECIMALS,
-                "address": STARGATE_ETH_VAULT_ADDRESS[ChainId.OPTIMISM]
+                "sharedDecimals": SGETH_SHARE_DECIMALS,
+                "address": SGETH_ADDRESS[ChainId.OPTIMISM]
             },
             chainPaths: [
-                {"weight" : 90, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
-                {"weight" : 10, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
+                {"weight" : 90, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.SGETH},
+                {"weight" : 10, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.SGETH},
             ]
         }
 
@@ -449,14 +449,14 @@ export const POOLS = {
             ]
         },
 
-        [PoolId.STARGATE_ETH_VAULT]: {
+        [PoolId.SGETH]: {
             info: {
-                "sharedDecimals": ETH_SHARE_DECIMALS,
-                "address": STARGATE_ETH_VAULT_ADDRESS[ChainId.RINKEBY]
+                "sharedDecimals": SGETH_SHARE_DECIMALS,
+                "address": SGETH_ADDRESS[ChainId.RINKEBY]
             },
             chainPaths : [
-                {"weight" : 1, "dstChainId": ChainId.ARBITRUM_RINKEBY, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
-                {"weight" : 1, "dstChainId": ChainId.OPTIMISM_KOVAN, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
+                {"weight" : 1, "dstChainId": ChainId.ARBITRUM_RINKEBY, "dstPoolId": PoolId.SGETH},
+                {"weight" : 1, "dstChainId": ChainId.OPTIMISM_KOVAN, "dstPoolId": PoolId.SGETH},
             ]
         },
 
@@ -692,14 +692,14 @@ export const POOLS = {
             ]
         },
 
-        [PoolId.STARGATE_ETH_VAULT]: {
+        [PoolId.SGETH]: {
             info: {
-                "sharedDecimals": ETH_SHARE_DECIMALS,
-                "address": STARGATE_ETH_VAULT_ADDRESS[ChainId.ARBITRUM_RINKEBY]
+                "sharedDecimals": SGETH_SHARE_DECIMALS,
+                "address": SGETH_ADDRESS[ChainId.ARBITRUM_RINKEBY]
             },
             chainPaths : [
-                {"weight" : 1, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
-                {"weight" : 1, "dstChainId": ChainId.OPTIMISM_KOVAN, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
+                {"weight" : 1, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.SGETH},
+                {"weight" : 1, "dstChainId": ChainId.OPTIMISM_KOVAN, "dstPoolId": PoolId.SGETH},
             ]
         },
 
@@ -733,14 +733,14 @@ export const POOLS = {
             ]
         },
 
-        [PoolId.STARGATE_ETH_VAULT]: {
+        [PoolId.SGETH]: {
             info: {
-                "sharedDecimals": ETH_SHARE_DECIMALS,
-                "address": STARGATE_ETH_VAULT_ADDRESS[ChainId.OPTIMISM_KOVAN]
+                "sharedDecimals": SGETH_SHARE_DECIMALS,
+                "address": SGETH_ADDRESS[ChainId.OPTIMISM_KOVAN]
             },
             chainPaths : [
-                {"weight" : 1, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
-                {"weight" : 1, "dstChainId": ChainId.ARBITRUM_RINKEBY, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
+                {"weight" : 1, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.SGETH},
+                {"weight" : 1, "dstChainId": ChainId.ARBITRUM_RINKEBY, "dstPoolId": PoolId.SGETH},
             ]
         },
 
@@ -832,14 +832,14 @@ export const POOLS = {
             ]
         },
 
-        [PoolId.STARGATE_ETH_VAULT]: {
+        [PoolId.SGETH]: {
             info: {
-                "sharedDecimals": ETH_SHARE_DECIMALS,
-                "address": STARGATE_ETH_VAULT_ADDRESS[ChainId.RINKEBY_SANDBOX]
+                "sharedDecimals": SGETH_SHARE_DECIMALS,
+                "address": SGETH_ADDRESS[ChainId.RINKEBY_SANDBOX]
             },
             chainPaths : [
-                {"weight" : 1, "dstChainId": ChainId.ARBITRUM_RINKEBY_SANDBOX, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
-                {"weight" : 1, "dstChainId": ChainId.OPTIMISM_KOVAN_SANDBOX, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
+                {"weight" : 1, "dstChainId": ChainId.ARBITRUM_RINKEBY_SANDBOX, "dstPoolId": PoolId.SGETH},
+                {"weight" : 1, "dstChainId": ChainId.OPTIMISM_KOVAN_SANDBOX, "dstPoolId": PoolId.SGETH},
             ]
         },
 
@@ -1077,14 +1077,14 @@ export const POOLS = {
             ]
         },
 
-        [PoolId.STARGATE_ETH_VAULT]: {
+        [PoolId.SGETH]: {
             info: {
-                "sharedDecimals": ETH_SHARE_DECIMALS,
-                "address": STARGATE_ETH_VAULT_ADDRESS[ChainId.ARBITRUM_RINKEBY_SANDBOX]
+                "sharedDecimals": SGETH_SHARE_DECIMALS,
+                "address": SGETH_ADDRESS[ChainId.ARBITRUM_RINKEBY_SANDBOX]
             },
             chainPaths : [
-                {"weight" : 1, "dstChainId": ChainId.RINKEBY_SANDBOX, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
-                {"weight" : 1, "dstChainId": ChainId.OPTIMISM_KOVAN_SANDBOX, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
+                {"weight" : 1, "dstChainId": ChainId.RINKEBY_SANDBOX, "dstPoolId": PoolId.SGETH},
+                {"weight" : 1, "dstChainId": ChainId.OPTIMISM_KOVAN_SANDBOX, "dstPoolId": PoolId.SGETH},
             ]
         },
 
@@ -1118,14 +1118,14 @@ export const POOLS = {
             ]
         },
 
-        [PoolId.STARGATE_ETH_VAULT]: {
+        [PoolId.SGETH]: {
             info: {
-                "sharedDecimals": ETH_SHARE_DECIMALS,
-                "address": STARGATE_ETH_VAULT_ADDRESS[ChainId.OPTIMISM_KOVAN_SANDBOX]
+                "sharedDecimals": SGETH_SHARE_DECIMALS,
+                "address": SGETH_ADDRESS[ChainId.OPTIMISM_KOVAN_SANDBOX]
             },
             chainPaths : [
-                {"weight" : 1, "dstChainId": ChainId.RINKEBY_SANDBOX, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
-                {"weight" : 1, "dstChainId": ChainId.ARBITRUM_RINKEBY_SANDBOX, "dstPoolId": PoolId.STARGATE_ETH_VAULT},
+                {"weight" : 1, "dstChainId": ChainId.RINKEBY_SANDBOX, "dstPoolId": PoolId.SGETH},
+                {"weight" : 1, "dstChainId": ChainId.ARBITRUM_RINKEBY_SANDBOX, "dstPoolId": PoolId.SGETH},
             ]
         },
 

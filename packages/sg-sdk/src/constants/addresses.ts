@@ -24,11 +24,11 @@ export const ROUTER_ADDRESS: { [chainId: number]: string } = {
 export const ROUTER_ETH_ADDRESS: { [chainId: number]: string } = {
     ...TEST.ROUTER_ADDRESS,
     [ChainId.ETHEREUM]: '',
-    [ChainId.RINKEBY]: '0x0BD6e930EF5e74A2D7E42E97bD27f89F8221458A',
+    [ChainId.RINKEBY]: '',
     [ChainId.ARBITRUM]: '',
-    [ChainId.ARBITRUM_RINKEBY]: '0xaE16d5dd9da0B66F6A1b262A47f92fDFC2E9f99b',
+    [ChainId.ARBITRUM_RINKEBY]: '',
     [ChainId.OPTIMISM]: '',
-    [ChainId.OPTIMISM_KOVAN]: '0x7171cf97b26C46Ba5Ee8cCfD0bB6B4A3932F1d95',
+    [ChainId.OPTIMISM_KOVAN]: '',
 }
 
 // Stargate Bridge.sol addresses
@@ -257,9 +257,15 @@ export const POOL_ADDRESS: { [tokenSymbol in TokenSymbol]: { [chainId: number]: 
     [TokenSymbol.aaSTG]: {},
     [TokenSymbol.WETH]: {
         ...TEST.POOL_ADDRESS.WETH,
-        [ChainId.RINKEBY]: "0xB0FC00981e11284869E6AAA17A0Ff1EF2a2A3999",
-        [ChainId.ARBITRUM_RINKEBY]: "0x0d2536D41825C5e1276CB3913894bF631A578C7B",
-        [ChainId.OPTIMISM_KOVAN]: "0xf5Bd0C493e00A30d3Db2e5e6BA27D72cdCfE060F",
+        [ChainId.RINKEBY]: "",
+        [ChainId.ARBITRUM_RINKEBY]: "",
+        [ChainId.OPTIMISM_KOVAN]: "",
+    },
+    [TokenSymbol.SGETH]: {
+        ...TEST.POOL_ADDRESS.SGETH,
+        [ChainId.RINKEBY]: "",
+        [ChainId.ARBITRUM_RINKEBY]: "",
+        [ChainId.OPTIMISM_KOVAN]: "",
     },
 }
 
@@ -371,14 +377,14 @@ export const WETH_ADDRESS: { [chainId: number]: string } = {
     [ChainId.FANTOM_TESTNET]: "0x0000000000000000000000000000000000000000",
 }
 
-export const STARGATE_ETH_VAULT_ADDRESS: { [chainId: number]: string } = {
-    ...TEST.STARGATE_ETH_VAULT_ADDRESS,
+export const SGETH_ADDRESS: { [chainId: number]: string } = {
+    ...TEST.SGETH_ADDRESS,
     [ChainId.ETHEREUM]: '',
-    [ChainId.RINKEBY]: '0x6AD87f552E678B9358F102B93638377aB2a6107d',
+    [ChainId.RINKEBY]: '0x195EFf74d864307407c68A978a3036B1Dc4A0be4',
     [ChainId.ARBITRUM]: '',
-    [ChainId.ARBITRUM_RINKEBY]: '0x7279cbFcE0420d7Eb9C64F8C0d4454E4801baaC0',
+    [ChainId.ARBITRUM_RINKEBY]: '0x1450e45e7345c4f6967b2A7DD91d9b0D3f65ff83',
     [ChainId.OPTIMISM]: '',
-    [ChainId.OPTIMISM_KOVAN]: '0x54ab08953765079890B7d1ECE2701d5B8D5fa384',
+    [ChainId.OPTIMISM_KOVAN]: '0x8b299936aa5e0eEA763f55267ACcE7394F0d83C0',
 }
 
 export const USDD_ADDRESS: { [chainId: number]: string } = {
