@@ -170,7 +170,6 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
     [ChainId.ARBITRUM_RINKEBY]: {
         [PoolId.USDC]: new Token(ChainId.ARBITRUM_RINKEBY, POOL_ADDRESS[TokenSymbol.USDC][ChainId.ARBITRUM_RINKEBY], 6, "S*USDC", "STG-USDC LP"),
         [PoolId.USDT]: new Token(ChainId.ARBITRUM_RINKEBY, POOL_ADDRESS[TokenSymbol.USDT][ChainId.ARBITRUM_RINKEBY], 6, "S*USDT", "STG-USDT LP"),
-        // prettier-ignore
         [PoolId.SGETH]: new Token(ChainId.ARBITRUM_RINKEBY, POOL_ADDRESS[TokenSymbol.SGETH][ChainId.ARBITRUM_RINKEBY], SGETH_SHARE_DECIMALS, "S*SGETH", "STG-SGETH LP"),
     },
     [ChainId.OPTIMISM]: {
@@ -178,7 +177,6 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
     },
     [ChainId.OPTIMISM_KOVAN]: {
         [PoolId.USDC]: new Token(ChainId.OPTIMISM_KOVAN, POOL_ADDRESS[TokenSymbol.USDC][ChainId.OPTIMISM_KOVAN], 6, "S*USDC", "STG-USDC LP"),
-        // prettier-ignore
         [PoolId.SGETH]: new Token(ChainId.OPTIMISM_KOVAN, POOL_ADDRESS[TokenSymbol.SGETH][ChainId.OPTIMISM_KOVAN], SGETH_SHARE_DECIMALS, "S*SGETH", "STG-SGETH LP"),
     },
     [ChainId.FANTOM]: {
