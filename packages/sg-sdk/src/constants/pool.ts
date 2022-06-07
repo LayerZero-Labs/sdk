@@ -1,12 +1,12 @@
-import { ChainKey, ChainId } from "@layerzerolabs/core-sdk";
-import { PoolId } from "../enums";
+import { ChainKey, ChainId } from "@layerzerolabs/lz-sdk"
+import { PoolId } from "../enums"
 import {
     USDC_ADDRESS,
     USDT_ADDRESS,
     BUSD_ADDRESS,
     USDD_ADDRESS,
     STARGATE_ETH_VAULT_ADDRESS
-} from "./addresses";
+} from "./addresses"
 
 export const SHARE_DECIMALS = 6
 export const ETH_SHARE_DECIMALS = 18
