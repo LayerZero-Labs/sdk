@@ -263,3 +263,8 @@ export const STARGATE_ETH_VAULT_ADDRESS: { [chainId: number]: string } = {
     [ChainId.ARBITRUM_RINKEBY_SANDBOX]: '0x7279cbFcE0420d7Eb9C64F8C0d4454E4801baaC0',
     [ChainId.OPTIMISM_KOVAN_SANDBOX]: '0x54ab08953765079890B7d1ECE2701d5B8D5fa384',
 }
+
+export const USDD_ADDRESS: { [chainId: number]: string } = {
+    [ChainId.RINKEBY_SANDBOX]: '',
+    [ChainId.BSC_TESTNET_SANDBOX]: '',
+}

@@ -380,3 +380,11 @@ export const STARGATE_ETH_VAULT_ADDRESS: { [chainId: number]: string } = {
     [ChainId.OPTIMISM]: '',
     [ChainId.OPTIMISM_KOVAN]: '0x54ab08953765079890B7d1ECE2701d5B8D5fa384',
 }
+
+export const USDD_ADDRESS: { [chainId: number]: string } = {
+    ...TEST.USDD_ADDRESS,
+    [ChainId.ETHEREUM]: '0x0C10bF8FcB7Bf5412187A595ab97a3609160b5c6',
+    [ChainId.RINKEBY]: '0x991cd1ff41dA564E4c4861be43E656345f2E649a',
+    [ChainId.BSC]: '0xd17479997F34dd9156Deef8F95A52D81D265be9c',
+    [ChainId.BSC_TESTNET]: '0x8467C2439BC4C593aC8AAf0df4879b89F7Ab8a61',
+}
