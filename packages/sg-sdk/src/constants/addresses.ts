@@ -22,12 +22,13 @@ export const ROUTER_ADDRESS: { [chainId: number]: string } = {
 }
 
 export const ROUTER_ETH_ADDRESS: { [chainId: number]: string } = {
-    [ChainId.ETHEREUM]: "",
-    [ChainId.RINKEBY]: "0x296cEB4b5b4702a50e6bDd632b7e4E7BCffff1fD",
-    [ChainId.ARBITRUM]: "",
-    [ChainId.ARBITRUM_RINKEBY]: "0x8AbC3Bf9027795B727C45596e43F7647bc0C912E",
-    [ChainId.OPTIMISM]: "",
-    [ChainId.OPTIMISM_KOVAN]: "0x876A1e2818dfD5eC69Af7e1B85764cab63fd753f",
+    ...TEST.ROUTER_ADDRESS,
+    [ChainId.ETHEREUM]: '',
+    [ChainId.RINKEBY]: '',
+    [ChainId.ARBITRUM]: '',
+    [ChainId.ARBITRUM_RINKEBY]: '',
+    [ChainId.OPTIMISM]: '',
+    [ChainId.OPTIMISM_KOVAN]: '',
 }
 
 // Stargate Bridge.sol addresses
@@ -368,4 +369,14 @@ export const WETH_ADDRESS: { [chainId: number]: string } = {
     [ChainId.OPTIMISM_KOVAN]: "0xF8Ac33Bf8Ebf07722253514afAE0a0db73b9F033",
     [ChainId.FANTOM]: "0x0000000000000000000000000000000000000000",
     [ChainId.FANTOM_TESTNET]: "0x0000000000000000000000000000000000000000",
+}
+
+export const STARGATE_ETH_VAULT_ADDRESS: { [chainId: number]: string } = {
+    ...TEST.STARGATE_ETH_VAULT_ADDRESS,
+    [ChainId.ETHEREUM]: '',
+    [ChainId.RINKEBY]: '0x6AD87f552E678B9358F102B93638377aB2a6107d',
+    [ChainId.ARBITRUM]: '',
+    [ChainId.ARBITRUM_RINKEBY]: '0x7279cbFcE0420d7Eb9C64F8C0d4454E4801baaC0',
+    [ChainId.OPTIMISM]: '',
+    [ChainId.OPTIMISM_KOVAN]: '0x54ab08953765079890B7d1ECE2701d5B8D5fa384',
 }

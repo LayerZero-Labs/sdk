@@ -10,4 +10,7 @@ export enum PoolId {
     USDCe = 8,
     USDTe = 9,
     WETH = 10,
+    USDD = 11,
+    STARGATE_ETH_VAULT
+
 }
