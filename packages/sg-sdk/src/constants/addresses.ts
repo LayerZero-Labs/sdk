@@ -24,11 +24,11 @@ export const ROUTER_ADDRESS: { [chainId: number]: string } = {
 export const ROUTER_ETH_ADDRESS: { [chainId: number]: string } = {
     ...TEST.ROUTER_ADDRESS,
     [ChainId.ETHEREUM]: '',
-    [ChainId.RINKEBY]: '',
+    [ChainId.RINKEBY]: '0x0BD6e930EF5e74A2D7E42E97bD27f89F8221458A',
     [ChainId.ARBITRUM]: '',
-    [ChainId.ARBITRUM_RINKEBY]: '',
+    [ChainId.ARBITRUM_RINKEBY]: '0xaE16d5dd9da0B66F6A1b262A47f92fDFC2E9f99b',
     [ChainId.OPTIMISM]: '',
-    [ChainId.OPTIMISM_KOVAN]: '',
+    [ChainId.OPTIMISM_KOVAN]: '0x7171cf97b26C46Ba5Ee8cCfD0bB6B4A3932F1d95',
 }
 
 // Stargate Bridge.sol addresses
