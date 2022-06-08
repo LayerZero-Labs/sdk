@@ -256,6 +256,11 @@ export const POOL_ADDRESS: { [tokenSymbol in TokenSymbol]: { [chainId: number]: 
     [TokenSymbol.pSTG]: {},
     [TokenSymbol.aaSTG]: {},
     [TokenSymbol.WETH]: {},
+    [TokenSymbol.USDD]: {
+        ...TEST.POOL_ADDRESS.USDD,
+        [ChainId.RINKEBY]: "0x715AA8017a4bEb679d53EF279BE12e6FE6E5FAe2",
+        [ChainId.BSC_TESTNET]: "0x9e57A8A0E78466C23f5f8F437a88EB8960097632"
+    },
     [TokenSymbol.SGETH]: {
         ...TEST.POOL_ADDRESS.SGETH,
         [ChainId.RINKEBY]: "0x1019540652A680fC550c18EAF2E8D39FFe21A426",

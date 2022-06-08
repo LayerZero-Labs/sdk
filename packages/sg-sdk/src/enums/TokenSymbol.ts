@@ -12,5 +12,6 @@ export enum TokenSymbol {
     pSTG = "pSTG",
     aaSTG = "aaSTG",
     WETH = "WETH",
+    USDD = 'USDD',
     SGETH = "SGETH"
 }

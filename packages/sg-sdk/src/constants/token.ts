@@ -11,11 +11,12 @@ import {
     POOL_ADDRESS,
     BUSD_ADDRESS,
     WHITELIST_AUCTION_ADDRESS,
+    USDD_ADDRESS,
     SGETH_ADDRESS,
 } from "./addresses"
 import * as TEST from "./testToken"
 import { PoolId } from "../enums"
-import { SGETH_SHARE_DECIMALS } from "./pool"
+import {SGETH_SHARE_DECIMALS, USDD_SHARE_DECIMALS} from "./pool"
 
 export const BUSD: { [chainId: number]: Token } = {
     [ChainId.BSC]: new Token(ChainId.BSC, BUSD_ADDRESS[ChainId.BSC], 18, "BUSD", "BUSD Coin"),
@@ -137,6 +138,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
     [ChainId.RINKEBY]: {
         [PoolId.USDC]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDC][ChainId.RINKEBY], 6, "S*USDC", "STG-USDC LP"),
         [PoolId.USDT]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDT][ChainId.RINKEBY], 6, "S*USDT", "STG-USDT LP"),
+        [PoolId.USDD]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDD][ChainId.RINKEBY], USDD_SHARE_DECIMALS, "S*USDD", "STG-USDD LP"),
         [PoolId.SGETH]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.SGETH][ChainId.RINKEBY], SGETH_SHARE_DECIMALS, "S*SGETH", "STG-SGETH LP"),
     },
     [ChainId.BSC]: {
@@ -146,6 +148,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
     [ChainId.BSC_TESTNET]: {
         [PoolId.BUSD]: new Token(ChainId.BSC_TESTNET, POOL_ADDRESS[TokenSymbol.BUSD][ChainId.BSC_TESTNET], 6, "S*BUSD", "STG-BUSD LP"),
         [PoolId.USDT]: new Token(ChainId.BSC_TESTNET, POOL_ADDRESS[TokenSymbol.USDT][ChainId.BSC_TESTNET], 6, "S*USDT", "STG-USDT LP"),
+        [PoolId.USDD]: new Token(ChainId.BSC_TESTNET, POOL_ADDRESS[TokenSymbol.USDD][ChainId.BSC_TESTNET], USDD_SHARE_DECIMALS, "S*USDD", "STG-USDD LP"),
     },
     [ChainId.AVALANCHE]: {
         [PoolId.USDC]: new Token(ChainId.AVALANCHE, POOL_ADDRESS[TokenSymbol.USDC][ChainId.AVALANCHE], 6, "S*USDC", "STG-USDCe LP"),
@@ -191,4 +194,9 @@ export const SGETH: { [chainId: number]: Token } = {
     [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, SGETH_ADDRESS[ChainId.RINKEBY], 18, "SGETH", "SGETH"),
     [ChainId.ARBITRUM_RINKEBY]: new Token(ChainId.ARBITRUM_RINKEBY, SGETH_ADDRESS[ChainId.ARBITRUM_RINKEBY], 18, "SGETH", "SGETH"),
     [ChainId.OPTIMISM_KOVAN]: new Token(ChainId.OPTIMISM_KOVAN, SGETH_ADDRESS[ChainId.OPTIMISM_KOVAN], 18, "SGETH", "SGETH"),
+}
+
+export const USDD: { [chainId: number]: Token } = {
+    [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, USDD_ADDRESS[ChainId.RINKEBY], 18, "USDD", "USDD"),
+    [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, USDD_ADDRESS[ChainId.BSC_TESTNET], 18, "USDD", "USDD"),
 }
