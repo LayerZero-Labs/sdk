@@ -12,7 +12,18 @@ export const SHARE_DECIMALS = 6
 export const SGETH_SHARE_DECIMALS = 18
 export const USDD_SHARE_DECIMALS = 18
 
-export const POOLS = {
+export const POOLS: {
+    [chainKey in ChainKey]?: {
+        [poolId in PoolId]?: {
+            info: { sharedDecimals: number; address: string }
+            chainPaths: {
+                weight: number
+                dstChainId: ChainId
+                dstPoolId: PoolId
+            }[]
+        }
+    }
+} = {
 
     ///////// MAINNET /////////
 
