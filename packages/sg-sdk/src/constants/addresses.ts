@@ -379,11 +379,11 @@ export const WETH_ADDRESS: { [chainId: number]: string } = {
 
 export const SGETH_ADDRESS: { [chainId: number]: string } = {
     ...TEST.SGETH_ADDRESS,
-    [ChainId.ETHEREUM]: '',
+    [ChainId.ETHEREUM]: '0x36D6D2fB6acaE9a49DA8cc536258B05f5A7240ec',
     [ChainId.RINKEBY]: '0x195EFf74d864307407c68A978a3036B1Dc4A0be4',
-    [ChainId.ARBITRUM]: '',
+    [ChainId.ARBITRUM]: '0x7Ed75072D5E21901ec140FCB3F53aA5C8dEd92AF',
     [ChainId.ARBITRUM_RINKEBY]: '0x1450e45e7345c4f6967b2A7DD91d9b0D3f65ff83',
-    [ChainId.OPTIMISM]: '',
+    [ChainId.OPTIMISM]: '0x4839FF304DD3E38da9bC73F58E2999390E76b80d',
     [ChainId.OPTIMISM_KOVAN]: '0x8b299936aa5e0eEA763f55267ACcE7394F0d83C0',
 }
 
