@@ -1,6 +1,7 @@
 const { USDC_ADDRESS, USDT_ADDRESS, BUSD_ADDRESS } = require("../../dist")
 const { POOLS, PoolId } = require("../../dist")
 const { CHAIN_ID, ChainId, getNetworksForEnv } = require("@layerzerolabs/lz-sdk")
+const { getStargateNetworksForEnv } = require("@layerzerolabs/sg-sdk")
 const poolIdKeys = Object.keys(PoolId)
 
 const tokenLinks = {
@@ -28,7 +29,7 @@ function getKeyByValue(object, value) {
 }
 
 function printPoolMesh() {
-    const networks = getNetworksForEnv("MAINNET")
+    const networks = getStargateNetworksForEnv('mainnet')
     let meshArray = []
     networks.map((network) => {
         let counter = 0
