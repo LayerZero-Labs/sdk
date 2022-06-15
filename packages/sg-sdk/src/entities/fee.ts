@@ -34,6 +34,18 @@ export interface FeeLibraryV02 extends FeeLibrary {
     protocolSubsidyRate: Fraction
 }
 
+//StargateFeeLibraryV03
+export interface FeeLibraryV03 extends FeeLibrary {
+    version: "3.0.0" // `3.${number}.${number}`
+    delta1Rate: Fraction
+    delta2Rate: Fraction
+    lambda1Rate: Fraction
+    lambda2Rate: Fraction
+    lpFeeRate: Fraction
+    protocolFeeRate: Fraction
+    protocolSubsidyRate: Fraction
+}
+
 export const FeeLibraryV02Defaults: FeeLibraryV02 = {
     version: "2.0.0",
     delta1Rate: new Fraction(60, 100),
@@ -45,13 +57,24 @@ export const FeeLibraryV02Defaults: FeeLibraryV02 = {
     protocolSubsidyRate: new Fraction(3, 100000),
 }
 
+export const FeeLibraryV03Defaults: FeeLibraryV03 = {
+    version: "3.0.0",
+    delta1Rate: new Fraction(60, 100),
+    delta2Rate: new Fraction(5, 100),
+    lambda1Rate: new Fraction(40, 10000),
+    lambda2Rate: new Fraction(9960, 10000),
+    lpFeeRate: new Fraction(10, 100000),
+    protocolFeeRate: new Fraction(50, 100000),
+    protocolSubsidyRate: new Fraction(3, 100000),
+}
+
 abstract class Fee {
     version: string
-    fee: FeeLibraryV01 | FeeLibraryV02
+    fee: FeeLibraryV01 | FeeLibraryV02 | FeeLibraryV03
     liquidityToken: Currency
     token: Currency
 
-    public constructor(_fee: FeeLibraryV01 | FeeLibraryV02, _token: Currency, _lpToken: Currency) {
+    public constructor(_fee: FeeLibraryV01 | FeeLibraryV02 | FeeLibraryV03, _token: Currency, _lpToken: Currency) {
         this.version = _fee.version
         this.fee = _fee
         this.token = _token
@@ -123,6 +146,50 @@ export class FeeV02 extends Fee {
     }
 }
 
+export class FeeV03 extends Fee {
+    public getFees(
+        _idealBalance: CurrencyAmount, // lpToken
+        _beforeBalance: CurrencyAmount, // lpToken
+        _poolTokenBalance: CurrencyAmount, //token (token.balanceOf(address(pool))
+        _poolTotalLiquidity: CurrencyAmount, //lpToken
+        _eqFeePool: CurrencyAmount, //lpToken
+        _amount: CurrencyAmount //token
+    ): FeeObj {
+        if (!_idealBalance.currency.equals(this.liquidityToken)) console.log(_idealBalance.currency, this.liquidityToken)
+
+        assert(_idealBalance.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(_beforeBalance.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(_poolTokenBalance.currency.equals(this.token), "TOKEN")
+        assert(_poolTotalLiquidity.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(_eqFeePool.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(_amount.currency.equals(this.token), "TOKEN")
+
+        const idealBalance = this.amountSDtoLD(_idealBalance)
+        const beforeBalance = this.amountSDtoLD(_beforeBalance)
+        const poolTotalLiquidity = this.amountSDtoLD(_poolTotalLiquidity)
+        const eqFeePool = this.amountSDtoLD(_eqFeePool)
+        // console.log('beforeBalance', beforeBalance, _amount)
+        assert(beforeBalance.greaterThan(_amount) || beforeBalance.equalTo(_amount), "not enough balance")
+
+        const fee = <FeeLibraryV03>this.fee
+        let protocolFee = _amount.multiply(fee.protocolFeeRate)
+
+        // calculate the equilibrium fee
+        let { eqFee, protocolSubsidy } = getEquilibriumFee(idealBalance, beforeBalance, _amount, fee)
+        protocolFee = protocolFee.subtract(protocolSubsidy)
+
+        // calculate the equilibrium reward
+        let eqReward = getEquilibriumReward(_poolTokenBalance, poolTotalLiquidity, eqFeePool, _amount)
+
+        return {
+            eqFee,
+            eqReward,
+            lpFee: _amount.multiply(fee.lpFeeRate),
+            protocolFee,
+        }
+    }
+}
+
 function getEquilibriumReward(
     _poolTokenBalance: CurrencyAmount,
     _poolTotalLiquidity: CurrencyAmount,
@@ -146,7 +213,7 @@ function getEquilibriumFee(
     _idealBalance: CurrencyAmount,
     _beforeBalance: CurrencyAmount,
     _amount: CurrencyAmount,
-    _fee: FeeLibraryV02
+    _fee: FeeLibraryV02 | FeeLibraryV03
 ): { eqFee: CurrencyAmount; protocolSubsidy: CurrencyAmount } {
     const afterBalance = _beforeBalance.subtract(_amount)
 
