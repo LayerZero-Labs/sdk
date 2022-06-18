@@ -35,6 +35,9 @@ export const POOLS: {
                 "address": USDC_ADDRESS[ChainId.ETHEREUM]
             },
             chainPaths : [
+                // -------------------------- loopback --------------------------------------------
+                {"weight" : 0, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
+
                 // -------------------------- BSC --------------------------------------------
                 {"weight" : 326, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
                 {"weight" : 533, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
@@ -60,6 +63,9 @@ export const POOLS: {
                 "address": USDT_ADDRESS[ChainId.ETHEREUM]
             },
             chainPaths: [
+                // -------------------------- loopback --------------------------------------------
+                {"weight" : 1, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
+
                 // -------------------------- BSC --------------------------------------------
                 {"weight" : 200, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
                 {"weight" : 529, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
@@ -416,6 +422,9 @@ export const POOLS: {
                 "address": USDC_ADDRESS[ChainId.RINKEBY]
             },
             chainPaths : [
+                // test of loopback USDC <> USDT chainPaths for local chain rebalancing
+                {"weight" : 0, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.USDT}, // local USDC to local USDT
+
                 // -------------------------- BSC_TESTNET --------------------------------------------
                 {"weight" : 1200, "dstChainId": ChainId.BSC_TESTNET, "dstPoolId": PoolId.BUSD},
                 {"weight" : 800, "dstChainId": ChainId.BSC_TESTNET, "dstPoolId": PoolId.USDT},
@@ -441,6 +450,9 @@ export const POOLS: {
                 "address": USDT_ADDRESS[ChainId.RINKEBY]
             },
             chainPaths: [
+                // test of loopback USDC <> USDT chainPaths for local chain rebalancing
+                {"weight" : 1, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.USDC}, // local USDT to local USDC
+
                 // -------------------------- BSC_TESTNET --------------------------------------------
                 {"weight" : 1200, "dstChainId": ChainId.BSC_TESTNET, "dstPoolId": PoolId.BUSD},
                 {"weight" : 800, "dstChainId": ChainId.BSC_TESTNET, "dstPoolId": PoolId.USDT},
