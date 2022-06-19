@@ -64,7 +64,7 @@ export const POOLS: {
             },
             chainPaths: [
                 // -------------------------- loopback --------------------------------------------
-                {"weight" : 1, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 525, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
 
                 // -------------------------- BSC --------------------------------------------
                 {"weight" : 200, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
@@ -451,7 +451,7 @@ export const POOLS: {
             },
             chainPaths: [
                 // test of loopback USDC <> USDT chainPaths for local chain rebalancing
-                {"weight" : 1, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.USDC}, // local USDT to local USDC
+                {"weight" : 525, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.USDC}, // local USDT to local USDC
 
                 // -------------------------- BSC_TESTNET --------------------------------------------
                 {"weight" : 1200, "dstChainId": ChainId.BSC_TESTNET, "dstPoolId": PoolId.BUSD},
