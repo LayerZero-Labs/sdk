@@ -23,12 +23,12 @@ export const ROUTER_ADDRESS: { [chainId: number]: string } = {
 
 export const ROUTER_ETH_ADDRESS: { [chainId: number]: string } = {
     ...TEST.ROUTER_ADDRESS,
-    [ChainId.ETHEREUM]: '',
-    [ChainId.RINKEBY]: '',
-    [ChainId.ARBITRUM]: '',
-    [ChainId.ARBITRUM_RINKEBY]: '',
-    [ChainId.OPTIMISM]: '',
-    [ChainId.OPTIMISM_KOVAN]: '',
+    [ChainId.ETHEREUM]: '0x150f94B44927F078737562f0fcF3C95c01Cc2376',
+    [ChainId.RINKEBY]: '0x2D57DbE0CFbe17FE654a0EBA64dF6a57ee389008',
+    [ChainId.ARBITRUM]: '0xbf22f0f184bCcbeA268dF387a49fF5238dD23E40',
+    [ChainId.ARBITRUM_RINKEBY]: '0x1450e45e7345c4f6967b2A7DD91d9b0D3f65ff83',
+    [ChainId.OPTIMISM]: '0xB49c4e680174E331CB0A7fF3Ab58afC9738d5F8b',
+    [ChainId.OPTIMISM_KOVAN]: '0x8637D51086D1a7A9d25b8dc233551C54fF8Ee49A',
 }
 
 // Stargate Bridge.sol addresses
@@ -258,13 +258,18 @@ export const POOL_ADDRESS: { [tokenSymbol in TokenSymbol]: { [chainId: number]: 
     [TokenSymbol.WETH]: {},
     [TokenSymbol.USDD]: {
         ...TEST.POOL_ADDRESS.USDD,
+        [ChainId.ETHEREUM]: "0x692953e758c3669290cb1677180c64183cEe374e",
         [ChainId.RINKEBY]: "0x715AA8017a4bEb679d53EF279BE12e6FE6E5FAe2",
+        [ChainId.BSC]: "0x4e145a589e4c03cBe3d28520e4BF3089834289Df",
         [ChainId.BSC_TESTNET]: "0x9e57A8A0E78466C23f5f8F437a88EB8960097632"
     },
     [TokenSymbol.SGETH]: {
         ...TEST.POOL_ADDRESS.SGETH,
+        [ChainId.ETHEREUM]: "0x101816545F6bd2b1076434B54383a1E633390A2E",
         [ChainId.RINKEBY]: "0x1019540652A680fC550c18EAF2E8D39FFe21A426",
+        [ChainId.ARBITRUM]: "0x915A55e36A01285A14f05dE6e81ED9cE89772f8e",
         [ChainId.ARBITRUM_RINKEBY]: "0x89cAc98aaa79ad9CC05bEB33F6542b086815a8e1",
+        [ChainId.OPTIMISM]: "0xd22363e3762cA7339569F3d33EADe20127D5F98C",
         [ChainId.OPTIMISM_KOVAN]: "0xED51Df4FE949c3C5A546aba5dd04B3751D44B794",
     },
 }

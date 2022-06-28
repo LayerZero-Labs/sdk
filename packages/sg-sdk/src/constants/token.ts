@@ -191,12 +191,17 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
 }
 
 export const SGETH: { [chainId: number]: Token } = {
+    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, SGETH_ADDRESS[ChainId.ETHEREUM], 18, "SGETH", "SGETH"),
     [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, SGETH_ADDRESS[ChainId.RINKEBY], 18, "SGETH", "SGETH"),
+    [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, SGETH_ADDRESS[ChainId.ARBITRUM], 18, "SGETH", "SGETH"),
     [ChainId.ARBITRUM_RINKEBY]: new Token(ChainId.ARBITRUM_RINKEBY, SGETH_ADDRESS[ChainId.ARBITRUM_RINKEBY], 18, "SGETH", "SGETH"),
+    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, SGETH_ADDRESS[ChainId.OPTIMISM], 18, "SGETH", "SGETH"),
     [ChainId.OPTIMISM_KOVAN]: new Token(ChainId.OPTIMISM_KOVAN, SGETH_ADDRESS[ChainId.OPTIMISM_KOVAN], 18, "SGETH", "SGETH"),
 }
 
 export const USDD: { [chainId: number]: Token } = {
+    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, USDD_ADDRESS[ChainId.ETHEREUM], 18, "USDD", "USDD"),
     [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, USDD_ADDRESS[ChainId.RINKEBY], 18, "USDD", "USDD"),
+    [ChainId.BSC]: new Token(ChainId.BSC, USDD_ADDRESS[ChainId.BSC], 18, "USDD", "USDD"),
     [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, USDD_ADDRESS[ChainId.BSC_TESTNET], 18, "USDD", "USDD"),
 }
