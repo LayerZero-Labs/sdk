@@ -134,6 +134,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
     [ChainId.ETHEREUM]: {
         [PoolId.USDC]: new Token(ChainId.ETHEREUM, POOL_ADDRESS[TokenSymbol.USDC][ChainId.ETHEREUM], 6, "S*USDC", "STG-USDC LP"),
         [PoolId.USDT]: new Token(ChainId.ETHEREUM, POOL_ADDRESS[TokenSymbol.USDT][ChainId.ETHEREUM], 6, "S*USDT", "STG-USDT LP"),
+        [PoolId.SGETH]: new Token(ChainId.ETHEREUM, POOL_ADDRESS[TokenSymbol.SGETH][ChainId.ETHEREUM], SGETH_SHARE_DECIMALS, "S*SGETH", "STG-SGETH LP"),
     },
     [ChainId.RINKEBY]: {
         [PoolId.USDC]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDC][ChainId.RINKEBY], 6, "S*USDC", "STG-USDC LP"),
@@ -169,6 +170,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
     [ChainId.ARBITRUM]: {
         [PoolId.USDC]: new Token(ChainId.ARBITRUM, POOL_ADDRESS[TokenSymbol.USDC][ChainId.ARBITRUM], 6, "S*USDC", "STG-USDC LP"),
         [PoolId.USDT]: new Token(ChainId.ARBITRUM, POOL_ADDRESS[TokenSymbol.USDT][ChainId.ARBITRUM], 6, "S*USDT", "STG-USDT LP"),
+        [PoolId.SGETH]: new Token(ChainId.ARBITRUM, POOL_ADDRESS[TokenSymbol.SGETH][ChainId.ARBITRUM], SGETH_SHARE_DECIMALS, "S*SGETH", "STG-SGETH LP"),
     },
     [ChainId.ARBITRUM_RINKEBY]: {
         [PoolId.USDC]: new Token(ChainId.ARBITRUM_RINKEBY, POOL_ADDRESS[TokenSymbol.USDC][ChainId.ARBITRUM_RINKEBY], 6, "S*USDC", "STG-USDC LP"),
@@ -177,6 +179,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
     },
     [ChainId.OPTIMISM]: {
         [PoolId.USDC]: new Token(ChainId.OPTIMISM, POOL_ADDRESS[TokenSymbol.USDC][ChainId.OPTIMISM], 6, "S*USDC", "STG-USDC LP"),
+        [PoolId.SGETH]: new Token(ChainId.OPTIMISM, POOL_ADDRESS[TokenSymbol.SGETH][ChainId.OPTIMISM], SGETH_SHARE_DECIMALS, "S*SGETH", "STG-SGETH LP"),
     },
     [ChainId.OPTIMISM_KOVAN]: {
         [PoolId.USDC]: new Token(ChainId.OPTIMISM_KOVAN, POOL_ADDRESS[TokenSymbol.USDC][ChainId.OPTIMISM_KOVAN], 6, "S*USDC", "STG-USDC LP"),
