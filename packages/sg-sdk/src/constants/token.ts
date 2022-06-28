@@ -16,7 +16,7 @@ import {
 } from "./addresses"
 import * as TEST from "./testToken"
 import { PoolId } from "../enums"
-import {SGETH_SHARE_DECIMALS, USDD_SHARE_DECIMALS} from "./pool"
+import { SGETH_SHARE_DECIMALS, USDD_SHARE_DECIMALS } from "./pool"
 
 export const BUSD: { [chainId: number]: Token } = {
     [ChainId.BSC]: new Token(ChainId.BSC, BUSD_ADDRESS[ChainId.BSC], 18, "BUSD", "BUSD Coin"),
@@ -129,6 +129,7 @@ export const USDT: { [chainId: number]: Token } = {
     [ChainId.FANTOM_TESTNET]: new Token(ChainId.FANTOM_TESTNET, USDT_ADDRESS[ChainId.FANTOM_TESTNET], 6, "USDT", "USD Tether"),
 }
 
+// prettier-ignore
 export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
     ...TEST.LPTOKEN,
     [ChainId.ETHEREUM]: {
