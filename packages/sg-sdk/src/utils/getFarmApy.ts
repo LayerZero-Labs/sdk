@@ -90,20 +90,6 @@ export function getTokenFarmApr(
     const tvlUsd = tvl.multiply(tokenPrice)
     const roiPerBlockUsd =  rewardPerBlock.multiply(rewardPrice).divide(tvlUsd)
     const roiPerYear = roiPerBlockUsd.multiply(blocksPerYear)
-
-    console.log(`test: ${rewardPerBlock.multiply(rewardPrice).toExact()}`)
-    console.log(`
-    rewardPrice: ${rewardPrice.toExact()} 
-    stgPerBlock: ${stgPerBlock.toExact()}  
-    rewardPerBlock: ${rewardPerBlock.toExact()}, 
-    totalLiquidity: ${totalLiquidity.toExact()} 
-    totalFarmLp: ${totalFarmLp.toExact()}  
-    totalPoolLp: ${totalPoolLp.toExact()}
-    tvl: ${tvl.toExact()}
-    tvlUsd: ${tvlUsd.toExact()}
-    roiPerBlockUsd: ${roiPerBlockUsd.toExact()}
-    blocksPerYear: ${blocksPerYear.toString()}, 
-    roiPerYear: ${roiPerYear.toExact()}`)
     return parseFloat(roiPerYear.toExact())
 }
 
