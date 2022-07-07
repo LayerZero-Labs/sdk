@@ -136,6 +136,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
         [PoolId.USDC]: new Token(ChainId.ETHEREUM, POOL_ADDRESS[TokenSymbol.USDC][ChainId.ETHEREUM], 6, "S*USDC", "STG-USDC LP"),
         [PoolId.USDT]: new Token(ChainId.ETHEREUM, POOL_ADDRESS[TokenSymbol.USDT][ChainId.ETHEREUM], 6, "S*USDT", "STG-USDT LP"),
         [PoolId.SGETH]: new Token(ChainId.ETHEREUM, POOL_ADDRESS[TokenSymbol.SGETH][ChainId.ETHEREUM], SGETH_SHARE_DECIMALS, "S*SGETH", "STG-SGETH LP"),
+        [PoolId.USDD]: new Token(ChainId.ETHEREUM, POOL_ADDRESS[TokenSymbol.USDD][ChainId.ETHEREUM], USDD_SHARE_DECIMALS, "S*USDD", "STG-USDD LP"),
     },
     [ChainId.RINKEBY]: {
         [PoolId.USDC]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDC][ChainId.RINKEBY], 6, "S*USDC", "STG-USDC LP"),
@@ -146,6 +147,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
     [ChainId.BSC]: {
         [PoolId.BUSD]: new Token(ChainId.BSC, POOL_ADDRESS[TokenSymbol.BUSD][ChainId.BSC], 6, "S*BUSD", "STG-BUSD LP"),
         [PoolId.USDT]: new Token(ChainId.BSC, POOL_ADDRESS[TokenSymbol.USDT][ChainId.BSC], 6, "S*USDT", "STG-USDT LP"),
+        [PoolId.USDD]: new Token(ChainId.BSC, POOL_ADDRESS[TokenSymbol.USDD][ChainId.BSC], USDD_SHARE_DECIMALS, "S*USDD", "STG-USDD LP"),
     },
     [ChainId.BSC_TESTNET]: {
         [PoolId.BUSD]: new Token(ChainId.BSC_TESTNET, POOL_ADDRESS[TokenSymbol.BUSD][ChainId.BSC_TESTNET], 6, "S*BUSD", "STG-BUSD LP"),
