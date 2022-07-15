@@ -16,6 +16,13 @@ export const POOLS: {
     [chainKey in ChainKey]?: {
         [poolId in PoolId]?: {
             info: { sharedDecimals: number; address: string }
+            deltaParams: {
+                batched: boolean,
+                swapDeltaBP: number,
+                lpDeltaBP: number,
+                defaultSwapMode: boolean,
+                defaultLPMode: boolean,
+            }
             chainPaths: {
                 weight: number
                 dstChainId: ChainId
@@ -33,6 +40,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.ETHEREUM]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- loopback --------------------------------------------
@@ -62,6 +76,13 @@ export const POOLS: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.ETHEREUM]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths: [
                 // -------------------------- loopback --------------------------------------------
                 {"weight" : 0, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
@@ -90,6 +111,13 @@ export const POOLS: {
                 "sharedDecimals": SGETH_SHARE_DECIMALS,
                 "address": SGETH_ADDRESS[ChainId.ETHEREUM]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths: [
                 {"weight" : 1, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.SGETH},
                 {"weight" : 1, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.SGETH},
@@ -100,6 +128,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": USDD_SHARE_DECIMALS,
                 "address": USDD_ADDRESS[ChainId.ETHEREUM]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths: [
                 {"weight" : 1, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDD}
@@ -114,6 +149,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": BUSD_ADDRESS[ChainId.BSC]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- ETHEREUM --------------------------------------------
@@ -140,6 +182,13 @@ export const POOLS: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.BSC]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths: [
                 // -------------------------- ETHEREUM --------------------------------------------
                 {"weight" : 26, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
@@ -165,6 +214,13 @@ export const POOLS: {
                 "sharedDecimals": USDD_SHARE_DECIMALS,
                 "address": USDD_ADDRESS[ChainId.BSC]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths: [
                 {"weight" : 1, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDD}
             ]
@@ -177,6 +233,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.AVALANCHE]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- ETHEREUM --------------------------------------------
@@ -202,6 +265,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.AVALANCHE]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- ETHEREUM --------------------------------------------
@@ -231,6 +301,13 @@ export const POOLS: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.POLYGON]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 // -------------------------- ETHEREUM --------------------------------------------
                 {"weight" : 19, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
@@ -255,6 +332,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.POLYGON]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- ETHEREUM --------------------------------------------
@@ -284,6 +368,13 @@ export const POOLS: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.ARBITRUM]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 // -------------------------- ETHEREUM --------------------------------------------
                 {"weight" : 26, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
@@ -308,6 +399,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.ARBITRUM]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- ETHEREUM --------------------------------------------
@@ -334,6 +432,13 @@ export const POOLS: {
                 "sharedDecimals": SGETH_SHARE_DECIMALS,
                 "address": SGETH_ADDRESS[ChainId.ARBITRUM]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths: [
                 {"weight" : 90, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.SGETH},
                 {"weight" : 10, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.SGETH},
@@ -347,6 +452,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.OPTIMISM]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- ETHEREUM --------------------------------------------
@@ -374,6 +486,13 @@ export const POOLS: {
                 "sharedDecimals": SGETH_SHARE_DECIMALS,
                 "address": SGETH_ADDRESS[ChainId.OPTIMISM]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths: [
                 {"weight" : 90, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.SGETH},
                 {"weight" : 10, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.SGETH},
@@ -388,6 +507,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.FANTOM]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- ETHEREUM --------------------------------------------
@@ -421,6 +547,13 @@ export const POOLS: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.RINKEBY]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 // test of loopback USDC <> USDT chainPaths for local chain rebalancing
                 {"weight" : 0, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.USDT}, // local USDC to local USDT
@@ -448,6 +581,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.RINKEBY]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths: [
                 // test of loopback USDC <> USDT chainPaths for local chain rebalancing
@@ -477,6 +617,13 @@ export const POOLS: {
                 "sharedDecimals": SGETH_SHARE_DECIMALS,
                 "address": SGETH_ADDRESS[ChainId.RINKEBY]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 {"weight" : 1, "dstChainId": ChainId.ARBITRUM_RINKEBY, "dstPoolId": PoolId.SGETH},
                 {"weight" : 1, "dstChainId": ChainId.OPTIMISM_KOVAN, "dstPoolId": PoolId.SGETH},
@@ -487,6 +634,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": USDD_SHARE_DECIMALS,
                 "address": USDD_ADDRESS[ChainId.RINKEBY]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 {"weight" : 1, "dstChainId": ChainId.BSC_TESTNET, "dstPoolId": PoolId.USDD},
@@ -500,6 +654,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": BUSD_ADDRESS[ChainId.BSC_TESTNET]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- RINKEBY --------------------------------------------
@@ -526,6 +687,13 @@ export const POOLS: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.BSC_TESTNET]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths: [
                 // -------------------------- RINKEBY --------------------------------------------
                 {"weight" : 2500, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.USDC},
@@ -550,6 +718,13 @@ export const POOLS: {
                 "sharedDecimals": USDD_SHARE_DECIMALS,
                 "address": USDD_ADDRESS[ChainId.BSC_TESTNET]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 {"weight" : 1, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.USDD},
             ]
@@ -563,6 +738,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.FUJI]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- RINKEBY --------------------------------------------
@@ -588,6 +770,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.FUJI]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- RINKEBY --------------------------------------------
@@ -617,6 +806,13 @@ export const POOLS: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.MUMBAI]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 // -------------------------- RINKEBY --------------------------------------------
                 {"weight" : 555, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.USDC},
@@ -641,6 +837,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.MUMBAI]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- RINKEBY --------------------------------------------
@@ -670,6 +873,13 @@ export const POOLS: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.ARBITRUM_RINKEBY]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 // -------------------------- RINKEBY --------------------------------------------
                 {"weight" : 2500, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.USDC},
@@ -694,6 +904,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.ARBITRUM_RINKEBY]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- RINKEBY --------------------------------------------
@@ -720,6 +937,13 @@ export const POOLS: {
                 "sharedDecimals": SGETH_SHARE_DECIMALS,
                 "address": SGETH_ADDRESS[ChainId.ARBITRUM_RINKEBY]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 {"weight" : 1, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.SGETH},
                 {"weight" : 1, "dstChainId": ChainId.OPTIMISM_KOVAN, "dstPoolId": PoolId.SGETH},
@@ -734,6 +958,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.OPTIMISM_KOVAN]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- RINKEBY --------------------------------------------
@@ -761,6 +992,13 @@ export const POOLS: {
                 "sharedDecimals": SGETH_SHARE_DECIMALS,
                 "address": SGETH_ADDRESS[ChainId.OPTIMISM_KOVAN]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 {"weight" : 1, "dstChainId": ChainId.RINKEBY, "dstPoolId": PoolId.SGETH},
                 {"weight" : 1, "dstChainId": ChainId.ARBITRUM_RINKEBY, "dstPoolId": PoolId.SGETH},
@@ -775,6 +1013,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.FANTOM_TESTNET]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 5000,
+                lpDeltaBP: 5000,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- RINKEBY --------------------------------------------
@@ -810,6 +1055,13 @@ export const POOLS: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.RINKEBY_SANDBOX]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 // -------------------------- BSC_TESTNET --------------------------------------------
                 {"weight" : 1, "dstChainId": ChainId.BSC_TESTNET_SANDBOX, "dstPoolId": PoolId.BUSD},
@@ -834,6 +1086,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.RINKEBY_SANDBOX]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- BSC_TESTNET --------------------------------------------
@@ -860,6 +1119,13 @@ export const POOLS: {
                 "sharedDecimals": SGETH_SHARE_DECIMALS,
                 "address": SGETH_ADDRESS[ChainId.RINKEBY_SANDBOX]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 {"weight" : 1, "dstChainId": ChainId.ARBITRUM_RINKEBY_SANDBOX, "dstPoolId": PoolId.SGETH},
                 {"weight" : 1, "dstChainId": ChainId.OPTIMISM_KOVAN_SANDBOX, "dstPoolId": PoolId.SGETH},
@@ -870,6 +1136,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": USDD_SHARE_DECIMALS,
                 "address": USDD_ADDRESS[ChainId.RINKEBY_SANDBOX]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 {"weight" : 1, "dstChainId": ChainId.BSC_TESTNET_SANDBOX, "dstPoolId": PoolId.USDD},
@@ -884,6 +1157,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": BUSD_ADDRESS[ChainId.BSC_TESTNET_SANDBOX]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- RINKEBY --------------------------------------------
@@ -910,6 +1190,13 @@ export const POOLS: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.BSC_TESTNET_SANDBOX]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths: [
                 // -------------------------- RINKEBY --------------------------------------------
                 {"weight" : 1, "dstChainId": ChainId.RINKEBY_SANDBOX, "dstPoolId": PoolId.USDC},
@@ -935,6 +1222,13 @@ export const POOLS: {
                 "sharedDecimals": USDD_SHARE_DECIMALS,
                 "address": USDD_ADDRESS[ChainId.BSC_TESTNET_SANDBOX]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 {"weight" : 1, "dstChainId": ChainId.RINKEBY_SANDBOX, "dstPoolId": PoolId.USDD},
             ]
@@ -948,6 +1242,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.FUJI_SANDBOX]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- RINKEBY --------------------------------------------
@@ -973,6 +1274,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.FUJI_SANDBOX]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- RINKEBY --------------------------------------------
@@ -1002,6 +1310,13 @@ export const POOLS: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.MUMBAI_SANDBOX]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 // -------------------------- RINKEBY --------------------------------------------
                 {"weight" : 1, "dstChainId": ChainId.RINKEBY_SANDBOX, "dstPoolId": PoolId.USDC},
@@ -1026,6 +1341,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.MUMBAI_SANDBOX]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- RINKEBY --------------------------------------------
@@ -1055,6 +1377,13 @@ export const POOLS: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.ARBITRUM_RINKEBY_SANDBOX]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 // -------------------------- RINKEBY --------------------------------------------
                 {"weight" : 1, "dstChainId": ChainId.RINKEBY_SANDBOX, "dstPoolId": PoolId.USDC},
@@ -1079,6 +1408,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDT_ADDRESS[ChainId.ARBITRUM_RINKEBY_SANDBOX]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- RINKEBY --------------------------------------------
@@ -1105,6 +1441,13 @@ export const POOLS: {
                 "sharedDecimals": SGETH_SHARE_DECIMALS,
                 "address": SGETH_ADDRESS[ChainId.ARBITRUM_RINKEBY_SANDBOX]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 {"weight" : 1, "dstChainId": ChainId.RINKEBY_SANDBOX, "dstPoolId": PoolId.SGETH},
                 {"weight" : 1, "dstChainId": ChainId.OPTIMISM_KOVAN_SANDBOX, "dstPoolId": PoolId.SGETH},
@@ -1119,6 +1462,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.OPTIMISM_KOVAN_SANDBOX]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- RINKEBY --------------------------------------------
@@ -1146,6 +1496,13 @@ export const POOLS: {
                 "sharedDecimals": SGETH_SHARE_DECIMALS,
                 "address": SGETH_ADDRESS[ChainId.OPTIMISM_KOVAN_SANDBOX]
             },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
+            },
             chainPaths : [
                 {"weight" : 1, "dstChainId": ChainId.RINKEBY_SANDBOX, "dstPoolId": PoolId.SGETH},
                 {"weight" : 1, "dstChainId": ChainId.ARBITRUM_RINKEBY_SANDBOX, "dstPoolId": PoolId.SGETH},
@@ -1160,6 +1517,13 @@ export const POOLS: {
             info: {
                 "sharedDecimals": SHARE_DECIMALS,
                 "address": USDC_ADDRESS[ChainId.FANTOM_TESTNET_SANDBOX]
+            },
+            deltaParams: {
+                batched: true,
+                swapDeltaBP: 250,
+                lpDeltaBP: 250,
+                defaultSwapMode: false,
+                defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- RINKEBY --------------------------------------------
