@@ -22,6 +22,7 @@ export const LZ_ADDRESS: { [chainKey in ChainKey]?: string } = {
   [ChainKey.FANTOM]: '0xb6319cC6c8c27A8F5dAF0dD3DF91EA35C4720dd7',
   [ChainKey.FANTOM_TESTNET]: '0x7dcAD72640F835B0FA36EFD3D6d3ec902C7E5acf',
   [ChainKey.FANTOM_TESTNET_SANDBOX]: '0x8953031E74A172586E89DDb40B7d269B9186e74c',
+
 }
 
 export const LZ_RELAYER: { [chainKey in ChainKey]?: string } = {
