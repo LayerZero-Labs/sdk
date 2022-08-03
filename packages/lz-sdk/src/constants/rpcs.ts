@@ -13,6 +13,20 @@ export const RPCS: { [chainId in ChainId]: string[] } = {
   ],
   [ChainId.RINKEBY]: ['https://rinkeby-light.eth.linkpool.io'],
   [ChainId.RINKEBY_SANDBOX]: ['https://rinkeby-light.eth.linkpool.io'],
+  [ChainId.KOVAN]: [
+    'http://kovan.poa.network:8545',
+    'https://kovan.poa.network'
+  ],
+  [ChainId.KOVAN_SANDBOX]: [
+    'http://kovan.poa.network:8545',
+    'https://kovan.poa.network'
+  ],
+  [ChainId.GOERLI]: [
+    'https://rpc.goerli.mudit.blog/'
+  ],
+  [ChainId.GOERLI_SANDBOX]: [
+    'https://rpc.goerli.mudit.blog/'
+  ],
   [ChainId.BSC]: [
     'https://rpc-bsc.bnb48.club',
     'https://bsc-dataseed2.ninicoin.io',
@@ -72,18 +86,21 @@ export const RPCS: { [chainId in ChainId]: string[] } = {
   [ChainId.SWIMMER]: ['https://subnets.avax.network/swimmer/mainnet/rpc'],
   [ChainId.SWIMMER_TESTNET]: ['https://subnets.avax.network/swimmer/testnet/rpc'],
   [ChainId.SWIMMER_TESTNET_SANDBOX]: ['https://subnets.avax.network/swimmer/testnet/rpc'],
+  [ChainId.DFK]: ['https://subnets.avax.network/defi-kingdoms/dfk-chain/rpc'],
   [ChainId.DFK_TESTNET]: ['https://subnets.avax.network/defi-kingdoms/dfk-chain-testnet/rpc'],
   [ChainId.DFK_TESTNET_SANDBOX]: ['https://subnets.avax.network/defi-kingdoms/dfk-chain-testnet/rpc'],
   [ChainId.HARMONY]: ['https://api.harmony.one', 'https://api.s0.t.hmny.io/'],
   [ChainId.HARMONY_TESTNET]: [
-    'https://api.s0.pops.one/',
     'https://api.s0.b.hmny.io/',
+    'https://api.s1.b.hmny.io',
     'https://api.s0.backup1.b.hmny.io/',
+    'https://api.s0.pops.one/',
   ],
   [ChainId.HARMONY_TESTNET_SANDBOX]: [
-    'https://api.s0.pops.one/',
     'https://api.s0.b.hmny.io/',
+    'https://api.s1.b.hmny.io',
     'https://api.s0.backup1.b.hmny.io/',
+    'https://api.s0.pops.one/',
   ],
   [ChainId.ARCANA_TESTNET]: ['https://blockchain-dev.arcana.network/'],
   [ChainId.ARCANA_TESTNET_SANDBOX]: ['https://blockchain-dev.arcana.network/'],
@@ -95,4 +112,47 @@ export const RPCS: { [chainId in ChainId]: string[] } = {
     'https://subnets.avax.network/dexalot/testnet/rpc',
     'https://node.dexalot-test.com/ext/bc/XuEPnCE59rtutASDPCDeYw8geQaGWwteWjkDXYLWvssfuirde/rpc',
   ],
+  [ChainId.CASTLECRUSH_TESTNET]: [
+    'https://subnets.avax.network/castle-crush/testnet/rpc',
+  ],
+  [ChainId.CASTLECRUSH_TESTNET_SANDBOX]: [
+    'https://subnets.avax.network/castle-crush/testnet/rpc',
+  ],
+  [ChainId.CELO]: ['https://forno.celo.org','https://rpc.ankr.com/celo'],
+  [ChainId.CELO_TESTNET]: ['https://alfajores-forno.celo-testnet.org'],
+  [ChainId.CELO_TESTNET_SANDBOX]: ['https://alfajores-forno.celo-testnet.org'],
+  [ChainId.MOONBEAM]: ['https://moonbeam.public.blastapi.io','https://moonbeam-rpc.dwellir.com','https://rpc.ankr.com/moonbeam','https://moonbeam.api.onfinality.io/public','https://moonbeam-mainnet.gateway.pokt.network/v1/lb/629a2b5650ec8c0039bb30f0'],
+  [ChainId.MOONBEAM_TESTNET]: [
+    'https://rpc.api.moonbase.moonbeam.network',
+    'https://moonbase-alpha.public.blastapi.io',
+    'https://moonbeam-alpha.api.onfinality.io/public'
+  ],
+  [ChainId.MOONBEAM_TESTNET_SANDBOX]: [
+    'https://rpc.api.moonbase.moonbeam.network',
+    'https://moonbase-alpha.public.blastapi.io',
+    'https://moonbeam-alpha.api.onfinality.io/public'
+  ],
+  [ChainId.GNOSIS_TESTNET]: [
+    'https://optimism.gnosischain.com',
+  ],
+  [ChainId.GNOSIS_TESTNET_SANDBOX]: [
+    'https://optimism.gnosischain.com',
+  ],
+  [ChainId.BOBA]: [
+    'https://mainnet.boba.network',
+    'https://lightning-replica.boba.network',
+    'https://boba-mainnet.gateway.pokt.network/v1/lb/623ad21b20354900396fed7f'
+  ],
+  [ChainId.BOBA_TESTNET]: [
+    'https://rinkeby.boba.network/'
+  ],
+  [ChainId.BOBA_TESTNET_SANDBOX]: [
+    'https://rinkeby.boba.network/'
+  ],
+  [ChainId.PORTAL_TESTNET]: ['http://3.212.233.100:9650/ext/bc/29oXNywCkGdJCuYikXkkqG6Pe5Q8tuS5VfyLHNGfeqmDzBoTPq/rpc'],
+  [ChainId.PORTAL_TESTNET_SANDBOX]: ['http://3.212.233.100:9650/ext/bc/29oXNywCkGdJCuYikXkkqG6Pe5Q8tuS5VfyLHNGfeqmDzBoTPq/rpc'],
+  [ChainId.AURORA]: ['https://mainnet.aurora.dev'],
+  [ChainId.AURORA_TESTNET]: ['https://testnet.aurora.dev/'],
+  [ChainId.AURORA_TESTNET_SANDBOX]: ['https://testnet.aurora.dev/']
+
 }
