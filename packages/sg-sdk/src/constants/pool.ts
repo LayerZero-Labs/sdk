@@ -43,8 +43,8 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
@@ -53,21 +53,21 @@ export const POOLS: {
                 {"weight" : 0, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
 
                 // -------------------------- BSC --------------------------------------------
-                {"weight" : 205, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
-                {"weight" : 630, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
+                {"weight" : 232, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
+                {"weight" : 284, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
                 // -------------------------- AVALANCHE --------------------------------------
-                {"weight" : 3101, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
-                {"weight" : 1050, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
+                {"weight" : 2007, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
+                {"weight" : 470, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
                 // -------------------------- POLYGON --------------------------------------
-                {"weight" : 200, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
-                {"weight" : 631, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
+                {"weight" : 2322, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
+                {"weight" : 279, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
                 // -------------------------- ARBITRUM --------------------------------------
-                {"weight" : 1218, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 665, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 1808, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 368, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- OPTIMISM --------------------------------------
-                {"weight" : 1544, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
+                {"weight" : 1458, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
                 // -------------------------- FANTOM --------------------------------------
-                {"weight" : 756, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
+                {"weight" : 770, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
             ]
         },
 
@@ -78,8 +78,8 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
@@ -88,21 +88,21 @@ export const POOLS: {
                 {"weight" : 0, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
 
                 // -------------------------- BSC --------------------------------------------
-                {"weight" : 200, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
-                {"weight" : 1162, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
+                {"weight" : 260, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
+                {"weight" : 1649, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
                 // -------------------------- AVALANCHE --------------------------------------
-                {"weight" : 1005, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
-                {"weight" : 2748, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
+                {"weight" : 1698, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
+                {"weight" : 1899, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
                 // -------------------------- POLYGON --------------------------------------
-                {"weight" : 459, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
-                {"weight" : 248, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
+                {"weight" : 871, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
+                {"weight" : 1200, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
                 // -------------------------- ARBITRUM --------------------------------------
-                {"weight" : 445, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 1830, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 574, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 1043, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- OPTIMISM --------------------------------------
-                {"weight" : 1704, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
+                {"weight" : 564, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
                 // -------------------------- FANTOM --------------------------------------
-                {"weight" : 200, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
+                {"weight" : 242, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
             ]
         },
 
@@ -113,8 +113,8 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
@@ -131,8 +131,8 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
@@ -152,28 +152,28 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- ETHEREUM --------------------------------------------
-                {"weight" : 1402, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 364, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 2665, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 278, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- AVALANCHE --------------------------------------
-                {"weight" : 2123, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
-                {"weight" : 0, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
+                {"weight" : 2637, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
+                {"weight" : 200, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
                 // -------------------------- POLYGON --------------------------------------
-                {"weight" : 568, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
+                {"weight" : 1606, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
                 {"weight" : 200, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
                 // -------------------------- ARBITRUM --------------------------------------
-                {"weight" : 2638, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 764, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
                 {"weight" : 200, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- OPTIMISM --------------------------------------
-                {"weight" : 637, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
+                {"weight" : 365, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
                 // -------------------------- FANTOM --------------------------------------
-                {"weight" : 1868, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
+                {"weight" : 506, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
             ]
         },
 
@@ -184,28 +184,28 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- ETHEREUM --------------------------------------------
-                {"weight" : 200, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 200, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 1018, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 2209, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- AVALANCHE --------------------------------------
-                {"weight" : 4478, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
-                {"weight" : 200, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
+                {"weight" : 935, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
+                {"weight" : 1200, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
                 // -------------------------- POLYGON --------------------------------------
-                {"weight" : 2210, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
-                {"weight" : 200, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
+                {"weight" : 1602, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
+                {"weight" : 1200, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
                 // -------------------------- ARBITRUM --------------------------------------
-                {"weight" : 1894, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 189, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 764, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 200, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- OPTIMISM --------------------------------------
-                {"weight" : 200, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
+                {"weight" : 365, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
                 // -------------------------- FANTOM --------------------------------------
-                {"weight" : 229, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
+                {"weight" : 506, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
             ]
         },
 
@@ -216,8 +216,8 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
@@ -236,28 +236,28 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- ETHEREUM --------------------------------------------
-                {"weight" : 3169, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 3367, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
                 {"weight" : 200, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- BSC --------------------------------------
-                {"weight" : 200, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
-                {"weight" : 491, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
+                {"weight" : 700, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
+                {"weight" : 614, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
                 // -------------------------- POLYGON --------------------------------------
-                {"weight" : 2649, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
+                {"weight" : 1793, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
                 {"weight" : 200, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
                 // -------------------------- ARBITRUM --------------------------------------
-                {"weight" : 2635, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 1865, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
                 {"weight" : 200, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- OPTIMISM --------------------------------------
-                {"weight" : 211, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
+                {"weight" : 822, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
                 // -------------------------- FANTOM --------------------------------------
-                {"weight" : 245, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
+                {"weight" : 200, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
             ]
         },
 
@@ -268,28 +268,28 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- ETHEREUM --------------------------------------------
-                {"weight" : 9, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 41, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 1167, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 1200, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- BSC --------------------------------------
-                {"weight" : 8, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
-                {"weight" : 12, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
+                {"weight" : 2089, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
+                {"weight" : 1200, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
                 // -------------------------- POLYGON --------------------------------------
-                {"weight" : 2, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
-                {"weight" : 9, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
+                {"weight" : 897, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
+                {"weight" : 1200, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
                 // -------------------------- ARBITRUM --------------------------------------
-                {"weight" : 2, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 11, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 500, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 1347, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- OPTIMISM --------------------------------------
-                {"weight" : 2, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
+                {"weight" : 200, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
                 // -------------------------- FANTOM --------------------------------------
-                {"weight" : 5, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
+                {"weight" : 200, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
             ]
         }
     },
@@ -303,28 +303,28 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- ETHEREUM --------------------------------------------
-                {"weight" : 2969, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 2596, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
                 {"weight" : 200, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- BSC --------------------------------------
-                {"weight" : 1407, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
-                {"weight" : 786, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
+                {"weight" : 245, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
+                {"weight" : 325, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
                 // -------------------------- AVALANCHE --------------------------------------
-                {"weight" : 2020, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
+                {"weight" : 2236, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
                 {"weight" : 200, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
                 // -------------------------- ARBITRUM --------------------------------------
-                {"weight" : 925, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 567, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 1734, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 200, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- OPTIMISM --------------------------------------
-                {"weight" : 450, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
+                {"weight" : 1265, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
                 // -------------------------- FANTOM --------------------------------------
-                {"weight" : 476, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
+                {"weight" : 999, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
             ]
         },
 
@@ -335,28 +335,28 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- ETHEREUM --------------------------------------------
-                {"weight" : 200, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 200, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 814, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 1749, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- BSC --------------------------------------
-                {"weight" : 3786, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
-                {"weight" : 295, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
+                {"weight" : 1012, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
+                {"weight" : 902, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
                 // -------------------------- AVALANCHE --------------------------------------
-                {"weight" : 3232, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
-                {"weight" : 196, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
+                {"weight" : 1814, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
+                {"weight" : 1200, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
                 // -------------------------- ARBITRUM --------------------------------------
-                {"weight" : 1491, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 1042, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
                 {"weight" : 200, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- OPTIMISM --------------------------------------
-                {"weight" : 200, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
+                {"weight" : 638, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
                 // -------------------------- FANTOM --------------------------------------
-                {"weight" : 200, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
+                {"weight" : 629, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
             ]
         }
     },
@@ -370,28 +370,28 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- ETHEREUM --------------------------------------------
-                {"weight" : 3645, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 231, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 3840, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 200, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- BSC --------------------------------------
-                {"weight" : 384, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
+                {"weight" : 255, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
                 {"weight" : 200, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
                 // -------------------------- AVALANCHE --------------------------------------
-                {"weight" : 3337, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
+                {"weight" : 2206, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
                 {"weight" : 200, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
                 // -------------------------- POLYGON --------------------------------------
-                {"weight" : 755, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
+                {"weight" : 982, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
                 {"weight" : 200, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
                 // -------------------------- OPTIMISM --------------------------------------
-                {"weight" : 843, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
+                {"weight" : 1717, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
                 // -------------------------- FANTOM --------------------------------------
-                {"weight" : 204, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
+                {"weight" : 200, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
             ]
         },
 
@@ -402,28 +402,28 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
             chainPaths: [
                 // -------------------------- ETHEREUM --------------------------------------------
-                {"weight" : 382, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 200, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 775, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 226, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- BSC --------------------------------------
-                {"weight" : 446, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
+                {"weight" : 1755, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
                 {"weight" : 200, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
                 // -------------------------- AVALANCHE --------------------------------------
-                {"weight" : 5022, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
+                {"weight" : 2893, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
                 {"weight" : 200, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
                 // -------------------------- POLYGON --------------------------------------
-                {"weight" : 2951, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
-                {"weight" : 200, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
+                {"weight" : 2172, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
+                {"weight" : 235, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
                 // -------------------------- OPTIMISM --------------------------------------
-                {"weight" : 200, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
+                {"weight" : 1166, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC},
                 // -------------------------- FANTOM --------------------------------------
-                {"weight" : 200, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
+                {"weight" : 377, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
             ]
         },
 
@@ -434,14 +434,14 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
             chainPaths: [
-                {"weight" : 90, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.SGETH},
-                {"weight" : 10, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.SGETH},
+                {"weight" : 8247, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.SGETH},
+                {"weight" : 1753, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.SGETH},
             ]
         }
     },
@@ -455,29 +455,29 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- ETHEREUM --------------------------------------------
-                {"weight" : 1694, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 743, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 2951, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 328, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- BSC --------------------------------------
-                {"weight" : 791, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
-                {"weight" : 1071, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
+                {"weight" : 637, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
+                {"weight" : 440, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
                 // -------------------------- AVALANCHE --------------------------------------
-                {"weight" : 3160, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
-                {"weight" : 402, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
+                {"weight" : 2243, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
+                {"weight" : 282, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
                 // -------------------------- POLYGON --------------------------------------
-                {"weight" : 638, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
-                {"weight" : 467, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
+                {"weight" : 956, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
+                {"weight" : 214, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
                 // -------------------------- ARBITRUM --------------------------------------
-                {"weight" : 631, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 1443, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
                 {"weight" : 200, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- FANTOM --------------------------------------
-                {"weight" : 203, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
+                {"weight" : 305, "dstChainId": ChainId.FANTOM, "dstPoolId": PoolId.USDC}
             ]
         },
 
@@ -488,14 +488,14 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
             chainPaths: [
-                {"weight" : 90, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.SGETH},
-                {"weight" : 10, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.SGETH},
+                {"weight" : 3734, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.SGETH},
+                {"weight" : 6266, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.SGETH},
             ]
         }
 
@@ -510,29 +510,29 @@ export const POOLS: {
             },
             deltaParams: {
                 batched: true,
-                swapDeltaBP: 5000,
-                lpDeltaBP: 5000,
+                swapDeltaBP: 2500,
+                lpDeltaBP: 2500,
                 defaultSwapMode: false,
                 defaultLPMode: false,
             },
             chainPaths : [
                 // -------------------------- ETHEREUM --------------------------------------------
-                {"weight" : 2200, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 200, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 727, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 322, "dstChainId": ChainId.ETHEREUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- BSC --------------------------------------
-                {"weight" : 409, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
-                {"weight" : 200, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
+                {"weight" : 437, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.BUSD},
+                {"weight" : 2257, "dstChainId": ChainId.BSC, "dstPoolId": PoolId.USDT},
                 // -------------------------- AVALANCHE --------------------------------------
-                {"weight" : 1609, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
+                {"weight" : 1151, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDC},
                 {"weight" : 200, "dstChainId": ChainId.AVALANCHE, "dstPoolId": PoolId.USDT},
                 // -------------------------- POLYGON --------------------------------------
-                {"weight" : 452, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
-                {"weight" : 1827, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
+                {"weight" : 2185, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDC},
+                {"weight" : 610, "dstChainId": ChainId.POLYGON, "dstPoolId": PoolId.USDT},
                 // -------------------------- ARBITRUM --------------------------------------
-                {"weight" : 1792, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
-                {"weight" : 200, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
+                {"weight" : 232, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDC},
+                {"weight" : 637, "dstChainId": ChainId.ARBITRUM, "dstPoolId": PoolId.USDT},
                 // -------------------------- OPTIMISM --------------------------------------
-                {"weight" : 911, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC}
+                {"weight" : 1240, "dstChainId": ChainId.OPTIMISM, "dstPoolId": PoolId.USDC}
             ]
         },
 
