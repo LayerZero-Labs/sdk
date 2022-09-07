@@ -160,7 +160,10 @@ export const LZ_ULTRA_LIGHT_NODE_V1: { [chainKey in ChainKey]: string } = {
   [ChainKey.PORTAL_TESTNET_SANDBOX]: '',
   [ChainKey.AURORA]: '',
   [ChainKey.AURORA_TESTNET]: '',
-  [ChainKey.AURORA_TESTNET_SANDBOX]: ''
+  [ChainKey.AURORA_TESTNET_SANDBOX]: '',
+  [ChainKey.APTOS]: '',
+  [ChainKey.APTOS_TESTNET]: '',
+  [ChainKey.APTOS_TESTNET_SANDBOX]: ''
 }
 
 export const LZ_ULTRA_LIGHT_NODE_V2: { [chainKey in ChainKey]: string } = {
@@ -220,4 +223,7 @@ export const LZ_ULTRA_LIGHT_NODE_V2: { [chainKey in ChainKey]: string } = {
   [ChainKey.AURORA]: '',
   [ChainKey.AURORA_TESTNET]: '',
   [ChainKey.AURORA_TESTNET_SANDBOX]: '',
+  [ChainKey.APTOS]: '',
+  [ChainKey.APTOS_TESTNET]: '',
+  [ChainKey.APTOS_TESTNET_SANDBOX]: ''
 }

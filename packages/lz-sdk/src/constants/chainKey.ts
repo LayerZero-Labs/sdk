@@ -1,5 +1,6 @@
 import { ChainId, ChainKey } from '../enums'
 
+//@ts-ignore
 export const CHAIN_KEY: { [chainId in ChainId]: ChainKey } = {
   [ChainId.ETHEREUM]: ChainKey.ETHEREUM,
   [ChainId.RINKEBY]: ChainKey.RINKEBY,
@@ -56,5 +57,8 @@ export const CHAIN_KEY: { [chainId in ChainId]: ChainKey } = {
   [ChainId.PORTAL_TESTNET_SANDBOX]: ChainKey.PORTAL_TESTNET_SANDBOX,
   [ChainId.AURORA]: ChainKey.AURORA,
   [ChainId.AURORA_TESTNET]: ChainKey.AURORA_TESTNET,
-  [ChainId.AURORA_TESTNET_SANDBOX]: ChainKey.AURORA_TESTNET_SANDBOX
+  [ChainId.AURORA_TESTNET_SANDBOX]: ChainKey.AURORA_TESTNET_SANDBOX,
+  [ChainId.APTOS]: ChainKey.APTOS,
+  [ChainId.APTOS_TESTNET]: ChainKey.APTOS_TESTNET,
+  [ChainId.APTOS_TESTNET_SANDBOX]: ChainKey.APTOS_TESTNET_SANDBOX,
 }
