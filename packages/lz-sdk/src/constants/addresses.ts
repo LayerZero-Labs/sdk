@@ -115,17 +115,17 @@ export const LZ_RELAYER_V2: { [chainKey in ChainKey]?: string } = {
   [ChainKey.MUMBAI]: "0x038b6098dA32957f2EbBF6dc743F0DC6810ac8C7",
   [ChainKey.ARBITRUM]: '0x177d36dBE2271A4DdB2Ad8304d82628eb921d790',
   [ChainKey.OPTIMISM]: '0x81E792e5a9003CC1C8BF5569A00f34b65d75b017',
-  [ChainKey.XXX]: "",
+
   [ChainKey.FANTOM]: '0x52EEA5c490fB89c7A0084B32FEAB854eefF07c82',
-  [ChainKey.XXX]: "",
+
   [ChainKey.SWIMMER]: '0x174F2bA26f8ADeAfA82663bcf908288d5DbCa649',
-  [ChainKey.XXX]: "",
+
   [ChainKey.DFK]: '0x473132bb594caEF281c68718F4541f73FE14Dc89',
-  [ChainKey.XXX]: "",
+
   [ChainKey.HARMONY]: '0x7Cbd185f21bEf4D87310d0171aD5f740BC240e26',
-  [ChainKey.XXX]: "",
+
   [ChainKey.MOONBEAM]: '0xccCDD23E11F3f47C37fC0a7C3BE505901912C6Cc',
-  [ChainKey.XXX]: "",
+
 }
 
 export const LZ_ULTRA_LIGHT_NODE_V1: { [chainKey in ChainKey]: string } = {
