@@ -2,11 +2,9 @@ import { ChainId } from '../enums'
 
 export const RPCS: { [chainId in ChainId]: string[] } = {
   [ChainId.ETHEREUM]: [
-    'https://main-rpc.linkpool.io',
-    'https://main-light.eth.linkpool.io',
+    'https://cloudflare-eth.com',
     'https://eth-mainnet.gateway.pokt.network/v1/5f3453978e354ab992c4da79',
     'https://eth-rpc.gateway.pokt.network',
-    'https://cloudflare-eth.com',
     'https://mainnet-nethermind.blockscout.com',
     'https://rpc.flashbots.net',
     'https://mainnet.infura.io/v3/',
