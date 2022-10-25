@@ -70,9 +70,11 @@ export const RPCS: { [chainId in ChainId]: string[] } = {
   [ChainId.MUMBAI_SANDBOX]: ['https://rpc-mumbai.maticvigil.com', 'https://matic-mumbai.chainstacklabs.com'],
   [ChainId.ARBITRUM]: ['https://arb1.arbitrum.io/rpc'],
   [ChainId.ARBITRUM_RINKEBY]: ['https://rinkeby.arbitrum.io/rpc'],
+  [ChainId.ARBITRUM_GOERLI]: ['https://goerli-rollup.arbitrum.io/rpc/'],
   [ChainId.ARBITRUM_RINKEBY_SANDBOX]: ['https://rinkeby.arbitrum.io/rpc'],
   [ChainId.OPTIMISM]: ['https://mainnet.optimism.io'],
   [ChainId.OPTIMISM_KOVAN]: ['https://kovan.optimism.io/'],
+  [ChainId.OPTIMISM_GOERLI]: ['https://goerli.optimism.io/'],
   [ChainId.OPTIMISM_KOVAN_SANDBOX]: ['https://kovan.optimism.io/'],
   [ChainId.FANTOM]: [
     'https://rpc.ftm.tools',
