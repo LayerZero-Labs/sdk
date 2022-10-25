@@ -155,6 +155,8 @@ export const RPCS: { [chainId in ChainId]: string[] } = {
   [ChainId.PORTAL_TESTNET_SANDBOX]: ['http://3.212.233.100:9650/ext/bc/29oXNywCkGdJCuYikXkkqG6Pe5Q8tuS5VfyLHNGfeqmDzBoTPq/rpc'],
   [ChainId.AURORA]: ['https://mainnet.aurora.dev'],
   [ChainId.AURORA_TESTNET]: ['https://testnet.aurora.dev/'],
-  [ChainId.AURORA_TESTNET_SANDBOX]: ['https://testnet.aurora.dev/']
-
+  [ChainId.AURORA_TESTNET_SANDBOX]: ['https://testnet.aurora.dev/'],
+  [ChainId.APTOS]: ['https://fullnode.devnet.aptoslabs.com/v1'],
+  [ChainId.APTOS_TESTNET]: ['https://fullnode.devnet.aptoslabs.com/v1'],
+  [ChainId.APTOS_TESTNET_SANDBOX]: ['https://fullnode.devnet.aptoslabs.com/v1'],
 }

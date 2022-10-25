@@ -56,5 +56,8 @@ export enum ChainKey {
   PORTAL_TESTNET_SANDBOX = 'portal-testnet-sandbox',
   AURORA = 'aurora',
   AURORA_TESTNET = 'aurora-testnet',
-  AURORA_TESTNET_SANDBOX = 'aurora-testnet-sandbox'
+  AURORA_TESTNET_SANDBOX = 'aurora-testnet-sandbox',
+  APTOS = 'aptos',
+  APTOS_TESTNET = 'aptos-testnet',
+  APTOS_TESTNET_SANDBOX = 'aptos-testnet-sandbox',
 }

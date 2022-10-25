@@ -59,5 +59,8 @@ export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]: number } = {
   [ChainId.PORTAL_TESTNET_SANDBOX]: 2,
   [ChainId.AURORA]: 2,
   [ChainId.AURORA_TESTNET]: 2,
-  [ChainId.AURORA_TESTNET_SANDBOX]: 2
+  [ChainId.AURORA_TESTNET_SANDBOX]: 2,
+  [ChainId.APTOS]: 1,
+  [ChainId.APTOS_TESTNET]: 1,
+  [ChainId.APTOS_TESTNET_SANDBOX]: 1,
 }

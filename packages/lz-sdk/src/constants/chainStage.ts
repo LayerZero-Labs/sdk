@@ -58,5 +58,8 @@ export const CHAIN_STAGE: { [chainKey in ChainKey]: ChainStage } = {
   [ChainKey.PORTAL_TESTNET_SANDBOX]: ChainStage.TESTNET_SANDBOX,
   [ChainKey.AURORA]: ChainStage.MAINNET,
   [ChainKey.AURORA_TESTNET]: ChainStage.TESTNET,
-  [ChainKey.AURORA_TESTNET_SANDBOX]: ChainStage.TESTNET_SANDBOX
+  [ChainKey.AURORA_TESTNET_SANDBOX]: ChainStage.TESTNET_SANDBOX,
+  [ChainKey.APTOS]: ChainStage.MAINNET,
+  [ChainKey.APTOS_TESTNET]: ChainStage.TESTNET,
+  [ChainKey.APTOS_TESTNET_SANDBOX]: ChainStage.TESTNET_SANDBOX,
 }

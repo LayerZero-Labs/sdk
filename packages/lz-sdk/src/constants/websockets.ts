@@ -83,5 +83,8 @@ export const WEBSOCKETS: { [chainId in ChainId]: string[] } = {
   [ChainId.PORTAL_TESTNET_SANDBOX]: [''],
   [ChainId.AURORA]: ['wss://mainnet.aurora.dev'],
   [ChainId.AURORA_TESTNET]: ['wss://testnet.aurora.dev/'],
-  [ChainId.AURORA_TESTNET_SANDBOX]: ['wss://testnet.aurora.dev/']
+  [ChainId.AURORA_TESTNET_SANDBOX]: ['wss://testnet.aurora.dev/'],
+  [ChainId.APTOS]: [''],
+  [ChainId.APTOS_TESTNET]: [''],
+  [ChainId.APTOS_TESTNET_SANDBOX]: ['']
 }
