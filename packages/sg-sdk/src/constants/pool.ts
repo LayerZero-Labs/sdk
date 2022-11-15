@@ -11,6 +11,10 @@ import {
 export const SHARE_DECIMALS = 6
 export const SGETH_SHARE_DECIMALS = 18
 export const USDD_SHARE_DECIMALS = 18
+export const FRAX_SHARE_DECIMALS = 6
+export const SUSD_SHARE_DECIMALS = 6
+export const LUSD_SHARE_DECIMALS = 6
+export const DAI_SHARE_DECIMALS = 6
 
 export const POOLS: {
     [chainKey in ChainKey]?: {
