@@ -416,7 +416,7 @@ export const USDD_ADDRESS: { [chainId: number]: string } = {
 
 export const FRAX_ADDRESS: { [chainId: number]: string } = {
     [ChainId.ETHEREUM]: "0x853d955aCEf822Db058eb8505911ED77F175b99e",
-    [ChainId.AVALANCHE]: "0x1c272232Df0bb6225dA87f4dEcD9d37c32f63Eea",
+    [ChainId.AVALANCHE]: "0xD24C2Ad096400B6FBcd2ad8B24E7acBc21A1da64",
     [ChainId.ARBITRUM]: "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
     [ChainId.OPTIMISM]: "0x2E3D870790dC77A83DD1d18184Acc7439A53f475",
 }
