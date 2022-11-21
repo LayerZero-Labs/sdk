@@ -16,6 +16,7 @@ import {
     FRAX_ADDRESS,
     SUSD_ADDRESS,
     LUSD_ADDRESS,
+    MAI_ADDRESS,
 } from "./addresses"
 import * as TEST from "./testToken"
 import { PoolId } from "../enums"
@@ -26,6 +27,7 @@ import {
     SUSD_SHARE_DECIMALS,
     LUSD_SHARE_DECIMALS,
     DAI_SHARE_DECIMALS,
+    MAI_SHARE_DECIMALS,
 } from "./pool"
 
 export const BUSD: { [chainId: number]: Token } = {
@@ -152,6 +154,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
         [PoolId.SUSD]: new Token(ChainId.ETHEREUM, POOL_ADDRESS[TokenSymbol.SUSD][ChainId.ETHEREUM], SUSD_SHARE_DECIMALS, "S*SUSD", "STG-SUSD LP"),
         [PoolId.LUSD]: new Token(ChainId.ETHEREUM, POOL_ADDRESS[TokenSymbol.LUSD][ChainId.ETHEREUM], LUSD_SHARE_DECIMALS, "S*LUSD", "STG-LUSD LP"),
         [PoolId.DAI]: new Token(ChainId.ETHEREUM, POOL_ADDRESS[TokenSymbol.DAI][ChainId.ETHEREUM], DAI_SHARE_DECIMALS, "S*DAI", "STG-DAI LP"),
+        [PoolId.MAI]: new Token(ChainId.ETHEREUM, POOL_ADDRESS[TokenSymbol.MAI][ChainId.ETHEREUM], MAI_SHARE_DECIMALS, "S*MAI", "STG-MAI LP"),
     },
     [ChainId.RINKEBY]: {
         [PoolId.USDC]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDC][ChainId.RINKEBY], 6, "S*USDC", "STG-USDC LP"),
@@ -163,6 +166,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
         [PoolId.BUSD]: new Token(ChainId.BSC, POOL_ADDRESS[TokenSymbol.BUSD][ChainId.BSC], 6, "S*BUSD", "STG-BUSD LP"),
         [PoolId.USDT]: new Token(ChainId.BSC, POOL_ADDRESS[TokenSymbol.USDT][ChainId.BSC], 6, "S*USDT", "STG-USDT LP"),
         [PoolId.USDD]: new Token(ChainId.BSC, POOL_ADDRESS[TokenSymbol.USDD][ChainId.BSC], USDD_SHARE_DECIMALS, "S*USDD", "STG-USDD LP"),
+        [PoolId.MAI]: new Token(ChainId.BSC, POOL_ADDRESS[TokenSymbol.MAI][ChainId.BSC], MAI_SHARE_DECIMALS, "S*MAI", "STG-MAI LP"),
     },
     [ChainId.BSC_TESTNET]: {
         [PoolId.BUSD]: new Token(ChainId.BSC_TESTNET, POOL_ADDRESS[TokenSymbol.BUSD][ChainId.BSC_TESTNET], 6, "S*BUSD", "STG-BUSD LP"),
@@ -173,6 +177,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
         [PoolId.USDC]: new Token(ChainId.AVALANCHE, POOL_ADDRESS[TokenSymbol.USDC][ChainId.AVALANCHE], 6, "S*USDC", "STG-USDCe LP"),
         [PoolId.USDT]: new Token(ChainId.AVALANCHE, POOL_ADDRESS[TokenSymbol.USDT][ChainId.AVALANCHE], 6, "S*USDT", "STG-USDTe LP"),
         [PoolId.FRAX]: new Token(ChainId.AVALANCHE, POOL_ADDRESS[TokenSymbol.FRAX][ChainId.AVALANCHE], 6, "S*FRAX", "STG-FRAX LP"),
+        [PoolId.MAI]: new Token(ChainId.AVALANCHE, POOL_ADDRESS[TokenSymbol.MAI][ChainId.AVALANCHE], MAI_SHARE_DECIMALS, "S*MAI", "STG-MAI LP"),
     },
     [ChainId.FUJI]: {
         [PoolId.USDC]: new Token(ChainId.FUJI, POOL_ADDRESS[TokenSymbol.USDC][ChainId.FUJI], 6, "S*USDC", "STG-USDC LP"),
@@ -192,6 +197,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
         [PoolId.USDT]: new Token(ChainId.ARBITRUM, POOL_ADDRESS[TokenSymbol.USDT][ChainId.ARBITRUM], 6, "S*USDT", "STG-USDT LP"),
         [PoolId.SGETH]: new Token(ChainId.ARBITRUM, POOL_ADDRESS[TokenSymbol.SGETH][ChainId.ARBITRUM], SGETH_SHARE_DECIMALS, "S*SGETH", "STG-SGETH LP"),
         [PoolId.FRAX]: new Token(ChainId.ARBITRUM, POOL_ADDRESS[TokenSymbol.FRAX][ChainId.ARBITRUM], FRAX_SHARE_DECIMALS, "S*FRAX", "STG-FRAX LP"),
+        [PoolId.MAI]: new Token(ChainId.ARBITRUM, POOL_ADDRESS[TokenSymbol.MAI][ChainId.ARBITRUM], MAI_SHARE_DECIMALS, "S*MAI", "STG-MAI LP"),
     },
     [ChainId.ARBITRUM_RINKEBY]: {
         [PoolId.USDC]: new Token(ChainId.ARBITRUM_RINKEBY, POOL_ADDRESS[TokenSymbol.USDC][ChainId.ARBITRUM_RINKEBY], 6, "S*USDC", "STG-USDC LP"),
@@ -205,6 +211,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
         [PoolId.SUSD]: new Token(ChainId.OPTIMISM, POOL_ADDRESS[TokenSymbol.SUSD][ChainId.OPTIMISM], SUSD_SHARE_DECIMALS, "S*SUSD", "STG-SUSD LP"),
         [PoolId.LUSD]: new Token(ChainId.OPTIMISM, POOL_ADDRESS[TokenSymbol.LUSD][ChainId.OPTIMISM], LUSD_SHARE_DECIMALS, "S*LUSD", "STG-LUSD LP"),
         [PoolId.DAI]: new Token(ChainId.OPTIMISM, POOL_ADDRESS[TokenSymbol.DAI][ChainId.OPTIMISM], DAI_SHARE_DECIMALS, "S*DAI", "STG-DAI LP"),
+        [PoolId.MAI]: new Token(ChainId.OPTIMISM, POOL_ADDRESS[TokenSymbol.MAI][ChainId.OPTIMISM], MAI_SHARE_DECIMALS, "S*MAI", "STG-MAI LP"),
     },
     [ChainId.OPTIMISM_KOVAN]: {
         [PoolId.USDC]: new Token(ChainId.OPTIMISM_KOVAN, POOL_ADDRESS[TokenSymbol.USDC][ChainId.OPTIMISM_KOVAN], 6, "S*USDC", "STG-USDC LP"),
@@ -251,4 +258,13 @@ const LUSD_DECIMALS = 18
 export const LUSD: { [chainId: number]: Token } = {
     [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, LUSD_ADDRESS[ChainId.ETHEREUM], LUSD_DECIMALS, "LUSD", "LUSD"),
     [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, LUSD_ADDRESS[ChainId.OPTIMISM], LUSD_DECIMALS, "LUSD", "LUSD"),
+}
+
+const MAI_DECIMALS = 18
+export const MAI: { [chainId: number]: Token } = {
+    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, MAI_ADDRESS[ChainId.ETHEREUM], MAI_DECIMALS, "MAI", "MAI"),
+    [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, MAI_ADDRESS[ChainId.AVALANCHE], MAI_DECIMALS, "MAI", "MAI"),
+    [ChainId.POLYGON]: new Token(ChainId.POLYGON, MAI_ADDRESS[ChainId.POLYGON], MAI_DECIMALS, "MAI", "MAI"),
+    [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, MAI_ADDRESS[ChainId.ARBITRUM], MAI_DECIMALS, "MAI", "MAI"),
+    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, MAI_ADDRESS[ChainId.OPTIMISM], MAI_DECIMALS, "MAI", "MAI"),
 }

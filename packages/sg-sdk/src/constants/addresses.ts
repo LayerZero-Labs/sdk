@@ -286,6 +286,14 @@ export const POOL_ADDRESS: { [tokenSymbol in TokenSymbol]: { [chainId: number]: 
         [ChainId.OPTIMISM]: "0xd22363e3762cA7339569F3d33EADe20127D5F98C",
         [ChainId.OPTIMISM_KOVAN]: "0xED51Df4FE949c3C5A546aba5dd04B3751D44B794",
     },
+    [TokenSymbol.MAI]: {
+        [ChainId.ETHEREUM]: "0x9cef9a0b1bE0D289ac9f4a98ff317c33EAA84eb8",
+        [ChainId.BSC]: "0x7BfD7f2498C4796f10b6C611D9db393D3052510C",
+        [ChainId.AVALANCHE]: "0x8736f92646B2542B3e5F3c63590cA7Fe313e283B",
+        [ChainId.POLYGON]: "0x8736f92646B2542B3e5F3c63590cA7Fe313e283B",
+        [ChainId.ARBITRUM]: "0xF39B7Be294cB36dE8c510e267B82bb588705d977",
+        [ChainId.OPTIMISM]: "0x5421FA1A48f9FF81e4580557E86C7C0D24C18036",
+    },
 }
 
 export const BUSD_ADDRESS: { [chainId: number]: string } = {
@@ -429,4 +437,13 @@ export const SUSD_ADDRESS: { [chainId: number]: string } = {
 export const LUSD_ADDRESS: { [chainId: number]: string } = {
     [ChainId.ETHEREUM]: "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
     [ChainId.OPTIMISM]: "0xc40F949F8a4e094D1b49a23ea9241D289B7b2819",
+}
+
+export const MAI_ADDRESS: { [chainId: number]: string } = {
+    [ChainId.ETHEREUM]: "0x8D6CeBD76f18E1558D4DB88138e2DeFB3909fAD6",
+    [ChainId.BSC]: "0x3F56e0c36d275367b8C502090EDF38289b3dEa0d",
+    [ChainId.AVALANCHE]: "0x5c49b268c9841AFF1Cc3B0a418ff5c3442eE3F3b",
+    [ChainId.POLYGON]: "0xa3Fa99A148fA48D14Ed51d610c367C61876997F1",
+    [ChainId.ARBITRUM]: "0x3F56e0c36d275367b8C502090EDF38289b3dEa0d",
+    [ChainId.OPTIMISM]: "0xdFA46478F9e5EA86d57387849598dbFB2e964b02",
 }
