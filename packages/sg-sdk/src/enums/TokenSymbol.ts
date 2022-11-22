@@ -17,4 +17,5 @@ export enum TokenSymbol {
     SUSD = "SUSD",
     FRAX = "FRAX",
     LUSD = "LUSD",
+    MAI = "MAI",
 }

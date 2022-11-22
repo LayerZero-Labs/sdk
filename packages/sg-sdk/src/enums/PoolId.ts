@@ -9,11 +9,12 @@ export enum PoolId {
     FRAX = 7,
     USDCe = 8,
     USDTe = 9,
-    WETH = 10,               // stargate uses use SGETH instead
+    WETH = 10, // stargate uses use SGETH instead
     USDD = 11,
     STARGATE_ETH_VAULT, // deprecated
     SGETH,
     //
-    SUSD=  14,
-    LUSD=  15
+    SUSD = 14,
+    LUSD = 15,
+    MAI = 16,
 }

@@ -15,6 +15,7 @@ export const FRAX_SHARE_DECIMALS = 6
 export const SUSD_SHARE_DECIMALS = 6
 export const LUSD_SHARE_DECIMALS = 6
 export const DAI_SHARE_DECIMALS = 6
+export const MAI_SHARE_DECIMALS = 6
 
 export const POOLS: {
     [chainKey in ChainKey]?: {
