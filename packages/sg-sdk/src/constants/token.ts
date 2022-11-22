@@ -187,6 +187,7 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
         [PoolId.USDC]: new Token(ChainId.POLYGON, POOL_ADDRESS[TokenSymbol.USDC][ChainId.POLYGON], 6, "S*USDC", "STG-USDC LP"),
         [PoolId.USDT]: new Token(ChainId.POLYGON, POOL_ADDRESS[TokenSymbol.USDT][ChainId.POLYGON], 6, "S*USDT", "STG-USDT LP"),
         [PoolId.DAI]: new Token(ChainId.POLYGON, POOL_ADDRESS[TokenSymbol.DAI][ChainId.POLYGON], DAI_SHARE_DECIMALS, "S*DAI", "STG-DAI LP"),
+        [PoolId.MAI]: new Token(ChainId.POLYGON, POOL_ADDRESS[TokenSymbol.MAI][ChainId.POLYGON], MAI_SHARE_DECIMALS, "S*MAI", "STG-MAI LP"),
     },
     [ChainId.MUMBAI]: {
         [PoolId.USDC]: new Token(ChainId.MUMBAI, POOL_ADDRESS[TokenSymbol.USDC][ChainId.MUMBAI], 6, "S*USDC", "STG-USDC LP"),
@@ -263,6 +264,7 @@ export const LUSD: { [chainId: number]: Token } = {
 const MAI_DECIMALS = 18
 export const MAI: { [chainId: number]: Token } = {
     [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, MAI_ADDRESS[ChainId.ETHEREUM], MAI_DECIMALS, "MAI", "MAI"),
+    [ChainId.BSC]: new Token(ChainId.BSC, MAI_ADDRESS[ChainId.BSC], MAI_DECIMALS, "MAI", "MAI"),
     [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, MAI_ADDRESS[ChainId.AVALANCHE], MAI_DECIMALS, "MAI", "MAI"),
     [ChainId.POLYGON]: new Token(ChainId.POLYGON, MAI_ADDRESS[ChainId.POLYGON], MAI_DECIMALS, "MAI", "MAI"),
     [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, MAI_ADDRESS[ChainId.ARBITRUM], MAI_DECIMALS, "MAI", "MAI"),
