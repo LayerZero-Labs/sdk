@@ -1,5 +1,5 @@
-import { Currency } from "./currency"
-import { invariant as assert } from "../utils/invariantHelper"
+import { Currency } from './currency'
+import { invariant as assert } from '../utils/invariantHelper'
 
 /**
  * A currency is any fungible financial instrument, including all ERC20 tokens
@@ -30,8 +30,8 @@ export abstract class BaseCurrency {
      * @param name of the currency
      */
     protected constructor(chainId: number, decimals: number, symbol: string, name?: string) {
-        assert(Number.isSafeInteger(chainId), "CHAIN_ID")
-        assert(decimals >= 0 && decimals < 255 && Number.isInteger(decimals), "DECIMALS")
+        assert(Number.isSafeInteger(chainId), 'CHAIN_ID')
+        assert(decimals >= 0 && decimals < 255 && Number.isInteger(decimals), 'DECIMALS')
 
         this.chainId = chainId
         this.decimals = decimals

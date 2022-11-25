@@ -1,11 +1,11 @@
-import JSBI from "jsbi"
-import { ChainId } from "@layerzerolabs/lz-sdk"
-import { CurrencyAmount, Fraction, Token } from "."
-import { USDC, STG } from "../constants/token"
-import { Bonding } from "./bonding"
-import { TokenSymbol } from "../enums"
+import JSBI from 'jsbi'
+import { ChainId } from '@layerzerolabs/lz-sdk'
+import { CurrencyAmount, Fraction, Token } from '.'
+import { USDC, STG } from '../constants/token'
+import { Bonding } from './bonding'
+import { TokenSymbol } from '../enums'
 
-describe("Bonding", () => {
+describe('Bonding', () => {
     const chainId = ChainId.FUJI_SANDBOX
     const stargateToken = STG[chainId]
     const stableCoin = USDC[chainId]
@@ -21,82 +21,82 @@ describe("Bonding", () => {
         CurrencyAmount.fromRawAmount(stargateToken, oneMilllionSTG) //1mil already sold
     )
 
-    describe("#computeCostFromQuantity", function () {
-        it("quantity = 0", function () {
+    describe('#computeCostFromQuantity', function () {
+        it('quantity = 0', function () {
             const quantity = JSBI.BigInt(0)
-            expect(() => bonding.computeCostFromQuantity(CurrencyAmount.fromRawAmount(stargateToken, quantity))).toThrow("QUANTITY_ZERO")
+            expect(() => bonding.computeCostFromQuantity(CurrencyAmount.fromRawAmount(stargateToken, quantity))).toThrow('QUANTITY_ZERO')
         })
 
-        it("quantity < quota", function () {
+        it('quantity < quota', function () {
             const cost = bonding.computeCostFromQuantity(CurrencyAmount.fromRawAmount(stargateToken, oneMilllionSTG))
             expect(cost.currency).toEqual(stableCoin)
-            expect(cost.toExact()).toEqual("575000")
+            expect(cost.toExact()).toEqual('575000')
         })
 
-        it("quantity = quota", function () {
+        it('quantity = quota', function () {
             const quantity = JSBI.multiply(JSBI.BigInt(49000000), JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(18))) //25m
             const cost = bonding.computeCostFromQuantity(CurrencyAmount.fromRawAmount(stargateToken, quantity))
             expect(cost.currency).toEqual(stableCoin)
 
-            expect(cost.toExact()).toEqual("86975000")
+            expect(cost.toExact()).toEqual('86975000')
         })
 
-        it("quantity > quota", function () {
+        it('quantity > quota', function () {
             const quantity = JSBI.multiply(JSBI.BigInt(50000000), JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(18))) //51m
             const cost = bonding.computeCostFromQuantity(CurrencyAmount.fromRawAmount(stargateToken, quantity))
             expect(cost.currency).toEqual(stableCoin)
-            expect(cost.toExact()).toEqual("86975000")
+            expect(cost.toExact()).toEqual('86975000')
         })
     })
 
-    describe("#computeQuantityFromCost", function () {
-        it("cost = 0", function () {
+    describe('#computeQuantityFromCost', function () {
+        it('cost = 0', function () {
             const cost = JSBI.BigInt(0)
-            expect(() => bonding.computeQuantityFromCost(CurrencyAmount.fromRawAmount(stableCoin, cost))).toThrow("COST_ZERO")
+            expect(() => bonding.computeQuantityFromCost(CurrencyAmount.fromRawAmount(stableCoin, cost))).toThrow('COST_ZERO')
         })
 
-        it("cost < quota", function () {
+        it('cost < quota', function () {
             const cost = JSBI.multiply(JSBI.BigInt(575000), JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(6)))
             const quantity = bonding.computeQuantityFromCost(CurrencyAmount.fromRawAmount(stableCoin, cost))
             expect(quantity.currency).toEqual(stargateToken)
-            expect(quantity.toExact()).toEqual("1000000") //1m
+            expect(quantity.toExact()).toEqual('1000000') //1m
         })
 
-        it("cost = quota", function () {
+        it('cost = quota', function () {
             const cost = JSBI.multiply(JSBI.BigInt(86975000), JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(6)))
             const quantity = bonding.computeQuantityFromCost(CurrencyAmount.fromRawAmount(stableCoin, cost))
             expect(quantity.currency).toEqual(stargateToken)
-            expect(quantity.toExact()).toEqual("49000000") //1m
+            expect(quantity.toExact()).toEqual('49000000') //1m
         })
 
-        it("cost > quota", function () {
+        it('cost > quota', function () {
             const cost = JSBI.multiply(JSBI.BigInt(87500000), JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(6)))
             const quantity = bonding.computeQuantityFromCost(CurrencyAmount.fromRawAmount(stableCoin, cost))
             expect(quantity.currency).toEqual(stargateToken)
-            expect(quantity.toExact()).toEqual("49000000") //1m
+            expect(quantity.toExact()).toEqual('49000000') //1m
         })
     })
 
-    describe("getCurrentPrice", () => {
+    describe('getCurrentPrice', () => {
         const chainId = ChainId.FUJI_SANDBOX
-        const stableCoin = new Token(chainId, "0x0000000000000000000000000000000000000000", 18, TokenSymbol.USDC)
-        const token = new Token(chainId, "0x0000000000000000000000000000000000000000", 18, TokenSymbol.STG)
+        const stableCoin = new Token(chainId, '0x0000000000000000000000000000000000000000', 18, TokenSymbol.USDC)
+        const token = new Token(chainId, '0x0000000000000000000000000000000000000000', 18, TokenSymbol.STG)
 
         const slope = new Fraction(5, 100000000)
         const initialPrice = CurrencyAmount.fromRawAmount(stableCoin, 0.5e18)
         let totalBonded = CurrencyAmount.fromRawAmount(token, 1000000e18)
         let curPrice = Bonding.getCurrentPrice(initialPrice, totalBonded, slope)
 
-        it("returns expected price", () => {
-            expect(parseFloat(curPrice.toSignificant(4)).toFixed(2)).toEqual("0.55")
+        it('returns expected price', () => {
+            expect(parseFloat(curPrice.toSignificant(4)).toFixed(2)).toEqual('0.55')
 
             totalBonded = CurrencyAmount.fromRawAmount(stableCoin, 2000000e18)
             curPrice = Bonding.getCurrentPrice(initialPrice, totalBonded, slope)
-            expect(parseFloat(curPrice.toSignificant(4)).toFixed(2)).toEqual("0.60")
+            expect(parseFloat(curPrice.toSignificant(4)).toFixed(2)).toEqual('0.60')
         })
 
-        it("returns the stablecoin token", () => {
-            expect(curPrice.currency.symbol).toEqual("USDC")
+        it('returns the stablecoin token', () => {
+            expect(curPrice.currency.symbol).toEqual('USDC')
         })
     })
 })

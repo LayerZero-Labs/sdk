@@ -1,7 +1,7 @@
-import { CurrencyAmount } from "./fractions"
-import { invariant as assert } from "../utils/invariantHelper"
-import JSBI from "jsbi"
-import { Currency } from "./currency"
+import { CurrencyAmount } from './fractions'
+import { invariant as assert } from '../utils/invariantHelper'
+import JSBI from 'jsbi'
+import { Currency } from './currency'
 
 const WEEK = 604800
 const MAXTIME = JSBI.BigInt(94608000)
@@ -22,7 +22,7 @@ export class VotingEscrow {
      * @returns CurrencyAmount of veToken
      */
     public estimateVe(_amount: CurrencyAmount, _unlock_time: number): CurrencyAmount {
-        assert(_amount.currency.equals(this.token), "TOKEN")
+        assert(_amount.currency.equals(this.token), 'TOKEN')
         let unlock_time = _unlock_time
         if (_unlock_time < 0) {
             unlock_time = 0

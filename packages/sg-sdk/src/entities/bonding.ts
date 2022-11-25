@@ -1,7 +1,7 @@
-import JSBI from "jsbi"
-import { CurrencyAmount, Fraction } from "./fractions"
-import { invariant as assert } from "../utils/invariantHelper"
-import { Currency } from "./currency"
+import JSBI from 'jsbi'
+import { CurrencyAmount, Fraction } from './fractions'
+import { invariant as assert } from '../utils/invariantHelper'
+import { Currency } from './currency'
 
 const ZERO: JSBI = JSBI.BigInt(0)
 const TWO: JSBI = JSBI.BigInt(2)
@@ -24,20 +24,20 @@ export class Bonding {
         _totalStargateForBonding: CurrencyAmount, //stargate token
         _totalStargateBonded: CurrencyAmount //stargate token
     ) {
-        assert(_stargateToken.decimals >= _stableCoinToken.decimals, "DECIMALS")
+        assert(_stargateToken.decimals >= _stableCoinToken.decimals, 'DECIMALS')
         this.stargateToken = _stargateToken
         this.stableCoinToken = _stableCoinToken
 
         this.slope = _slope
 
-        assert(_initialPrice.currency.equals(this.stargateToken), "TOKEN")
-        assert(_initialPrice.greaterThan(ZERO), "PRICE_ZERO")
+        assert(_initialPrice.currency.equals(this.stargateToken), 'TOKEN')
+        assert(_initialPrice.greaterThan(ZERO), 'PRICE_ZERO')
         this.initialPrice = _initialPrice
 
-        assert(_totalStargateForBonding.currency.equals(this.stargateToken), "TOKEN")
+        assert(_totalStargateForBonding.currency.equals(this.stargateToken), 'TOKEN')
         this.totalStargateForBonding = _totalStargateForBonding
 
-        assert(_totalStargateBonded.currency.equals(this.stargateToken), "TOKEN")
+        assert(_totalStargateBonded.currency.equals(this.stargateToken), 'TOKEN')
         this.totalStargateBonded = _totalStargateBonded
 
         this.quota = this.totalStargateForBonding.subtract(this.totalStargateBonded)
@@ -45,12 +45,12 @@ export class Bonding {
     }
 
     public computeCostFromQuantity(_quantity: CurrencyAmount): CurrencyAmount {
-        assert(_quantity.currency.equals(this.stargateToken), "TOKEN")
+        assert(_quantity.currency.equals(this.stargateToken), 'TOKEN')
         let quantity = _quantity
         if (_quantity.greaterThan(this.quota)) {
             quantity = this.quota
         }
-        assert(quantity.greaterThan(ZERO), "QUANTITY_ZERO")
+        assert(quantity.greaterThan(ZERO), 'QUANTITY_ZERO')
 
         const startPrice = this.totalStargateBonded.multiply(this.slope.numerator).divide(this.slope.denominator).add(this.initialPrice)
         const endPrice = startPrice.add(quantity.multiply(this.slope.numerator).divide(this.slope.denominator))
@@ -64,8 +64,8 @@ export class Bonding {
     }
 
     public computeQuantityFromCost(_cost: CurrencyAmount): CurrencyAmount {
-        assert(_cost.currency.equals(this.stableCoinToken), "TOKEN")
-        assert(_cost.greaterThan(ZERO), "COST_ZERO")
+        assert(_cost.currency.equals(this.stableCoinToken), 'TOKEN')
+        assert(_cost.greaterThan(ZERO), 'COST_ZERO')
         const _startPrice = this.totalStargateBonded.multiply(this.slope.numerator).divide(this.slope.denominator).add(this.initialPrice)
 
         const startPrice = parseFloat(_startPrice.toSignificant(this.stargateToken.decimals))
@@ -89,7 +89,7 @@ export class Bonding {
     }
 
     toStableCoinDecimals(amount: CurrencyAmount): CurrencyAmount {
-        assert(amount.currency.equals(this.stargateToken), "TOKEN")
+        assert(amount.currency.equals(this.stargateToken), 'TOKEN')
         return CurrencyAmount.fromFractionalAmount(this.stableCoinToken, amount.quotient, this.convertRate)
     }
 

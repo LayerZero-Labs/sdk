@@ -1,23 +1,25 @@
 module.exports = {
     overrides: [
         {
-            files: "*.ts",
+            files: '*.ts',
             options: {
                 printWidth: 145,
                 semi: false,
                 tabWidth: 4,
                 useTabs: false,
-                trailingComma: "es5",
+                trailingComma: 'es5',
+                singleQuote: true,
             },
         },
         {
-            files: "*.js",
+            files: '*.js',
             options: {
                 printWidth: 145,
                 semi: false,
                 tabWidth: 4,
                 useTabs: false,
-                trailingComma: "es5",
+                trailingComma: 'es5',
+                singleQuote: true,
             },
         },
     ],

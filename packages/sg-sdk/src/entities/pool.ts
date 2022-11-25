@@ -1,13 +1,13 @@
-import { Token } from "./token"
-import { CurrencyAmount, Fraction } from "./fractions"
-import { ChainId } from "@layerzerolabs/lz-sdk"
-import { PoolId } from "../enums"
-import JSBI from "jsbi"
-import { SHARE_DECIMALS } from "../constants/pool"
-import { invariant as assert } from "../utils/invariantHelper"
-import { FeeObj, FeeV01, FeeV02 } from "./fee"
-import { Currency } from "./currency"
-import { LPTOKEN } from "../constants/token"
+import { Token } from './token'
+import { CurrencyAmount, Fraction } from './fractions'
+import { ChainId } from '@layerzerolabs/lz-sdk'
+import { PoolId } from '../enums'
+import JSBI from 'jsbi'
+import { SHARE_DECIMALS } from '../constants/pool'
+import { invariant as assert } from '../utils/invariantHelper'
+import { FeeObj, FeeV01, FeeV02 } from './fee'
+import { Currency } from './currency'
+import { LPTOKEN } from '../constants/token'
 
 //Pool Fee
 export interface PoolFee {
@@ -77,29 +77,29 @@ export class Pool {
         totalLiquidity: CurrencyAmount,
         eqFeePool: CurrencyAmount
     ): { outputAmount: CurrencyAmount; fee: FeeObj } {
-        assert(inputAmount.currency.equals(this.token), "TOKEN")
-        assert(minAmount.currency.equals(this.token), "TOKEN")
-        assert(tokenBalance.currency.equals(this.token), "TOKEN")
-        assert(totalLiquidity.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(eqFeePool.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(this.fee != undefined, "FEE")
+        assert(inputAmount.currency.equals(this.token), 'TOKEN')
+        assert(minAmount.currency.equals(this.token), 'TOKEN')
+        assert(tokenBalance.currency.equals(this.token), 'TOKEN')
+        assert(totalLiquidity.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(eqFeePool.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(this.fee != undefined, 'FEE')
 
         const cp = this.getChainPath(dstChainId, dstPoolId)
-        assert(cp, "NO_CHAIN_PATH")
+        assert(cp, 'NO_CHAIN_PATH')
 
         // fee library
         let fee: FeeObj
-        if (this.fee?.version.split(".")[0] == "1") {
+        if (this.fee?.version.split('.')[0] == '1') {
             fee = (<FeeV01>this.fee).getFees(inputAmount)
         } else {
             fee = (<FeeV02>this.fee).getFees(cp.idealBalance, cp.balance, tokenBalance, totalLiquidity, eqFeePool, inputAmount)
         }
 
         const amount = inputAmount.subtract(fee.eqFee).subtract(fee.protocolFee).subtract(fee.lpFee)
-        assert(JSBI.greaterThanOrEqual(amount.add(fee.eqReward).quotient, minAmount.quotient), "SLIPPAGE_TOO_HIGH")
+        assert(JSBI.greaterThanOrEqual(amount.add(fee.eqReward).quotient, minAmount.quotient), 'SLIPPAGE_TOO_HIGH')
 
         const lkbRemove = this.amountLDtoSD(inputAmount.subtract(fee.lpFee))
-        assert(JSBI.greaterThanOrEqual(cp.balance.quotient, lkbRemove.quotient), "DST_BALANCE_TOO_LOW")
+        assert(JSBI.greaterThanOrEqual(cp.balance.quotient, lkbRemove.quotient), 'DST_BALANCE_TOO_LOW')
 
         return {
             outputAmount: amount.add(fee.eqReward),
@@ -114,9 +114,9 @@ export class Pool {
         tokenAmount: CurrencyAmount, //token
         feeOn: boolean = false
     ): CurrencyAmount {
-        assert(tokenAmount.currency.equals(this.token), "TOKEN")
-        assert(totalSupply.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(totalLiquidity.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(tokenAmount.currency.equals(this.token), 'TOKEN')
+        assert(totalSupply.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(totalLiquidity.currency.equals(this.liquidityToken), 'LIQUIDITY')
 
         let amountSD = this.amountLDtoSD(tokenAmount).quotient
         if (feeOn) {
@@ -139,10 +139,10 @@ export class Pool {
         deltaCredit: CurrencyAmount, //token Pool
         lpTokenAmount: CurrencyAmount //token LP / Pool, both are in SHARED_DECIMAL
     ): [CurrencyAmount, CurrencyAmount] {
-        assert(totalSupply.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(totalLiquidity.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(deltaCredit.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(lpTokenAmount.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(totalSupply.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(totalLiquidity.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(deltaCredit.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(lpTokenAmount.currency.equals(this.liquidityToken), 'LIQUIDITY')
 
         let amountLP = lpTokenAmount
         let amountSD = lpTokenAmount.multiply(totalLiquidity).divide(totalSupply)
@@ -168,17 +168,17 @@ export class Pool {
         tokenBalance: CurrencyAmount,
         eqFeePool: CurrencyAmount
     ): [CurrencyAmount, CurrencyAmount] {
-        assert(totalSupply.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(totalLiquidity.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(lpTokenAmount.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(eqFeePool.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(minAmount.currency.equals(this.token), "TOKEN")
-        assert(tokenBalance.currency.equals(this.token), "TOKEN")
+        assert(totalSupply.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(totalLiquidity.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(lpTokenAmount.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(eqFeePool.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(minAmount.currency.equals(this.token), 'TOKEN')
+        assert(tokenBalance.currency.equals(this.token), 'TOKEN')
 
         //check that pool has enough liquidity
         assert(
             JSBI.greaterThanOrEqual(totalLiquidity.quotient, lpTokenAmount.multiply(totalLiquidity).divide(totalSupply).quotient),
-            "POOL DOES NOT HAVE ENOUGH LIQUIDITY"
+            'POOL DOES NOT HAVE ENOUGH LIQUIDITY'
         )
 
         const amountSD = lpTokenAmount.multiply(totalLiquidity).divide(totalSupply)
@@ -206,12 +206,12 @@ export class Pool {
         totalLiquidity: CurrencyAmount,
         lpTokenAmount: CurrencyAmount
     ): [CurrencyAmount, CurrencyAmount] {
-        assert(totalSupply.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(totalLiquidity.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(lpTokenAmount.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(totalSupply.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(totalLiquidity.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(lpTokenAmount.currency.equals(this.liquidityToken), 'LIQUIDITY')
 
         const cp = this.getChainPath(dstChainId, dstPoolId)
-        assert(cp, "NO_CHAIN_PATH")
+        assert(cp, 'NO_CHAIN_PATH')
         let amountSD = lpTokenAmount.multiply(totalLiquidity).divide(totalSupply)
         const available = cp.lkb.add(cp.credit)
         if (JSBI.greaterThanOrEqual(amountSD.quotient, available.quotient)) {
@@ -230,9 +230,9 @@ export class Pool {
      * @returns price
      */
     public getPrice(totalSupply: CurrencyAmount, totalLiquidity: CurrencyAmount, lpTokenAmount: CurrencyAmount) {
-        assert(totalSupply.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(totalLiquidity.currency.equals(this.liquidityToken), "LIQUIDITY")
-        assert(lpTokenAmount.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(totalSupply.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(totalLiquidity.currency.equals(this.liquidityToken), 'LIQUIDITY')
+        assert(lpTokenAmount.currency.equals(this.liquidityToken), 'LIQUIDITY')
 
         return this.amountSDtoLD(totalLiquidity.multiply(lpTokenAmount).divide(totalSupply))
     }

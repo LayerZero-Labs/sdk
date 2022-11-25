@@ -1,18 +1,18 @@
-import { ChainPaths, Pool, PoolFee } from "./pool"
-import { CurrencyAmount, Fraction } from "./fractions"
-import { Token } from "./token"
-import { TokenSymbol } from "../enums"
-import { ChainId } from "@layerzerolabs/lz-sdk"
-import JSBI from "jsbi"
-import { POOL_ADDRESS } from "../constants/addresses"
-import { FeeV01 } from "./fee"
+import { ChainPaths, Pool, PoolFee } from './pool'
+import { CurrencyAmount, Fraction } from './fractions'
+import { Token } from './token'
+import { TokenSymbol } from '../enums'
+import { ChainId } from '@layerzerolabs/lz-sdk'
+import JSBI from 'jsbi'
+import { POOL_ADDRESS } from '../constants/addresses'
+import { FeeV01 } from './fee'
 
-describe("Pool", () => {
+describe('Pool', () => {
     const chainId = ChainId.FUJI_SANDBOX
     const dstChainId = 1
     const dstPoolId = 1
-    const token = new Token(chainId, "0x0000000000000000000000000000000000000000", 18, TokenSymbol.USDC)
-    const liquidityToken = new Token(chainId, "0x0000000000000000000000000000000000000000", 6, TokenSymbol.SLP)
+    const token = new Token(chainId, '0x0000000000000000000000000000000000000000', 18, TokenSymbol.USDC)
+    const liquidityToken = new Token(chainId, '0x0000000000000000000000000000000000000000', 6, TokenSymbol.SLP)
     const fraction = new Fraction(100, 10000) // 1%
 
     const poolFee: PoolFee = {
@@ -34,32 +34,32 @@ describe("Pool", () => {
         },
     }
 
-    describe("#tokens", () => {
-        it("#token", () => {
+    describe('#tokens', () => {
+        it('#token', () => {
             expect(new Pool(token, poolFee, chainPaths).token).toEqual(token)
         })
-        it("#liquidityToken", () => {
+        it('#liquidityToken', () => {
             expect(new Pool(token, poolFee, chainPaths).liquidityToken).toEqual(
-                new Token(chainId, POOL_ADDRESS[TokenSymbol.USDC]![chainId], 6, "S*USDC", "STG-USDC LP")
+                new Token(chainId, POOL_ADDRESS[TokenSymbol.USDC]![chainId], 6, 'S*USDC', 'STG-USDC LP')
             )
         })
     })
 
-    describe("#chainId", () => {
-        it("returns correct chainId", () => {
+    describe('#chainId', () => {
+        it('returns correct chainId', () => {
             expect(new Pool(token, poolFee, chainPaths).getChainId()).toEqual(chainId)
         })
     })
 
-    describe("#getSwapOutputAmount", () => {
-        it("slippage too high", () => {
+    describe('#getSwapOutputAmount', () => {
+        it('slippage too high', () => {
             // all fees are 1%
             // user swaps 100 and gets max 98  (2% fee)
             const pool = new Pool(token, poolFee, chainPaths)
             pool.setFee(
                 new FeeV01(
                     {
-                        version: "1.0.0",
+                        version: '1.0.0',
                         eqFeeRate: fraction,
                         eqRewardRate: fraction,
                         lpFeeRate: fraction,
@@ -82,10 +82,10 @@ describe("Pool", () => {
                     CurrencyAmount.fromRawAmount(pool.liquidityToken, JSBI.BigInt(0)),
                     CurrencyAmount.fromRawAmount(pool.liquidityToken, JSBI.BigInt(0))
                 )
-            ).toThrow("SLIPPAGE_TOO_HIGH")
+            ).toThrow('SLIPPAGE_TOO_HIGH')
         })
 
-        it("returns correct amount", () => {
+        it('returns correct amount', () => {
             // all fees are 1%
             // user swaps 100 and gets 98  (2% fee)
             //  sub lpFee and protocolFee and eqFee (-3%)
@@ -94,7 +94,7 @@ describe("Pool", () => {
             pool.setFee(
                 new FeeV01(
                     {
-                        version: "1.0.0",
+                        version: '1.0.0',
                         eqFeeRate: fraction,
                         eqRewardRate: fraction,
                         lpFeeRate: fraction,
@@ -124,8 +124,8 @@ describe("Pool", () => {
         })
     })
 
-    describe("#getLiquidityMinted", () => {
-        it("no fees - returns correct values", () => {
+    describe('#getLiquidityMinted', () => {
+        it('no fees - returns correct values', () => {
             //100:100 supply and liquidity
             //user adds 200 token and gets 200 liquidity
             const pool = new Pool(token, poolFee, chainPaths)
@@ -138,7 +138,7 @@ describe("Pool", () => {
             )
         })
 
-        it("with fees - returns correct values", () => {
+        it('with fees - returns correct values', () => {
             // all fees are 1%
             // 100:100 supply and liquidity
             // user adds 200 token and gets 198 liquidity, 1% mint fee
@@ -153,8 +153,8 @@ describe("Pool", () => {
         })
     })
 
-    describe("#getRedeemLocalInstant", () => {
-        it("amount > deltaCredit, capped at deltaCredit", () => {
+    describe('#getRedeemLocalInstant', () => {
+        it('amount > deltaCredit, capped at deltaCredit', () => {
             //available = deltaCredit = 20 token
             //user has 40 tokens (in shares) and 100 lp
             const pool = new Pool(token, poolFee, chainPaths)
@@ -173,7 +173,7 @@ describe("Pool", () => {
             )
         })
 
-        it("amount <= deltaCredit", () => {
+        it('amount <= deltaCredit', () => {
             //available = deltaCredit = 20 token
             //user has 10 tokens (in shares) and 100 lp
             const pool = new Pool(token, poolFee, chainPaths)
@@ -192,15 +192,15 @@ describe("Pool", () => {
         })
     })
 
-    describe("#getRedeemRemote", () => {
+    describe('#getRedeemRemote', () => {
         //todo: how much lp one should redeem
         //currently capped by swappable, need to trial and error to get a more precise amount
-        it("amount <= available", () => {
+        it('amount <= available', () => {
             const pool = new Pool(token, poolFee, chainPaths)
             pool.setFee(
                 new FeeV01(
                     {
-                        version: "1.0.0",
+                        version: '1.0.0',
                         eqFeeRate: fraction,
                         eqRewardRate: fraction,
                         lpFeeRate: fraction,
@@ -231,12 +231,12 @@ describe("Pool", () => {
             ).toEqual(CurrencyAmount.fromRawAmount(token, 98e18).toExact())
         })
 
-        it("amount > available", () => {
+        it('amount > available', () => {
             const pool = new Pool(token, poolFee, chainPaths)
             pool.setFee(
                 new FeeV01(
                     {
-                        version: "1.0.0",
+                        version: '1.0.0',
                         eqFeeRate: fraction,
                         eqRewardRate: fraction,
                         lpFeeRate: fraction,
@@ -268,9 +268,9 @@ describe("Pool", () => {
         })
     })
 
-    describe("#getRedeemLocal", function () {
-        describe("Fee Library V01", () => {
-            it("amount <= available", () => {
+    describe('#getRedeemLocal', function () {
+        describe('Fee Library V01', () => {
+            it('amount <= available', () => {
                 //available = lkb+credit = 100 token
                 //user has 100 tokens (in shares) and 100 lp
                 const pool = new Pool(token, poolFee, chainPaths)
@@ -287,7 +287,7 @@ describe("Pool", () => {
                 )
             })
 
-            it("amount > available", () => {
+            it('amount > available', () => {
                 //available = lkb+credit = 100 token
                 //user has 200 tokens (in shares) and 100lp
                 const pool = new Pool(token, poolFee, chainPaths)
@@ -306,49 +306,49 @@ describe("Pool", () => {
             })
         })
 
-        describe("Fee Library V02", () => {})
+        describe('Fee Library V02', () => {})
     })
 
-    describe("getPrice", function () {
+    describe('getPrice', function () {
         const pool = new Pool(token, poolFee, chainPaths)
         const totalSupply = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
         const totalLiquidity = CurrencyAmount.fromRawAmount(pool.liquidityToken, 1000e6)
         const lpTokenAmount = CurrencyAmount.fromRawAmount(pool.liquidityToken, 10e6)
         const fiatValue = pool.getPrice(totalSupply, totalLiquidity, lpTokenAmount)
         const result = JSBI.BigInt(fiatValue.toFixed(0))
-        it("Should be > 0", () => {
+        it('Should be > 0', () => {
             expect(JSBI.greaterThan(result, JSBI.BigInt(0))).toBeTruthy()
         })
 
-        it("Should should return expected value", () => {
+        it('Should should return expected value', () => {
             // 10 % of pool sharing $1000 should equal $100
             expect(JSBI.equal(result, JSBI.BigInt(100))).toBeTruthy()
         })
 
-        it("Should return the original token", () => {
+        it('Should return the original token', () => {
             const originalDecimals = token.decimals
             expect(originalDecimals === fiatValue.currency.decimals).toBeTruthy()
             expect(token.symbol === fiatValue.currency.symbol).toBeTruthy()
         })
     })
 
-    describe("getPriceStatic", function () {
+    describe('getPriceStatic', function () {
         const pool = new Pool(token, poolFee, chainPaths)
         const totalSupply = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
         const totalLiquidity = CurrencyAmount.fromRawAmount(pool.liquidityToken, 1000e6)
         const lpTokenAmount = CurrencyAmount.fromRawAmount(pool.liquidityToken, 10e6)
         const fiatValue = Pool.getPriceStatic(totalSupply, totalLiquidity, lpTokenAmount, token)
         const result = JSBI.BigInt(fiatValue.toFixed(0))
-        it("Should be > 0", () => {
+        it('Should be > 0', () => {
             expect(JSBI.greaterThan(result, JSBI.BigInt(0))).toBeTruthy()
         })
 
-        it("Should should return expected value", () => {
+        it('Should should return expected value', () => {
             // 10 % of pool sharing $1000 should equal $100
             expect(JSBI.equal(result, JSBI.BigInt(100))).toBeTruthy()
         })
 
-        it("Should return the original token", () => {
+        it('Should return the original token', () => {
             const originalDecimals = token.decimals
             expect(originalDecimals === fiatValue.currency.decimals).toBeTruthy()
             expect(token.symbol === fiatValue.currency.symbol).toBeTruthy()

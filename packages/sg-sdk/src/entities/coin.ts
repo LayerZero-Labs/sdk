@@ -1,5 +1,5 @@
-import { BaseCurrency } from "./baseCurrency"
-import { Currency } from "./currency"
+import { BaseCurrency } from './baseCurrency'
+import { Currency } from './currency'
 
 /**
  * Represents an Coin with some metadata.

@@ -1,5 +1,5 @@
 export enum ChainStage {
-  MAINNET,
-  TESTNET,
-  TESTNET_SANDBOX,
+    MAINNET,
+    TESTNET,
+    TESTNET_SANDBOX,
 }
