@@ -1,5 +1,5 @@
-import { ChainKey, ChainId } from '@layerzerolabs/lz-sdk'
-import { PoolId } from '../enums'
+import { ChainKey, ChainId } from "@layerzerolabs/lz-sdk"
+import { PoolId } from "../enums"
 import {
     USDC_ADDRESS,
     USDT_ADDRESS,
@@ -11,7 +11,7 @@ import {
     SUSD_ADDRESS,
     LUSD_ADDRESS,
     MAI_ADDRESS,
-} from './addresses'
+} from "./addresses"
 
 export const SHARE_DECIMALS = 6
 export const SGETH_SHARE_DECIMALS = 18

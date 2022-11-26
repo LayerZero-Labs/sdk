@@ -1,6 +1,6 @@
-import { ChainId } from '@layerzerolabs/lz-sdk'
-import { TokenSymbol } from '../enums/TokenSymbol'
-import { Token } from '../entities/token'
+import { ChainId } from "@layerzerolabs/lz-sdk"
+import { TokenSymbol } from "../enums/TokenSymbol"
+import { Token } from "../entities/token"
 import {
     DAI_ADDRESS,
     STG_ADDRESS,
@@ -17,9 +17,9 @@ import {
     SUSD_ADDRESS,
     LUSD_ADDRESS,
     MAI_ADDRESS,
-} from './addresses'
-import * as TEST from './testToken'
-import { PoolId } from '../enums'
+} from "./addresses"
+import * as TEST from "./testToken"
+import { PoolId } from "../enums"
 import {
     SGETH_SHARE_DECIMALS,
     USDD_SHARE_DECIMALS,
@@ -28,11 +28,11 @@ import {
     LUSD_SHARE_DECIMALS,
     DAI_SHARE_DECIMALS,
     MAI_SHARE_DECIMALS,
-} from './pool'
+} from "./pool"
 
 export const BUSD: { [chainId: number]: Token } = {
-    [ChainId.BSC]: new Token(ChainId.BSC, BUSD_ADDRESS[ChainId.BSC], 18, 'BUSD', 'BUSD Coin'),
-    [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, BUSD_ADDRESS[ChainId.BSC_TESTNET], 18, 'BUSD', 'BUSD Coin'),
+    [ChainId.BSC]: new Token(ChainId.BSC, BUSD_ADDRESS[ChainId.BSC], 18, "BUSD", "BUSD Coin"),
+    [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, BUSD_ADDRESS[ChainId.BSC_TESTNET], 18, "BUSD", "BUSD Coin"),
 }
 
 const DAI_DECIMALS = 18
@@ -90,7 +90,7 @@ export const SVESTG: { [chainId: number]: Token } = {
 }
 
 export const AASTG: { [chainId: number]: Token } = {
-    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, WHITELIST_AUCTION_ADDRESS[ChainId.ETHEREUM] as string, 6, 'aaSTG', 'aaStargateToken'),
+    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, WHITELIST_AUCTION_ADDRESS[ChainId.ETHEREUM] as string, 6, "aaSTG", "aaStargateToken"),
 }
 
 // prettier-ignore
@@ -111,17 +111,17 @@ export const USDC: { [chainId: number]: Token } = {
 
 export const USDT: { [chainId: number]: Token } = {
     ...TEST.USDT,
-    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, USDT_ADDRESS[ChainId.ETHEREUM], 6, 'USDT', 'USD Tether'),
-    [ChainId.BSC]: new Token(ChainId.BSC, USDT_ADDRESS[ChainId.BSC], 18, 'USDT', 'USD Tether'),
-    [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, USDT_ADDRESS[ChainId.BSC_TESTNET], 18, 'USDT', 'USD Tether'),
-    [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, USDT_ADDRESS[ChainId.AVALANCHE], 6, 'USDT', 'USD Tether'),
-    [ChainId.FUJI]: new Token(ChainId.FUJI, USDT_ADDRESS[ChainId.FUJI], 6, 'USDT', 'USD Tether'),
-    [ChainId.POLYGON]: new Token(ChainId.POLYGON, USDT_ADDRESS[ChainId.POLYGON], 6, 'USDT', 'USD Tether'),
-    [ChainId.MUMBAI]: new Token(ChainId.MUMBAI, USDT_ADDRESS[ChainId.MUMBAI], 6, 'USDT', 'USD Tether'),
-    [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, USDT_ADDRESS[ChainId.ARBITRUM], 6, 'USDT', 'USD Tether'),
-    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, USDT_ADDRESS[ChainId.OPTIMISM], 6, 'USDT', 'USD Tether'),
-    [ChainId.FANTOM]: new Token(ChainId.FANTOM, USDT_ADDRESS[ChainId.FANTOM], 6, 'USDT', 'USD Tether'),
-    [ChainId.FANTOM_TESTNET]: new Token(ChainId.FANTOM_TESTNET, USDT_ADDRESS[ChainId.FANTOM_TESTNET], 6, 'USDT', 'USD Tether'),
+    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, USDT_ADDRESS[ChainId.ETHEREUM], 6, "USDT", "USD Tether"),
+    [ChainId.BSC]: new Token(ChainId.BSC, USDT_ADDRESS[ChainId.BSC], 18, "USDT", "USD Tether"),
+    [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, USDT_ADDRESS[ChainId.BSC_TESTNET], 18, "USDT", "USD Tether"),
+    [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, USDT_ADDRESS[ChainId.AVALANCHE], 6, "USDT", "USD Tether"),
+    [ChainId.FUJI]: new Token(ChainId.FUJI, USDT_ADDRESS[ChainId.FUJI], 6, "USDT", "USD Tether"),
+    [ChainId.POLYGON]: new Token(ChainId.POLYGON, USDT_ADDRESS[ChainId.POLYGON], 6, "USDT", "USD Tether"),
+    [ChainId.MUMBAI]: new Token(ChainId.MUMBAI, USDT_ADDRESS[ChainId.MUMBAI], 6, "USDT", "USD Tether"),
+    [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, USDT_ADDRESS[ChainId.ARBITRUM], 6, "USDT", "USD Tether"),
+    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, USDT_ADDRESS[ChainId.OPTIMISM], 6, "USDT", "USD Tether"),
+    [ChainId.FANTOM]: new Token(ChainId.FANTOM, USDT_ADDRESS[ChainId.FANTOM], 6, "USDT", "USD Tether"),
+    [ChainId.FANTOM_TESTNET]: new Token(ChainId.FANTOM_TESTNET, USDT_ADDRESS[ChainId.FANTOM_TESTNET], 6, "USDT", "USD Tether"),
 }
 
 // prettier-ignore
@@ -193,41 +193,41 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
 }
 
 export const SGETH: { [chainId: number]: Token } = {
-    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, SGETH_ADDRESS[ChainId.ETHEREUM], 18, 'SGETH', 'SGETH'),
-    [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, SGETH_ADDRESS[ChainId.ARBITRUM], 18, 'SGETH', 'SGETH'),
-    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, SGETH_ADDRESS[ChainId.OPTIMISM], 18, 'SGETH', 'SGETH'),
+    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, SGETH_ADDRESS[ChainId.ETHEREUM], 18, "SGETH", "SGETH"),
+    [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, SGETH_ADDRESS[ChainId.ARBITRUM], 18, "SGETH", "SGETH"),
+    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, SGETH_ADDRESS[ChainId.OPTIMISM], 18, "SGETH", "SGETH"),
 }
 
 export const USDD: { [chainId: number]: Token } = {
-    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, USDD_ADDRESS[ChainId.ETHEREUM], 18, 'USDD', 'USDD'),
-    [ChainId.BSC]: new Token(ChainId.BSC, USDD_ADDRESS[ChainId.BSC], 18, 'USDD', 'USDD'),
-    [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, USDD_ADDRESS[ChainId.BSC_TESTNET], 18, 'USDD', 'USDD'),
+    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, USDD_ADDRESS[ChainId.ETHEREUM], 18, "USDD", "USDD"),
+    [ChainId.BSC]: new Token(ChainId.BSC, USDD_ADDRESS[ChainId.BSC], 18, "USDD", "USDD"),
+    [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, USDD_ADDRESS[ChainId.BSC_TESTNET], 18, "USDD", "USDD"),
 }
 
 const FRAX_DECIMALS = 18
 export const FRAX: { [chainId: number]: Token } = {
-    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, FRAX_ADDRESS[ChainId.ETHEREUM], FRAX_DECIMALS, 'FRAX', 'FRAX'),
-    [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, FRAX_ADDRESS[ChainId.AVALANCHE], FRAX_DECIMALS, 'FRAX', 'FRAX'),
-    [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, FRAX_ADDRESS[ChainId.ARBITRUM], FRAX_DECIMALS, 'FRAX', 'FRAX'),
-    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, FRAX_ADDRESS[ChainId.OPTIMISM], FRAX_DECIMALS, 'FRAX', 'FRAX'),
+    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, FRAX_ADDRESS[ChainId.ETHEREUM], FRAX_DECIMALS, "FRAX", "FRAX"),
+    [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, FRAX_ADDRESS[ChainId.AVALANCHE], FRAX_DECIMALS, "FRAX", "FRAX"),
+    [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, FRAX_ADDRESS[ChainId.ARBITRUM], FRAX_DECIMALS, "FRAX", "FRAX"),
+    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, FRAX_ADDRESS[ChainId.OPTIMISM], FRAX_DECIMALS, "FRAX", "FRAX"),
 }
 const SUSD_DECIMALS = 18
 export const SUSD: { [chainId: number]: Token } = {
-    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, SUSD_ADDRESS[ChainId.ETHEREUM], SUSD_DECIMALS, 'SUSD', 'SUSD'),
-    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, SUSD_ADDRESS[ChainId.OPTIMISM], SUSD_DECIMALS, 'SUSD', 'SUSD'),
+    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, SUSD_ADDRESS[ChainId.ETHEREUM], SUSD_DECIMALS, "SUSD", "SUSD"),
+    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, SUSD_ADDRESS[ChainId.OPTIMISM], SUSD_DECIMALS, "SUSD", "SUSD"),
 }
 
 const LUSD_DECIMALS = 18
 export const LUSD: { [chainId: number]: Token } = {
-    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, LUSD_ADDRESS[ChainId.ETHEREUM], LUSD_DECIMALS, 'LUSD', 'LUSD'),
-    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, LUSD_ADDRESS[ChainId.OPTIMISM], LUSD_DECIMALS, 'LUSD', 'LUSD'),
+    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, LUSD_ADDRESS[ChainId.ETHEREUM], LUSD_DECIMALS, "LUSD", "LUSD"),
+    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, LUSD_ADDRESS[ChainId.OPTIMISM], LUSD_DECIMALS, "LUSD", "LUSD"),
 }
 
 const MAI_DECIMALS = 18
 export const MAI: { [chainId: number]: Token } = {
-    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, MAI_ADDRESS[ChainId.ETHEREUM], MAI_DECIMALS, 'MAI', 'MAI'),
-    [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, MAI_ADDRESS[ChainId.AVALANCHE], MAI_DECIMALS, 'MAI', 'MAI'),
-    [ChainId.POLYGON]: new Token(ChainId.POLYGON, MAI_ADDRESS[ChainId.POLYGON], MAI_DECIMALS, 'MAI', 'MAI'),
-    [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, MAI_ADDRESS[ChainId.ARBITRUM], MAI_DECIMALS, 'MAI', 'MAI'),
-    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, MAI_ADDRESS[ChainId.OPTIMISM], MAI_DECIMALS, 'MAI', 'MAI'),
+    [ChainId.ETHEREUM]: new Token(ChainId.ETHEREUM, MAI_ADDRESS[ChainId.ETHEREUM], MAI_DECIMALS, "MAI", "MAI"),
+    [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, MAI_ADDRESS[ChainId.AVALANCHE], MAI_DECIMALS, "MAI", "MAI"),
+    [ChainId.POLYGON]: new Token(ChainId.POLYGON, MAI_ADDRESS[ChainId.POLYGON], MAI_DECIMALS, "MAI", "MAI"),
+    [ChainId.ARBITRUM]: new Token(ChainId.ARBITRUM, MAI_ADDRESS[ChainId.ARBITRUM], MAI_DECIMALS, "MAI", "MAI"),
+    [ChainId.OPTIMISM]: new Token(ChainId.OPTIMISM, MAI_ADDRESS[ChainId.OPTIMISM], MAI_DECIMALS, "MAI", "MAI"),
 }

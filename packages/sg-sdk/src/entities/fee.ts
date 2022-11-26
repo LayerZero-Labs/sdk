@@ -1,7 +1,7 @@
-import { CurrencyAmount, Fraction } from './fractions'
-import { invariant as assert } from '../utils/invariantHelper'
-import JSBI from 'jsbi'
-import { Currency } from './currency'
+import { CurrencyAmount, Fraction } from "./fractions"
+import { invariant as assert } from "../utils/invariantHelper"
+import JSBI from "jsbi"
+import { Currency } from "./currency"
 
 export interface FeeObj {
     eqFee: CurrencyAmount
@@ -15,7 +15,7 @@ interface FeeLibrary {
 }
 //StargateFeeLibraryV01
 export interface FeeLibraryV01 extends FeeLibrary {
-    version: '1.0.0' // `1.${number}.${number}`
+    version: "1.0.0" // `1.${number}.${number}`
     lpFeeRate: Fraction
     protocolFeeRate: Fraction
     eqFeeRate: Fraction
@@ -24,7 +24,7 @@ export interface FeeLibraryV01 extends FeeLibrary {
 
 //StargateFeeLibraryV02
 export interface FeeLibraryV02 extends FeeLibrary {
-    version: '2.0.0' // `2.${number}.${number}`
+    version: "2.0.0" // `2.${number}.${number}`
     delta1Rate: Fraction
     delta2Rate: Fraction
     lambda1Rate: Fraction
@@ -36,7 +36,7 @@ export interface FeeLibraryV02 extends FeeLibrary {
 
 //StargateFeeLibraryV03
 export interface FeeLibraryV03 extends FeeLibrary {
-    version: '3.0.0' // `3.${number}.${number}`
+    version: "3.0.0" // `3.${number}.${number}`
     delta1Rate: Fraction
     delta2Rate: Fraction
     lambda1Rate: Fraction
@@ -47,7 +47,7 @@ export interface FeeLibraryV03 extends FeeLibrary {
 }
 
 export const FeeLibraryV02Defaults: FeeLibraryV02 = {
-    version: '2.0.0',
+    version: "2.0.0",
     delta1Rate: new Fraction(60, 100),
     delta2Rate: new Fraction(5, 100),
     lambda1Rate: new Fraction(40, 10000),
@@ -58,7 +58,7 @@ export const FeeLibraryV02Defaults: FeeLibraryV02 = {
 }
 
 export const FeeLibraryV03Defaults: FeeLibraryV03 = {
-    version: '3.0.0',
+    version: "3.0.0",
     delta1Rate: new Fraction(60, 100),
     delta2Rate: new Fraction(5, 100),
     lambda1Rate: new Fraction(40, 10000),
@@ -113,19 +113,19 @@ export class FeeV02 extends Fee {
     ): FeeObj {
         if (!_idealBalance.currency.equals(this.liquidityToken)) console.log(_idealBalance.currency, this.liquidityToken)
 
-        assert(_idealBalance.currency.equals(this.liquidityToken), 'LIQUIDITY')
-        assert(_beforeBalance.currency.equals(this.liquidityToken), 'LIQUIDITY')
-        assert(_poolTokenBalance.currency.equals(this.token), 'TOKEN')
-        assert(_poolTotalLiquidity.currency.equals(this.liquidityToken), 'LIQUIDITY')
-        assert(_eqFeePool.currency.equals(this.liquidityToken), 'LIQUIDITY')
-        assert(_amount.currency.equals(this.token), 'TOKEN')
+        assert(_idealBalance.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(_beforeBalance.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(_poolTokenBalance.currency.equals(this.token), "TOKEN")
+        assert(_poolTotalLiquidity.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(_eqFeePool.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(_amount.currency.equals(this.token), "TOKEN")
 
         const idealBalance = this.amountSDtoLD(_idealBalance)
         const beforeBalance = this.amountSDtoLD(_beforeBalance)
         const poolTotalLiquidity = this.amountSDtoLD(_poolTotalLiquidity)
         const eqFeePool = this.amountSDtoLD(_eqFeePool)
         // console.log('beforeBalance', beforeBalance, _amount)
-        assert(beforeBalance.greaterThan(_amount) || beforeBalance.equalTo(_amount), 'not enough balance')
+        assert(beforeBalance.greaterThan(_amount) || beforeBalance.equalTo(_amount), "not enough balance")
 
         const fee = <FeeLibraryV02>this.fee
         let protocolFee = _amount.multiply(fee.protocolFeeRate)
@@ -157,19 +157,19 @@ export class FeeV03 extends Fee {
     ): FeeObj {
         if (!_idealBalance.currency.equals(this.liquidityToken)) console.log(_idealBalance.currency, this.liquidityToken)
 
-        assert(_idealBalance.currency.equals(this.liquidityToken), 'LIQUIDITY')
-        assert(_beforeBalance.currency.equals(this.liquidityToken), 'LIQUIDITY')
-        assert(_poolTokenBalance.currency.equals(this.token), 'TOKEN')
-        assert(_poolTotalLiquidity.currency.equals(this.liquidityToken), 'LIQUIDITY')
-        assert(_eqFeePool.currency.equals(this.liquidityToken), 'LIQUIDITY')
-        assert(_amount.currency.equals(this.token), 'TOKEN')
+        assert(_idealBalance.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(_beforeBalance.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(_poolTokenBalance.currency.equals(this.token), "TOKEN")
+        assert(_poolTotalLiquidity.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(_eqFeePool.currency.equals(this.liquidityToken), "LIQUIDITY")
+        assert(_amount.currency.equals(this.token), "TOKEN")
 
         const idealBalance = this.amountSDtoLD(_idealBalance)
         const beforeBalance = this.amountSDtoLD(_beforeBalance)
         const poolTotalLiquidity = this.amountSDtoLD(_poolTotalLiquidity)
         const eqFeePool = this.amountSDtoLD(_eqFeePool)
         // console.log('beforeBalance', beforeBalance, _amount)
-        assert(beforeBalance.greaterThan(_amount) || beforeBalance.equalTo(_amount), 'not enough balance')
+        assert(beforeBalance.greaterThan(_amount) || beforeBalance.equalTo(_amount), "not enough balance")
 
         const fee = <FeeLibraryV03>this.fee
         let protocolFee = _amount.multiply(fee.protocolFeeRate)
@@ -270,8 +270,8 @@ function getTrapezoidArea(
     _xStart: Fraction,
     _xEnd: Fraction
 ): CurrencyAmount {
-    assert(_xEnd.greaterThan(_xLowerBound) || _xEnd.equalTo(_xLowerBound), 'out of bounds')
-    assert(_xStart.lessThan(_xUpperBound) || _xStart.equalTo(_xUpperBound), 'out of bounds')
+    assert(_xEnd.greaterThan(_xLowerBound) || _xEnd.equalTo(_xLowerBound), "out of bounds")
+    assert(_xStart.lessThan(_xUpperBound) || _xStart.equalTo(_xUpperBound), "out of bounds")
 
     const xBoundWidth = _xUpperBound.subtract(_xLowerBound)
     const yStart = _xUpperBound.subtract(_xStart).multiply(_lambda).divide(xBoundWidth).add(_yOffset)

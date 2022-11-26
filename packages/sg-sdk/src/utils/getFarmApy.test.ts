@@ -1,10 +1,10 @@
-import { getFarmApr, getFarmApy, getTokenFarmApr, getTokenFarmApy } from './getFarmApy'
-import farmingData from './data/farming.json'
-import { CurrencyAmount } from '../entities/fractions'
-import { ChainId } from '@layerzerolabs/lz-sdk'
-import { USDC, LPTOKEN, STG } from '../constants/token'
-import { PoolId } from '../enums'
-import JSBI from 'jsbi'
+import { getFarmApr, getFarmApy, getTokenFarmApr, getTokenFarmApy } from "./getFarmApy"
+import farmingData from "./data/farming.json"
+import { CurrencyAmount } from "../entities/fractions"
+import { ChainId } from "@layerzerolabs/lz-sdk"
+import { USDC, LPTOKEN, STG } from "../constants/token"
+import { PoolId } from "../enums"
+import JSBI from "jsbi"
 
 function approx(a: number, b: number, precision: number = 1e-10) {
     if (a == b && a == 0) {
@@ -13,13 +13,13 @@ function approx(a: number, b: number, precision: number = 1e-10) {
     return (2 * Math.abs(a - b)) / (a + b) <= precision
 }
 
-describe('getApy', () => {
+describe("getApy", () => {
     const data = farmingData.farming
 
     const chainId = ChainId.FUJI
     const poolId = PoolId.USDC
 
-    it('Expected Apr should match', () => {
+    it("Expected Apr should match", () => {
         data.forEach((testCase) => {
             // total allocation is 1 per pool contract per chain
             const { stgPrice, stgPerBlock, avgBlockTime, alloc, expectedApr, totalLiquidity, totalFarmLp, totalLp } = testCase
@@ -36,7 +36,7 @@ describe('getApy', () => {
         })
     })
 
-    it.only('Expected Apr should match NEW', () => {
+    it.only("Expected Apr should match NEW", () => {
         // total allocation is 1 per pool contract per chain
         // const {stgPrice, stgPerBlock, avgBlockTime, alloc, expectedApr, totalLiquidity, totalFarmLp, totalLp} = testCase
         const ethPoolTestCases = [
@@ -127,7 +127,7 @@ describe('getApy', () => {
         }
     })
 
-    it('Expected Apy should match', () => {
+    it("Expected Apy should match", () => {
         data.forEach((testCase) => {
             // total allocation is 1 per pool contract per chain
             const { stgPrice, stgPerBlock, avgBlockTime, alloc, expectedApy, totalLiquidity, totalFarmLp, totalLp } = testCase

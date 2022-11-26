@@ -8,7 +8,6 @@ module.exports = {
                 tabWidth: 4,
                 useTabs: false,
                 trailingComma: 'es5',
-                singleQuote: true,
             },
         },
         {
@@ -19,7 +18,6 @@ module.exports = {
                 tabWidth: 4,
                 useTabs: false,
                 trailingComma: 'es5',
-                singleQuote: true,
             },
         },
     ],

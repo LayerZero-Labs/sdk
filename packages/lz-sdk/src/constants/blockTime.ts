@@ -1,4 +1,4 @@
-import { ChainId } from '../enums'
+import { ChainId } from "../enums"
 
 // in seconds
 export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]?: number } = {

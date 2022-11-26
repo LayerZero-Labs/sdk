@@ -1,4 +1,4 @@
-import { getAddress } from '@ethersproject/address'
+import { getAddress } from "@ethersproject/address"
 
 /**
  * Validates an address and returns the parsed (checksummed) version of that address

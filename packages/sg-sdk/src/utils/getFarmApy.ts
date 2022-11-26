@@ -1,7 +1,7 @@
-import { YEAR } from './constants'
-import { CurrencyAmount, Percent } from '../entities/fractions'
-import { Token } from '../entities/token'
-import JSBI from 'jsbi'
+import { YEAR } from "./constants"
+import { CurrencyAmount, Percent } from "../entities/fractions"
+import { Token } from "../entities/token"
+import JSBI from "jsbi"
 
 /**
  * Get APR for a Farm

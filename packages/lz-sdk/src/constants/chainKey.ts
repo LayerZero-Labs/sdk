@@ -1,4 +1,4 @@
-import { ChainId, ChainKey } from '../enums'
+import { ChainId, ChainKey } from "../enums"
 
 export const CHAIN_KEY: { [chainId in ChainId]: ChainKey } = {
     [ChainId.ETHEREUM]: ChainKey.ETHEREUM,
