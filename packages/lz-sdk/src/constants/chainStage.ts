@@ -2,6 +2,7 @@ import { ChainKey, ChainStage } from "../enums"
 
 export const CHAIN_STAGE: { [chainKey in ChainKey]: ChainStage } = {
     [ChainKey.ETHEREUM]: ChainStage.MAINNET,
+    [ChainKey.RINKEBY]: ChainStage.TESTNET,
     [ChainKey.GOERLI]: ChainStage.TESTNET,
     [ChainKey.GOERLI_SANDBOX]: ChainStage.TESTNET_SANDBOX,
     [ChainKey.BSC]: ChainStage.MAINNET,
@@ -14,8 +15,10 @@ export const CHAIN_STAGE: { [chainKey in ChainKey]: ChainStage } = {
     [ChainKey.MUMBAI]: ChainStage.TESTNET,
     [ChainKey.MUMBAI_SANDBOX]: ChainStage.TESTNET_SANDBOX,
     [ChainKey.ARBITRUM]: ChainStage.MAINNET,
+    [ChainKey.ARBITRUM_RINKEBY]: ChainStage.TESTNET,
     [ChainKey.ARBITRUM_GOERLI]: ChainStage.TESTNET,
     [ChainKey.OPTIMISM]: ChainStage.MAINNET,
+    [ChainKey.OPTIMISM_KOVAN]: ChainStage.TESTNET,
     [ChainKey.OPTIMISM_GOERLI]: ChainStage.TESTNET,
     [ChainKey.FANTOM]: ChainStage.MAINNET,
     [ChainKey.FANTOM_TESTNET]: ChainStage.TESTNET,

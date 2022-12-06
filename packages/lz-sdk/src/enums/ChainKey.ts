@@ -1,5 +1,6 @@
 export enum ChainKey {
     ETHEREUM = "ethereum",
+    RINKEBY = "rinkeby",
     GOERLI = "goerli",
     GOERLI_SANDBOX = "goerli-sandbox",
     BSC = "bsc",
@@ -12,8 +13,10 @@ export enum ChainKey {
     MUMBAI = "mumbai",
     MUMBAI_SANDBOX = "mumbai-sandbox",
     ARBITRUM = "arbitrum",
+    ARBITRUM_RINKEBY = "arbitrum-rinkeby",
     ARBITRUM_GOERLI = "arbitrum-goerli",
     OPTIMISM = "optimism",
+    OPTIMISM_KOVAN = "optimism-kovan",
     OPTIMISM_GOERLI = "optimism-goerli",
     FANTOM = "fantom",
     FANTOM_TESTNET = "fantom-testnet",

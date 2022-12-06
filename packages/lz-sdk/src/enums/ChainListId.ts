@@ -1,5 +1,6 @@
 export enum ChainListId {
     ETHEREUM = 1,
+    RINKEBY = 4,
     GOERLI = 5,
     GOERLI_SANDBOX = 5,
     BSC = 56,
@@ -12,8 +13,10 @@ export enum ChainListId {
     MUMBAI = 80001,
     MUMBAI_SANDBOX = 80001,
     ARBITRUM = 42161,
+    ARBITRUM_RINKEBY = 421611,
     ARBITRUM_GOERLI = 421613,
     OPTIMISM = 10,
+    OPTIMISM_KOVAN = 69,
     OPTIMISM_GOERLI = 420,
     FANTOM = 250,
     FANTOM_TESTNET = 4002,
