@@ -53,6 +53,8 @@ export const LZ_ADDRESS: { [chainKey in ChainKey]?: string } = {
   [ChainKey.AURORA]: '',
   [ChainKey.AURORA_TESTNET]: '',
   [ChainKey.AURORA_TESTNET_SANDBOX]: '',
+  [ChainKey.METIS]: '0x9740FF91F1985D8d2B71494aE1A2f723bb3Ed9E4',
+  [ChainKey.METIS_TESTNET]: "0xae92d5aD7583AD66E49A0c67BAd18F6ba52dDDc1",
 }
 
 export const LZ_RELAYER: { [chainKey in ChainKey]?: string } = {
@@ -131,10 +133,12 @@ export const LZ_RELAYER_V2: { [chainKey in ChainKey]?: string } = {
   [ChainKey.MOONBEAM]: '0xccCDD23E11F3f47C37fC0a7C3BE505901912C6Cc',
   [ChainKey.ARBITRUM_GOERLI]: '0x79c2127C2cF1c41cdd0E24e6Ba70b6F3308B7B79',
   [ChainKey.OPTIMISM_GOERLI]: '0x7F417F2192B89Cf93b8c4Ee01d558883A0AD7B47',
+  [ChainKey.METIS]: '0x5B19bd330A84c049b62D5B0FC2bA120217a18C1C',
+  [ChainKey.METIS_TESTNET]: '0xb23b28012ee92E8dE39DEb57Af31722223034747',
 
 }
 
-export const LZ_ULTRA_LIGHT_NODE_V1: { [chainKey in ChainKey]: string } = {
+export const LZ_ULTRA_LIGHT_NODE_V1: { [chainKey in ChainKey]?: string } = {
   [ChainKey.ETHEREUM]: '0x5B19bd330A84c049b62D5B0FC2bA120217a18C1C',
   [ChainKey.RINKEBY]: '0x3363DEB8366A4302349EB26809F9971A1e33921a',
   [ChainKey.RINKEBY_SANDBOX]: '0x382FCC69B04866A27Fc170A8C8dFB16Eee383755',
@@ -259,5 +263,7 @@ export const LZ_ULTRA_LIGHT_NODE_V2: { [chainKey in ChainKey]: string } = {
   [ChainKey.AURORA_TESTNET_SANDBOX]: '',
   [ChainKey.APTOS]: '',
   [ChainKey.APTOS_TESTNET]: '',
-  [ChainKey.APTOS_TESTNET_SANDBOX]: ''
+  [ChainKey.APTOS_TESTNET_SANDBOX]: '',
+  [ChainKey.METIS]: '0x38dE71124f7a447a01D67945a51eDcE9FF491251',
+  [ChainKey.METIS_TESTNET]: "0x533fB43e6808D9634CC0DD0c6c1195e8921D4FCC",
 }
