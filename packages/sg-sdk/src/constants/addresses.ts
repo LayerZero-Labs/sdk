@@ -19,6 +19,7 @@ export const ROUTER_ADDRESS: { [chainId: number]: string } = {
     [ChainId.OPTIMISM_KOVAN]: "0xCC68641528B948642bDE1729805d6cf1DECB0B00",
     [ChainId.FANTOM]: "0xAf5191B0De278C7286d6C7CC6ab6BB8A73bA2Cd6",
     [ChainId.FANTOM_TESTNET]: "0xa73b0a56B29aD790595763e71505FCa2c1abb77f",
+    [ChainId.METIS_TESTNET]: "0x62273145f80EB808EeF539Ed3ea21f4440CEBB18",
 }
 
 export const ROUTER_ETH_ADDRESS: { [chainId: number]: string } = {
@@ -86,6 +87,12 @@ export const FARM_ADDRESS: { [chainId: number]: string } = {
     [ChainId.OPTIMISM_KOVAN]: "0x03e047c0D17c497fCfb5fEe3594f0610af5de36F",
     [ChainId.FANTOM]: "0x224D8Fd7aB6AD4c6eb4611Ce56EF35Dec2277F03",
     [ChainId.FANTOM_TESTNET]: "0x60caC60d0Ee864925Bb44c30805F7fC850f5a8aE",
+}
+
+export const FARM_TIME_ADDRESS: { [chainId: number]: string } = {
+    [ChainId.GOERLI]: "0xF41017643605f31481505F8b3FE8509e78448397",
+    [ChainId.BSC_TESTNET]: "0x7C9D5A7A483a803b3Beeb456fF36F0A52871052b",
+    [ChainId.METIS_TESTNET]: "0x7C9D5A7A483a803b3Beeb456fF36F0A52871052b",
 }
 
 export const BONDING_ADDRESS: { [tokenSymbol in TokenSymbol]?: { [chainId: number]: string } } = {

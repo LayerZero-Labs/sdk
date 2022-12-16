@@ -1618,11 +1618,6 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@layerzerolabs/lz-sdk@0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@layerzerolabs/lz-sdk/-/lz-sdk-0.0.2.tgz#275fc48ef67f944cdc7140fc47248c7d5263bff3"
-  integrity sha512-SdQ+kjqRhVMV0pwsGSmQdhO7RJGGQzUk1cGDMCeOJ0dSjC8luDf24nB380oKZhZmr4PW61DO7fSIpRnLhfK/IA==
-
 "@lerna/add@4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@lerna/add/-/add-4.0.0.tgz#c36f57d132502a57b9e7058d1548b7a565ef183f"
