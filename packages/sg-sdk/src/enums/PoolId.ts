@@ -17,4 +17,5 @@ export enum PoolId {
     SUSD = 14,
     LUSD = 15,
     MAI = 16,
+    USDTm = 19,
 }

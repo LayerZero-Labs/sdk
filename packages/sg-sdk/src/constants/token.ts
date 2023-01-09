@@ -17,6 +17,7 @@ import {
     SUSD_ADDRESS,
     LUSD_ADDRESS,
     MAI_ADDRESS,
+    USDT_METIS_ADDRESS,
 } from "./addresses"
 import * as TEST from "./testToken"
 import { PoolId } from "../enums"
@@ -142,6 +143,10 @@ export const USDT: { [chainId: number]: Token } = {
     [ChainId.FANTOM_TESTNET]: new Token(ChainId.FANTOM_TESTNET, USDT_ADDRESS[ChainId.FANTOM_TESTNET], 6, "USDT", "USD Tether"),
 }
 
+export const USDTm: { [chainId: number]: Token } = {
+    [ChainId.GOERLI]: new Token(ChainId.GOERLI, USDT_METIS_ADDRESS[ChainId.GOERLI], 6, "USDT", "USD Tether"),
+}
+
 // prettier-ignore
 export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
     ...TEST.LPTOKEN,
@@ -156,11 +161,15 @@ export const LPTOKEN: { [chainId: number]: { [poolId: number]: Token } } = {
         [PoolId.DAI]: new Token(ChainId.ETHEREUM, POOL_ADDRESS[TokenSymbol.DAI][ChainId.ETHEREUM], DAI_SHARE_DECIMALS, "S*DAI", "STG-DAI LP"),
         [PoolId.MAI]: new Token(ChainId.ETHEREUM, POOL_ADDRESS[TokenSymbol.MAI][ChainId.ETHEREUM], MAI_SHARE_DECIMALS, "S*MAI", "STG-MAI LP"),
     },
-    [ChainId.RINKEBY]: {
-        [PoolId.USDC]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDC][ChainId.RINKEBY], 6, "S*USDC", "STG-USDC LP"),
-        [PoolId.USDT]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDT][ChainId.RINKEBY], 6, "S*USDT", "STG-USDT LP"),
-        [PoolId.USDD]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDD][ChainId.RINKEBY], USDD_SHARE_DECIMALS, "S*USDD", "STG-USDD LP"),
-        [PoolId.SGETH]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.SGETH][ChainId.RINKEBY], SGETH_SHARE_DECIMALS, "S*SGETH", "STG-SGETH LP"),
+    // [ChainId.RINKEBY]: {
+    //     [PoolId.USDC]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDC][ChainId.RINKEBY], 6, "S*USDC", "STG-USDC LP"),
+    //     [PoolId.USDT]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDT][ChainId.RINKEBY], 6, "S*USDT", "STG-USDT LP"),
+    //     [PoolId.USDD]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.USDD][ChainId.RINKEBY], USDD_SHARE_DECIMALS, "S*USDD", "STG-USDD LP"),
+    //     [PoolId.SGETH]: new Token(ChainId.RINKEBY, POOL_ADDRESS[TokenSymbol.SGETH][ChainId.RINKEBY], SGETH_SHARE_DECIMALS, "S*SGETH", "STG-SGETH LP"),
+    // },
+    [ChainId.GOERLI]: {
+        [PoolId.USDT]: new Token(ChainId.GOERLI, POOL_ADDRESS[TokenSymbol.USDT][ChainId.GOERLI], 6, "S*USDT", "STG-USDT LP"),
+        [PoolId.USDTm]: new Token(ChainId.GOERLI, POOL_ADDRESS[TokenSymbol.USDTm][ChainId.GOERLI], 6, "S*USDT", "STG-USDT LP"),
     },
     [ChainId.BSC]: {
         [PoolId.BUSD]: new Token(ChainId.BSC, POOL_ADDRESS[TokenSymbol.BUSD][ChainId.BSC], 6, "S*BUSD", "STG-BUSD LP"),

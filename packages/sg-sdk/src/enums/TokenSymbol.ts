@@ -18,4 +18,5 @@ export enum TokenSymbol {
     FRAX = "FRAX",
     LUSD = "LUSD",
     MAI = "MAI",
+    USDTm = "USDTm",
 }
