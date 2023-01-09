@@ -1,4 +1,3 @@
-import { Currency } from "./currency"
 import { invariant as assert } from "../utils/invariantHelper"
 
 /**
@@ -44,5 +43,5 @@ export abstract class BaseCurrency {
      * Returns whether this currency is functionally equivalent to the other currency
      * @param other the other currency
      */
-    public abstract equals(other: Currency): boolean
+    public abstract equals(other: BaseCurrency): boolean
 }

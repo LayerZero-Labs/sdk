@@ -1,6 +1,5 @@
 import { validateAndParseAddress } from "../utils/validateAndParseAddress"
 import { BaseCurrency } from "./baseCurrency"
-import { Currency } from "./currency"
 
 /**
  * Represents an ERC20 token with a unique address and some metadata.
@@ -20,7 +19,7 @@ export class Token extends BaseCurrency {
      * Returns true if the two tokens are equivalent, i.e. have the same chainId and address.
      * @param other other token to compare
      */
-    public equals(other: Currency): boolean {
+    public equals(other: BaseCurrency): other is Token {
         if (!(other instanceof Token)) return false
         return this.chainId === other.chainId && this.address === other.address
     }
