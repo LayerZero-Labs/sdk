@@ -1,5 +1,4 @@
 import { BaseCurrency } from "./baseCurrency"
-import { Currency } from "./currency"
 
 /**
  * Represents an Coin with some metadata.
@@ -12,7 +11,7 @@ export class Coin extends BaseCurrency {
      * Returns true if the two Coins are equivalent, i.e. have the same chainId
      * @param other other currency to compare
      */
-    public equals(other: Currency): boolean {
+    public equals(other: BaseCurrency): other is Coin {
         if (!(other instanceof Coin)) return false
         return this.chainId === other.chainId
     }
