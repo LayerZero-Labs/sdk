@@ -63,4 +63,7 @@ export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]: number } = {
   [ChainId.APTOS]: 1,
   [ChainId.APTOS_TESTNET]: 1,
   [ChainId.APTOS_TESTNET_SANDBOX]: 1,
+  // todo: verify
+  [ChainId.METIS]: 1,  
+  [ChainId.METIS_TESTNET]: 1,  
 }

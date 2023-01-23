@@ -159,4 +159,6 @@ export const RPCS: { [chainId in ChainId]: string[] } = {
   [ChainId.APTOS]: ['https://fullnode.devnet.aptoslabs.com/v1'],
   [ChainId.APTOS_TESTNET]: ['https://fullnode.devnet.aptoslabs.com/v1'],
   [ChainId.APTOS_TESTNET_SANDBOX]: ['https://fullnode.devnet.aptoslabs.com/v1'],
+  [ChainId.METIS]: ['https://andromeda.metis.io/?owner=1088'],
+  [ChainId.METIS_TESTNET]: ['https://goerli.gateway.metisdevops.link'],
 }

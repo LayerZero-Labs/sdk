@@ -60,4 +60,6 @@ export enum ChainId {
     AURORA = 129,
     AURORA_TESTNET = 10129,
     AURORA_TESTNET_SANDBOX = 20129,
+    METIS = 151,
+    METIS_TESTNET = 10151,
 }

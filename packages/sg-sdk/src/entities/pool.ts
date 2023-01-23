@@ -7,7 +7,6 @@ import { SHARE_DECIMALS } from "../constants/pool"
 import { invariant as assert } from "../utils/invariantHelper"
 import { FeeObj, FeeV01, FeeV02 } from "./fee"
 import { Currency } from "./currency"
-import { LPTOKEN } from "../constants/token"
 
 //Pool Fee
 export interface PoolFee {
@@ -34,8 +33,8 @@ export class Pool {
     public readonly poolFee: PoolFee
     public readonly chainPaths: ChainPaths
 
-    public constructor(token: Currency, poolFee: PoolFee, chainPaths: ChainPaths) {
-        this.liquidityToken = getLpToken(token)
+    public constructor(lpToken: Token, token: Currency, poolFee: PoolFee, chainPaths: ChainPaths) {
+        this.liquidityToken = lpToken
         this.token = token
         this.poolFee = poolFee
         this.chainPaths = chainPaths
@@ -252,11 +251,4 @@ export class Pool {
             lpPrice.multiply(JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(token.decimals))).divide(lpPrice.decimalScale).quotient
         )
     }
-}
-
-export function getLpToken(token: Currency) {
-    const poolId = PoolId[token.symbol as any] as any
-    const lpToken = LPTOKEN[token.chainId][poolId]
-    assert(lpToken, `No LP Token for ChainId(${token.chainId}) symbol(${token.symbol})`)
-    return lpToken
 }

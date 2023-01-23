@@ -62,4 +62,6 @@ export const CHAIN_STAGE: { [chainKey in ChainKey]: ChainStage } = {
   [ChainKey.APTOS]: ChainStage.MAINNET,
   [ChainKey.APTOS_TESTNET]: ChainStage.TESTNET,
   [ChainKey.APTOS_TESTNET_SANDBOX]: ChainStage.TESTNET_SANDBOX,
+  [ChainKey.METIS]: ChainStage.MAINNET,
+  [ChainKey.METIS_TESTNET]: ChainStage.TESTNET,
 }

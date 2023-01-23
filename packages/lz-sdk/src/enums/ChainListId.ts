@@ -60,4 +60,6 @@ export enum ChainListId {
   APTOS = 1,
   APTOS_TESTNET = 2,
   APTOS_TESTNET_SANDBOX = 3,
+  METIS = 1088,
+  METIS_TESTNET = 599,
 }

@@ -11,10 +11,15 @@ export const REVERT_REDEEM_LOCAL: { [chainId in ChainId]?: number } = {
     [ChainId.MUMBAI]: 120000,
     [ChainId.ARBITRUM]: 705000,
     [ChainId.ARBITRUM_RINKEBY]: 705000,
+    [ChainId.ARBITRUM_GOERLI]: 705000,
     [ChainId.OPTIMISM]: 120000,
     [ChainId.OPTIMISM_KOVAN]: 120000,
+    [ChainId.OPTIMISM_GOERLI]: 120000,
     [ChainId.FANTOM]: 120000,
     [ChainId.FANTOM_TESTNET]: 120000,
+    [ChainId.METIS]: 120000,
+    [ChainId.METIS_TESTNET]: 120000,
+    [ChainId.GOERLI]: 120000,
 }
 
 export const ERC20_TRANSFER: { [chainId in ChainId]?: number } = {
@@ -28,10 +33,14 @@ export const ERC20_TRANSFER: { [chainId in ChainId]?: number } = {
     [ChainId.MUMBAI]: 65000,
     [ChainId.ARBITRUM]: 390000,
     [ChainId.ARBITRUM_RINKEBY]: 390000,
+    [ChainId.ARBITRUM_GOERLI]: 390000,
     [ChainId.OPTIMISM]: 65000,
     [ChainId.OPTIMISM_KOVAN]: 65000,
+    [ChainId.OPTIMISM_GOERLI]: 65000,
     [ChainId.FANTOM]: 65000,
     [ChainId.FANTOM_TESTNET]: 65000,
+    [ChainId.METIS]: 65000,
+    [ChainId.METIS_TESTNET]: 65000,
 }
 
 export const ERC20_APPROVE: { [chainId in ChainId]?: number } = {
@@ -45,8 +54,12 @@ export const ERC20_APPROVE: { [chainId in ChainId]?: number } = {
     [ChainId.MUMBAI]: 47000,
     [ChainId.ARBITRUM]: 282000,
     [ChainId.ARBITRUM_RINKEBY]: 282000,
+    [ChainId.ARBITRUM_GOERLI]: 282000,
     [ChainId.OPTIMISM]: 47000,
     [ChainId.OPTIMISM_KOVAN]: 47000,
+    [ChainId.OPTIMISM_GOERLI]: 47000,
     [ChainId.FANTOM]: 47000,
     [ChainId.FANTOM_TESTNET]: 47000,
+    [ChainId.METIS]: 47000,
+    [ChainId.METIS_TESTNET]: 47000,
 }

@@ -4,7 +4,6 @@ import { Token } from "./token"
 import { TokenSymbol } from "../enums"
 import { ChainId } from "@layerzerolabs/lz-sdk"
 import JSBI from "jsbi"
-import { POOL_ADDRESS } from "../constants/addresses"
 import { FeeV01 } from "./fee"
 
 describe("Pool", () => {
@@ -36,18 +35,13 @@ describe("Pool", () => {
 
     describe("#tokens", () => {
         it("#token", () => {
-            expect(new Pool(token, poolFee, chainPaths).token).toEqual(token)
-        })
-        it("#liquidityToken", () => {
-            expect(new Pool(token, poolFee, chainPaths).liquidityToken).toEqual(
-                new Token(chainId, POOL_ADDRESS[TokenSymbol.USDC]![chainId], 6, "S*USDC", "STG-USDC LP")
-            )
+            expect(new Pool(liquidityToken, token, poolFee, chainPaths).token).toEqual(token)
         })
     })
 
     describe("#chainId", () => {
         it("returns correct chainId", () => {
-            expect(new Pool(token, poolFee, chainPaths).getChainId()).toEqual(chainId)
+            expect(new Pool(liquidityToken, token, poolFee, chainPaths).getChainId()).toEqual(chainId)
         })
     })
 
@@ -55,7 +49,7 @@ describe("Pool", () => {
         it("slippage too high", () => {
             // all fees are 1%
             // user swaps 100 and gets max 98  (2% fee)
-            const pool = new Pool(token, poolFee, chainPaths)
+            const pool = new Pool(liquidityToken, token, poolFee, chainPaths)
             pool.setFee(
                 new FeeV01(
                     {
@@ -90,7 +84,7 @@ describe("Pool", () => {
             // user swaps 100 and gets 98  (2% fee)
             //  sub lpFee and protocolFee and eqFee (-3%)
             //  add eqReward (+1%)
-            const pool = new Pool(token, poolFee, chainPaths)
+            const pool = new Pool(liquidityToken, token, poolFee, chainPaths)
             pool.setFee(
                 new FeeV01(
                     {
@@ -128,7 +122,7 @@ describe("Pool", () => {
         it("no fees - returns correct values", () => {
             //100:100 supply and liquidity
             //user adds 200 token and gets 200 liquidity
-            const pool = new Pool(token, poolFee, chainPaths)
+            const pool = new Pool(liquidityToken, token, poolFee, chainPaths)
             const totalSupply = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
             const totalLiquidity = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
             const tokenAmount = CurrencyAmount.fromRawAmount(token, 200e18)
@@ -142,7 +136,7 @@ describe("Pool", () => {
             // all fees are 1%
             // 100:100 supply and liquidity
             // user adds 200 token and gets 198 liquidity, 1% mint fee
-            const pool = new Pool(token, poolFee, chainPaths)
+            const pool = new Pool(liquidityToken, token, poolFee, chainPaths)
             const totalSupply = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
             const totalLiquidity = CurrencyAmount.fromRawAmount(pool.liquidityToken, 1e6)
             const tokenAmount = CurrencyAmount.fromRawAmount(token, 2e18)
@@ -157,7 +151,7 @@ describe("Pool", () => {
         it("amount > deltaCredit, capped at deltaCredit", () => {
             //available = deltaCredit = 20 token
             //user has 40 tokens (in shares) and 100 lp
-            const pool = new Pool(token, poolFee, chainPaths)
+            const pool = new Pool(liquidityToken, token, poolFee, chainPaths)
             const totalSupply = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
             const totalLiquidity = CurrencyAmount.fromRawAmount(pool.liquidityToken, 40e6)
             const deltaCredit = CurrencyAmount.fromRawAmount(pool.liquidityToken, 20e6)
@@ -176,7 +170,7 @@ describe("Pool", () => {
         it("amount <= deltaCredit", () => {
             //available = deltaCredit = 20 token
             //user has 10 tokens (in shares) and 100 lp
-            const pool = new Pool(token, poolFee, chainPaths)
+            const pool = new Pool(liquidityToken, token, poolFee, chainPaths)
             const totalSupply = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
             const totalLiquidity = CurrencyAmount.fromRawAmount(pool.liquidityToken, 10e6)
             const deltaCredit = CurrencyAmount.fromRawAmount(pool.liquidityToken, 20e6)
@@ -196,7 +190,7 @@ describe("Pool", () => {
         //todo: how much lp one should redeem
         //currently capped by swappable, need to trial and error to get a more precise amount
         it("amount <= available", () => {
-            const pool = new Pool(token, poolFee, chainPaths)
+            const pool = new Pool(liquidityToken, token, poolFee, chainPaths)
             pool.setFee(
                 new FeeV01(
                     {
@@ -232,7 +226,7 @@ describe("Pool", () => {
         })
 
         it("amount > available", () => {
-            const pool = new Pool(token, poolFee, chainPaths)
+            const pool = new Pool(liquidityToken, token, poolFee, chainPaths)
             pool.setFee(
                 new FeeV01(
                     {
@@ -273,7 +267,7 @@ describe("Pool", () => {
             it("amount <= available", () => {
                 //available = lkb+credit = 100 token
                 //user has 100 tokens (in shares) and 100 lp
-                const pool = new Pool(token, poolFee, chainPaths)
+                const pool = new Pool(liquidityToken, token, poolFee, chainPaths)
                 const totalSupply = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
                 const totalLiquidity = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
                 const lpTokenAmount = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
@@ -290,7 +284,7 @@ describe("Pool", () => {
             it("amount > available", () => {
                 //available = lkb+credit = 100 token
                 //user has 200 tokens (in shares) and 100lp
-                const pool = new Pool(token, poolFee, chainPaths)
+                const pool = new Pool(liquidityToken, token, poolFee, chainPaths)
                 const totalSupply = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
                 const totalLiquidity = CurrencyAmount.fromRawAmount(pool.liquidityToken, 200e6)
                 const lpTokenAmount = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
@@ -310,7 +304,7 @@ describe("Pool", () => {
     })
 
     describe("getPrice", function () {
-        const pool = new Pool(token, poolFee, chainPaths)
+        const pool = new Pool(liquidityToken, token, poolFee, chainPaths)
         const totalSupply = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
         const totalLiquidity = CurrencyAmount.fromRawAmount(pool.liquidityToken, 1000e6)
         const lpTokenAmount = CurrencyAmount.fromRawAmount(pool.liquidityToken, 10e6)
@@ -333,7 +327,7 @@ describe("Pool", () => {
     })
 
     describe("getPriceStatic", function () {
-        const pool = new Pool(token, poolFee, chainPaths)
+        const pool = new Pool(liquidityToken, token, poolFee, chainPaths)
         const totalSupply = CurrencyAmount.fromRawAmount(pool.liquidityToken, 100e6)
         const totalLiquidity = CurrencyAmount.fromRawAmount(pool.liquidityToken, 1000e6)
         const lpTokenAmount = CurrencyAmount.fromRawAmount(pool.liquidityToken, 10e6)
