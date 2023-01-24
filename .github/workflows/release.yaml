@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - 'release/**'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -11,9 +12,7 @@ env:
   # We require the NPM_TOKEN env variable to be set when installing dependencies
   # and for several other jobs so we keep it global
   # FIXME Remove after testing
-  # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  GITHUB_TOKEN: xxxxx
   NPM_TOKEN: xxxxxx
 
 jobs:
@@ -31,21 +30,18 @@ jobs:
           cache: 'yarn'
 
       - name: Install Dependencies
-        id: install
         run: yarn install --frozen-lockfile --prefer-offline
 
       - name: Build Packages
-        id: build
         run: yarn build
 
       - name: Test
-        id: test
         run: yarn test
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: dist
+          name: build
           path: |
             packages/*/dist/
 
@@ -64,14 +60,12 @@ jobs:
           cache: 'yarn'
 
       - name: Install Dependencies
-        id: install
         run: yarn install --frozen-lockfile --prefer-offline
 
       - name: Download build artifacts
         uses: actions/download-artifact@v3
         with:
-          name: dist
+          name: build
 
-      - name: Publish Preview to NPM
-        id: publish-npm--preview
-        run: yarn publish:dev --yes
+      - name: Publish to NPM
+        run: yarn publish:main --yes

@@ -7,18 +7,9 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
-env:
-  # We require the NPM_TOKEN env variable to be set when installing dependencies
-  # and for several other jobs so we keep it global
-  # FIXME Remove after testing
-  # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  GITHUB_TOKEN: xxxxx
-  NPM_TOKEN: xxxxxx
-
 jobs:
   test:
-    name: Test
+    name: Build & test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -31,15 +22,12 @@ jobs:
           cache: 'yarn'
 
       - name: Install Dependencies
-        id: install
         run: yarn install --frozen-lockfile --prefer-offline
 
       - name: Build Packages
-        id: build
         run: yarn build
 
       - name: Test
-        id: test
         run: yarn test
 
       - name: Upload build artifacts
