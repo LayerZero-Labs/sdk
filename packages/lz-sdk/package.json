@@ -4,7 +4,7 @@
   "license": "BUSL-1.1",
   "description": "LayerZero SDK",
   "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -23,5 +23,5 @@
   "engines": {
     "node": ">=10"
   },
-  "gitHead": "ada9583e87aba692c77f648a2bd43841f112a409"
+  "gitHead": "9747743d0351d9f038b3306f8ef2b9f95b08bffd"
 }
