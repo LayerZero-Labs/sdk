@@ -17,19 +17,19 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@ethersproject/address": "^5.0.2",
     "@layerzerolabs/lz-sdk": "*",
     "@layerzerolabs/ui-core": "^0.0.1",
-    "big.js": "^5.2.2",
-    "decimal.js-light": "^2.5.0",
-    "jsbi": "^3.1.4",
-    "toformat": "^2.0.0"
-  },
-  "devDependencies": {
-    "@types/big.js": "^4.0.5",
     "@types/jest": "^24.0.25",
     "tsdx": "^0.14.1"
+  },
+  "peerDependencies": {
+    "@ethersproject/address": "^5.0.2",
+    "@layerzerolabs/lz-sdk": "*",
+    "@layerzerolabs/ui-core": "^0.0.1",
+    "jsbi": "^3.1.4"
   },
   "engines": {
     "node": ">=10"

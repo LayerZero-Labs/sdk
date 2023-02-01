@@ -1960,10 +1960,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@layerzerolabs/ui-core@^0.0.0":
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/@layerzerolabs/ui-core/-/ui-core-0.0.0.tgz#c34ef7f04a208f1bebfe0666c47044f0f237cc33"
-  integrity sha512-hMEWczGVpF8EIrR/HdHuFoDRlq3fZFopoyOEqzdgXvOF+PHOPU48q5y/sOFTLciWemDEpJI2msQmwM/4ZmdrZA==
+"@layerzerolabs/ui-core@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@layerzerolabs/ui-core/-/ui-core-0.0.1.tgz#221daf90628af5492bfa064ab4ad2224c276b032"
+  integrity sha512-OTi7W7ashMjAzhVwsFfOMvTdvyr28P2PwNh0h7v0+gXyUJPw9c0MvEzmEuln/gOBvSN0/1SM9icozQtQVGCJdA==
   dependencies:
     big.js "^5.2.2"
     decimal.js-light "^2.5.0"
@@ -3094,11 +3094,6 @@
   integrity sha512-kVzjari1s2YVi77D3w1yuvohV2idweYXMCDzqBiVNN63TcDWrIlTVOYpqVrvbbyOE/IyzBoTKF0fdnLPEORFxA==
   dependencies:
     "@babel/types" "^7.3.0"
-
-"@types/big.js@^4.0.5":
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/@types/big.js/-/big.js-4.0.5.tgz#62c61697646269e39191f24e55e8272f05f21fc0"
-  integrity sha512-D9KFrAt05FDSqLo7PU9TDHfDgkarlwdkuwFsg7Zm4xl62tTNaz+zN+Tkcdx2wGLBbSMf8BnoMhOVeUGUaJfLKg==
 
 "@types/bignumber.js@^5.0.0":
   version "5.0.0"
