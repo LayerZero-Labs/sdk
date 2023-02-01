@@ -53,7 +53,7 @@ describe("getApy", () => {
                 // ethereum
                 allocPoint: 325,
                 avgBlockTime: 13.21448276,
-                chainId: 1,
+                chainId: ChainId.ETHEREUM,
                 rewardPrice: 0.384747,
                 stgPerBlock: 4.906029642,
                 totalAllocPoint: 1326,
@@ -68,7 +68,7 @@ describe("getApy", () => {
             {
                 allocPoint: 84,
                 avgBlockTime: 1.458,
-                chainId: 11,
+                chainId: ChainId.OPTIMISM,
                 lpBalance: 146.447991419022073661,
                 rewardPrice: 0.386418,
                 stgPerBlock: 0.03372,
@@ -84,7 +84,7 @@ describe("getApy", () => {
             {
                 allocPoint: 32,
                 avgBlockTime: 13.21448276,
-                chainId: 10,
+                chainId: ChainId.ARBITRUM,
                 lpBalance: 207.069515769678625158,
                 rewardPrice: 0.386418,
                 stgPerBlock: 2.662852115,
