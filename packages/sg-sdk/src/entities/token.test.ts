@@ -6,9 +6,7 @@ describe("Token", () => {
 
     describe("#constructor", () => {
         it("fails with invalid address", () => {
-            expect(() => new Token(3, "0xhello00000000000000000000000000000000002", 18, "TEST").address).toThrow(
-                "0xhello00000000000000000000000000000000002 is not a valid address"
-            )
+            expect(() => new Token(3, "0xhello00000000000000000000000000000000002", 18, "TEST").address).toThrow(/invalid address/)
         })
         it("fails with negative decimals", () => {
             expect(() => new Token(3, ADDRESS_ONE, -1, "TEST").address).toThrow("DECIMALS")
