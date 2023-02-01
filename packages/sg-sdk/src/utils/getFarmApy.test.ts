@@ -1,9 +1,9 @@
-import {getFarmApr, getFarmApy, getTokenFarmApr, getTokenFarmApy} from "./getFarmApy"
+import { getFarmApr, getFarmApy, getTokenFarmApr, getTokenFarmApy } from "./getFarmApy"
 import farmingData from "./data/farming.json"
-import {CurrencyAmount} from "../entities/fractions"
-import {ChainId} from "@layerzerolabs/lz-sdk"
-import {USDC, LPTOKEN, STG} from "../constants/token"
-import {PoolId} from "../enums"
+import { CurrencyAmount } from "../entities/fractions"
+import { ChainId } from "@layerzerolabs/lz-sdk"
+import { USDC, LPTOKEN, STG } from "../constants/token"
+import { PoolId } from "../enums"
 import JSBI from "jsbi"
 
 function approx(a: number, b: number, precision: number = 1e-10) {
@@ -22,16 +22,7 @@ describe("getApy", () => {
     it("Expected Apr should match", () => {
         data.forEach((testCase) => {
             // total allocation is 1 per pool contract per chain
-            const {
-                stgPrice,
-                stgPerBlock,
-                avgBlockTime,
-                alloc,
-                expectedApr,
-                totalLiquidity,
-                totalFarmLp,
-                totalLp
-            } = testCase
+            const { stgPrice, stgPerBlock, avgBlockTime, alloc, expectedApr, totalLiquidity, totalFarmLp, totalLp } = testCase
 
             const rewardPrice = CurrencyAmount.fromRawAmount(USDC[chainId], JSBI.BigInt(stgPrice * 10 ** 6))
 
@@ -62,7 +53,7 @@ describe("getApy", () => {
                 lpBalance: 1537.246218374302799112,
                 tokenPrice: 1100,
                 expectedApr: 0.6529266610153618,
-                expectedApy: 0.9211551793241914
+                expectedApy: 0.9211551793241914,
             },
             // optimism
             {
@@ -77,8 +68,7 @@ describe("getApy", () => {
                 totalSupply: 156.867969526539025598,
                 tokenPrice: 1100,
                 expectedApr: 0.14695726281950983,
-                expectedApy: 0.15830445930529802
-
+                expectedApy: 0.15830445930529802,
             },
             // arbitrum
             {
@@ -93,12 +83,11 @@ describe("getApy", () => {
                 totalSupply: 217.589492269291255445,
                 tokenPrice: 1100,
                 expectedApr: 0.33396439031848696,
-                expectedApy: 0.3964934140033758
+                expectedApy: 0.3964934140033758,
             },
         ]
 
         for (let testCase of ethPoolTestCases) {
-
             const totalFarmLp = testCase.lpBalance
             const totalLp = testCase.totalSupply
 
@@ -111,9 +100,29 @@ describe("getApy", () => {
             const totalLiq = CurrencyAmount.fromRawAmount(USDC[testCase.chainId], JSBI.BigInt(Math.round(testCase.totalLiquidity * 10 ** 6)))
             const totalFLp = CurrencyAmount.fromRawAmount(LPTOKEN[testCase.chainId][poolId], JSBI.BigInt(Math.round(totalFarmLp * 10 ** 6)))
             const totalPLp = CurrencyAmount.fromRawAmount(LPTOKEN[testCase.chainId][poolId], JSBI.BigInt(Math.round(totalLp * 10 ** 6)))
-            const apr = getTokenFarmApr(rewardPrice, rewardPerBlock, testCase.allocPoint, testCase.totalAllocPoint, testCase.avgBlockTime, totalLiq, totalFLp, totalPLp, tokenPriceSD)
+            const apr = getTokenFarmApr(
+                rewardPrice,
+                rewardPerBlock,
+                testCase.allocPoint,
+                testCase.totalAllocPoint,
+                testCase.avgBlockTime,
+                totalLiq,
+                totalFLp,
+                totalPLp,
+                tokenPriceSD
+            )
             expect(approx(apr, testCase.expectedApr, 2)).toBeTruthy()
-            const apy = getTokenFarmApy(rewardPrice, rewardPerBlock, testCase.allocPoint, testCase.totalAllocPoint, testCase.avgBlockTime, totalLiq, totalFLp, totalPLp, tokenPriceSD)
+            const apy = getTokenFarmApy(
+                rewardPrice,
+                rewardPerBlock,
+                testCase.allocPoint,
+                testCase.totalAllocPoint,
+                testCase.avgBlockTime,
+                totalLiq,
+                totalFLp,
+                totalPLp,
+                tokenPriceSD
+            )
             console.log(`chainId: ${testCase.chainId}, total apr: ${apr}, total apy: ${apy}`)
         }
     })
@@ -121,16 +130,7 @@ describe("getApy", () => {
     it("Expected Apy should match", () => {
         data.forEach((testCase) => {
             // total allocation is 1 per pool contract per chain
-            const {
-                stgPrice,
-                stgPerBlock,
-                avgBlockTime,
-                alloc,
-                expectedApy,
-                totalLiquidity,
-                totalFarmLp,
-                totalLp
-            } = testCase
+            const { stgPrice, stgPerBlock, avgBlockTime, alloc, expectedApy, totalLiquidity, totalFarmLp, totalLp } = testCase
 
             const rewardPrice = CurrencyAmount.fromRawAmount(USDC[chainId], JSBI.BigInt(stgPrice * 10 ** 6))
             const rewardPerBlock = CurrencyAmount.fromRawAmount(STG[chainId], JSBI.BigInt(stgPerBlock * 10 ** 18))
