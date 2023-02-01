@@ -1960,6 +1960,11 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@layerzerolabs/lz-sdk@*":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@layerzerolabs/lz-sdk/-/lz-sdk-0.0.10.tgz#e55c3c2889f79446829f1232002364ad29b8b2d9"
+  integrity sha512-5me1VGRX+BV1sJkToTsKdndatUPbIl6qIsHJS39ytkRCdWHdU+8xv9fSfEdtunKDijnMWYy9OQnefQOdv6joJQ==
+
 "@layerzerolabs/ui-core@^0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@layerzerolabs/ui-core/-/ui-core-0.0.1.tgz#221daf90628af5492bfa064ab4ad2224c276b032"
