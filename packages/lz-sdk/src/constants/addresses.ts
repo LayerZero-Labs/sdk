@@ -2,6 +2,7 @@ import { ChainKey } from '../enums'
 
 export const LZ_ADDRESS: { [chainKey in ChainKey]?: string } = {
   [ChainKey.ETHEREUM]: '0x66A71Dcef29A0fFBDBE3c6a460a3B5BC225Cd675',
+  [ChainKey.GOERLI]: '0xbfD2135BFfbb0B5378b56643c2Df8a87552Bfa23',
   [ChainKey.RINKEBY]: '0x79a63d6d8BBD5c6dfc774dA79bCcD948EAcb53FA',
   [ChainKey.RINKEBY_SANDBOX]: '0x0578664BCd893bF3dB651b15c1417fAD2EfE673d',
   [ChainKey.BSC]: '0x3c2269811836af69497E5F486A85D7316753cf62',
