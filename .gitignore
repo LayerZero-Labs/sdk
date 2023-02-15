@@ -15,4 +15,3 @@ artifacts
 
 # lerna
 lerna-debug.log
-.npmrc
