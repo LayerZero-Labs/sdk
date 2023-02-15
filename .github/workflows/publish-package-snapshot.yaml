@@ -48,4 +48,4 @@ jobs:
       - name: Publish snapshot versions
         # We'll publish the version under snapshot tag
         # This is important since we don't want to be publishing under latest
-        run: yarn lerna publish from-package --yes --pre-dist-tag dev
+        run: yarn lerna publish from-package --pre-dist-tag dev --no-verify-access --yes
