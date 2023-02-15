@@ -1,0 +1,54 @@
+name: Publish package snapshot
+
+on:
+  # This workflow can be triggered from the UI
+  workflow_dispatch:
+    inputs:
+      # It needs a specific package to publish as its input
+      package:
+        description: Package to publish
+        required: true
+        type: choice
+        # As we publish more packages we might want to add them here
+        options:
+          - 'packages/lz-sdk'
+          - 'packages/sg-sdk'
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        id: install
+        run: yarn install --frozen-lockfile --prefer-offline
+
+      - name: Build package
+        id: build
+        run: yarn build
+
+      - name: Create a snapshot version
+        working-directory: ${{ inputs.package }}
+        # We are not committing the snapshot version so to avoid collisions
+        # we'll use the commit hash as a part of the snapshot identifier
+        run: yarn version --prerelease --preid=dev-${{ github.sha }} --no-git-tag-version
+
+      - name: Publish snapshot versions
+        working-directory: ${{ inputs.package }}
+        # We'll publish the version under snapshot tag
+        # This is important since we don't want to be publishing under latest
+        run: run: yarn lerna publish from-package --yes --preid dev-${{ github.sha }} --pre-dist-tag dev
