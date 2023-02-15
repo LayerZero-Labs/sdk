@@ -24,7 +24,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
+          registry: "https://registry.npmjs.org"
+          always-auth: true
+          scope: "@layerzerolabs"
           cache: "yarn"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install Dependencies
         id: install
@@ -34,7 +39,10 @@ jobs:
         id: build
         run: yarn build
 
+      - name: Create snapshot versions
+        run: yarn lerna version prerelease --preid dev-${{ github.sha }} --allow-branch ${{ github.ref_name }} --yes
+
       - name: Publish snapshot versions
         # We'll publish the version under snapshot tag
         # This is important since we don't want to be publishing under latest
-        run: yarn lerna publish from-package --yes --preid dev-${{ github.sha }} --pre-dist-tag dev
+        run: yarn lerna publish from-package --yes --pre-dist-tag dev
