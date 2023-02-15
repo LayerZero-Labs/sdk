@@ -1,0 +1,52 @@
+name: Publish package snapshot
+
+# This workflow can be triggered from the UI
+on:
+  workflow_dispatch:
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          registry: "https://registry.npmjs.org"
+          always-auth: true
+          scope: "@layerzerolabs"
+          cache: "yarn"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Install Dependencies
+        id: install
+        run: yarn install --frozen-lockfile --prefer-offline
+
+      - name: Build package
+        id: build
+        run: yarn build
+
+      # Without setting up a github credentials, lerna will freak out when running lerna version
+      #
+      # We also can't skip the git commit because the publish step would freak out on uncommited changes in the repo
+      - name: Setup version commit github account
+        run: git config --global user.email "commitbot@layerzerolabs.org" && git config --global user.name "Commit Bot"
+
+      # Now we create a snapshot version (git commit and tag are also created)
+      - name: Create snapshot versions
+        run: yarn lerna version prerelease --preid dev-${{ github.sha }} --allow-branch ${{ github.ref_name }} --yes --no-push
+
+      - name: Publish snapshot versions
+        # We'll publish the version under dev tag
+        # This is important since we don't want to be publishing under latest
+        run: yarn lerna publish from-package --pre-dist-tag dev --no-verify-access --yes

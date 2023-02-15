@@ -1,0 +1,40 @@
+name: Publish packages
+
+on:
+  push:
+    branches:
+      - main
+      - "release/*"
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          cache: "yarn"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Install Dependencies
+        id: install
+        run: yarn install --frozen-lockfile --prefer-offline
+
+      - name: Build packages
+        id: build
+        run: yarn build
+
+      - name: Publish packages
+        id: publish
+        run: yarn lerna publish from-package --yes
