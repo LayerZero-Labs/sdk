@@ -1,6 +1,6 @@
 {
   "name": "@layerzerolabs/sg-sdk",
-  "version": "0.3.2-dev-efd5592f350cb025b90dedc8d88141481f3785f3.0",
+  "version": "0.3.2-dev-8426b56da1ba065ddb5412314e6861bac55a1094.0",
   "license": "BUSL-1.1",
   "description": "Stargate SDK",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@ethersproject/address": "^5.0.2",
-    "@layerzerolabs/lz-sdk": "0.0.12-dev-efd5592f350cb025b90dedc8d88141481f3785f3.0",
+    "@layerzerolabs/lz-sdk": "0.0.12-dev-8426b56da1ba065ddb5412314e6861bac55a1094.0",
     "@layerzerolabs/ui-core": "^0.0.1",
     "@types/jest": "^24.0.25",
     "tsdx": "^0.14.1"
