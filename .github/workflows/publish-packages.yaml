@@ -5,7 +5,6 @@ on:
     branches:
       - main
       - "release/*"
-      - "jan/github-actions"
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -25,6 +24,8 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: "yarn"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install Dependencies
         id: install
