@@ -61,4 +61,7 @@ export const CHAIN_LIST_ID: { [chainKey in ChainKey]?: ChainListId } = {
   [ChainKey.APTOS]: ChainListId.APTOS,
   [ChainKey.APTOS_TESTNET]: ChainListId.APTOS_TESTNET,
   [ChainKey.APTOS_TESTNET_SANDBOX]: ChainListId.APTOS_TESTNET_SANDBOX,
+  [ChainKey.COREDAO]: ChainListId.COREDAO,
+  [ChainKey.COREDAO_TESTNET]: ChainListId.COREDAO_TESTNET,
+  [ChainKey.COREDAO_TESTNET_SANDBOX]: ChainListId.COREDAO_TESTNET_SANDBOX,
 }

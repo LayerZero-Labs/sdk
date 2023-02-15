@@ -62,4 +62,7 @@ export enum ChainKey {
   APTOS_TESTNET_SANDBOX = 'aptos-testnet-sandbox',
   METIS = "metis",
   METIS_TESTNET = 'metis-testnet',
+  COREDAO = "coredao",
+  COREDAO_TESTNET = 'coredao-testnet',
+  COREDAO_TESTNET_SANDBOX = 'coredao-testnet-sandbox',
 }

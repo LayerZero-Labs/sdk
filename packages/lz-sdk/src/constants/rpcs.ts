@@ -161,4 +161,7 @@ export const RPCS: { [chainId in ChainId]: string[] } = {
   [ChainId.APTOS_TESTNET_SANDBOX]: ['https://fullnode.devnet.aptoslabs.com/v1'],
   [ChainId.METIS]: ['https://andromeda.metis.io/?owner=1088'],
   [ChainId.METIS_TESTNET]: ['https://goerli.gateway.metisdevops.link'],
+  [ChainId.COREDAO]: ['https://rpc.coredao.org'],
+  [ChainId.COREDAO_TESTNET]: ['https://rpc.test.btcs.network '],
+  [ChainId.COREDAO_TESTNET_SANDBOX]: ['https://rpc.test.btcs.network '],
 }

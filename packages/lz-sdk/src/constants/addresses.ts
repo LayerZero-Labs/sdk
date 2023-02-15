@@ -56,6 +56,9 @@ export const LZ_ADDRESS: { [chainKey in ChainKey]?: string } = {
   [ChainKey.AURORA_TESTNET_SANDBOX]: '',
   [ChainKey.METIS]: '0x9740FF91F1985D8d2B71494aE1A2f723bb3Ed9E4',
   [ChainKey.METIS_TESTNET]: "0xae92d5aD7583AD66E49A0c67BAd18F6ba52dDDc1",
+  [ChainKey.COREDAO]: '0x9740FF91F1985D8d2B71494aE1A2f723bb3Ed9E4',
+  [ChainKey.COREDAO_TESTNET]: '0x9740FF91F1985D8d2B71494aE1A2f723bb3Ed9E4',
+  [ChainKey.COREDAO_TESTNET_SANDBOX]: '',
 }
 
 export const LZ_RELAYER: { [chainKey in ChainKey]?: string } = {
@@ -109,6 +112,9 @@ export const LZ_RELAYER: { [chainKey in ChainKey]?: string } = {
   [ChainKey.AURORA]: '',
   [ChainKey.AURORA_TESTNET]: '',
   [ChainKey.AURORA_TESTNET_SANDBOX]: '',
+  [ChainKey.COREDAO]: '',
+  [ChainKey.COREDAO_TESTNET]: '',
+  [ChainKey.COREDAO_TESTNET_SANDBOX]: '',
 }
 
 export const LZ_RELAYER_V2: { [chainKey in ChainKey]?: string } = {
@@ -200,7 +206,10 @@ export const LZ_ULTRA_LIGHT_NODE_V1: { [chainKey in ChainKey]?: string } = {
   [ChainKey.AURORA_TESTNET_SANDBOX]: '',
   [ChainKey.APTOS]: '',
   [ChainKey.APTOS_TESTNET]: '',
-  [ChainKey.APTOS_TESTNET_SANDBOX]: ''
+  [ChainKey.APTOS_TESTNET_SANDBOX]: '',
+  [ChainKey.COREDAO]: '',
+  [ChainKey.COREDAO_TESTNET]: '',
+  [ChainKey.COREDAO_TESTNET_SANDBOX]: '',
 }
 
 export const LZ_ULTRA_LIGHT_NODE_V2: { [chainKey in ChainKey]: string } = {
@@ -267,4 +276,7 @@ export const LZ_ULTRA_LIGHT_NODE_V2: { [chainKey in ChainKey]: string } = {
   [ChainKey.APTOS_TESTNET_SANDBOX]: '',
   [ChainKey.METIS]: '0x38dE71124f7a447a01D67945a51eDcE9FF491251',
   [ChainKey.METIS_TESTNET]: "0x533fB43e6808D9634CC0DD0c6c1195e8921D4FCC",
+  [ChainKey.COREDAO]: '',
+  [ChainKey.COREDAO_TESTNET]: '',
+  [ChainKey.COREDAO_TESTNET_SANDBOX]: '',
 }

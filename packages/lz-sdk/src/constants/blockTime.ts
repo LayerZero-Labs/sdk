@@ -66,4 +66,7 @@ export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]: number } = {
   // todo: verify
   [ChainId.METIS]: 1,  
   [ChainId.METIS_TESTNET]: 1,  
+  [ChainId.COREDAO]: 1,
+  [ChainId.COREDAO_TESTNET]: 1,
+  [ChainId.COREDAO_TESTNET_SANDBOX]: 1,
 }
