@@ -39,6 +39,9 @@ jobs:
         id: build
         run: yarn build
 
+      - name: Setup version commit github account
+        run: git config --global user.email "commitbot@layerzerolabs.org" && git config --global user.name "Commit Bot"
+
       - name: Create snapshot versions
         run: yarn lerna version prerelease --preid dev-${{ github.sha }} --allow-branch ${{ github.ref_name }} --yes
 
