@@ -64,5 +64,7 @@ export const CHAIN_KEY: { [chainId in ChainId]: ChainKey } = {
   [ChainId.APTOS_TESTNET]: ChainKey.APTOS_TESTNET,
   [ChainId.APTOS_TESTNET_SANDBOX]: ChainKey.APTOS_TESTNET_SANDBOX,
   [ChainId.METIS]: ChainKey.METIS,
-  [ChainId.METIS_TESTNET]: ChainKey.METIS_TESTNET
+  [ChainId.METIS_TESTNET]: ChainKey.METIS_TESTNET,
+  [ChainId.COREDAO]: ChainKey.COREDAO,
+  [ChainId.COREDAO_TESTNET]: ChainKey.COREDAO_TESTNET
 }
