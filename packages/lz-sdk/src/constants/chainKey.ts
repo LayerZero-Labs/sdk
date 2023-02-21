@@ -8,6 +8,7 @@ export const CHAIN_KEY: { [chainId in ChainId]: ChainKey } = {
   [ChainId.KOVAN]: ChainKey.KOVAN,
   [ChainId.KOVAN_SANDBOX]: ChainKey.KOVAN_SANDBOX,
   [ChainId.GOERLI]: ChainKey.GOERLI,
+  [ChainId.GOERLI_MAINNET]: ChainKey.GOERLI_MAINNET,
   [ChainId.GOERLI_SANDBOX]: ChainKey.GOERLI_SANDBOX,
   [ChainId.BSC]: ChainKey.BSC,
   [ChainId.BSC_TESTNET]: ChainKey.BSC_TESTNET,

@@ -3,6 +3,7 @@ export enum ChainListId {
   RINKEBY = 4,
   RINKEBY_SANDBOX = 4,
   GOERLI = 5,
+  GOERLI_MAINNET = 5,
   GOERLI_SANDBOX = 5,
   KOVAN = 42,
   KOVAN_SANDBOX = 42,

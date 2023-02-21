@@ -5,6 +5,7 @@ export enum ChainKey {
   KOVAN = 'kovan',
   KOVAN_SANDBOX = 'kovan-sandbox',
   GOERLI = 'goerli',
+  GOERLI_MAINNET = 'goerli-mainnet',
   GOERLI_SANDBOX = 'goerli-sandbox',
   BSC = 'bsc',
   BSC_TESTNET = 'bsc-testnet',

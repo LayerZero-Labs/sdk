@@ -7,6 +7,7 @@ export const CHAIN_STAGE: { [chainKey in ChainKey]: ChainStage } = {
   [ChainKey.KOVAN]: ChainStage.TESTNET,
   [ChainKey.KOVAN_SANDBOX]: ChainStage.TESTNET_SANDBOX,
   [ChainKey.GOERLI]: ChainStage.TESTNET,
+  [ChainKey.GOERLI_MAINNET]: ChainStage.TESTNET,
   [ChainKey.GOERLI_SANDBOX]: ChainStage.TESTNET_SANDBOX,
   [ChainKey.BSC]: ChainStage.MAINNET,
   [ChainKey.BSC_TESTNET]: ChainStage.TESTNET,

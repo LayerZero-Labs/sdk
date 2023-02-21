@@ -24,6 +24,9 @@ export const RPCS: { [chainId in ChainId]: string[] } = {
   [ChainId.GOERLI]: [
     'https://rpc.goerli.mudit.blog/'
   ],
+  [ChainId.GOERLI_MAINNET]: [
+    'https://rpc.goerli.mudit.blog/'
+  ],
   [ChainId.GOERLI_SANDBOX]: [
     'https://rpc.goerli.mudit.blog/'
   ],
