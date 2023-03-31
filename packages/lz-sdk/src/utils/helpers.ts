@@ -21,3 +21,9 @@ export function getNetworksForEnv(chainStage: string) {
     }
     return networks
 }
+
+export function getChainStage(chainId: number): ChainStage {
+    if (chainId < 10000) return ChainStage.MAINNET
+    if (chainId < 20000) return ChainStage.TESTNET
+    return ChainStage.TESTNET_SANDBOX
+}
