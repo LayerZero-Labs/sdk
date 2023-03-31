@@ -10,7 +10,15 @@ export function getEndpointIdByName(networkName: ChainKey | string): ChainId {
     return getChainIdByChainKey(networkName as ChainKey)
 }
 
-export function getNetworksForEnv(chainStage: string) {
+const CHAIN_STAGE: Record<string, ChainStage> = {
+    mainnet: ChainStage.MAINNET,
+    testnet: ChainStage.TESTNET,
+    sandbox: ChainStage.TESTNET_SANDBOX,
+}
+
+export function getNetworksForEnv(chainStageAsString: string) {
+    const chainStage = CHAIN_STAGE[chainStageAsString]
+    if (!chainStage) throw new Error(`No ChainStage for ${chainStageAsString}`)
     const networks: ChainKey[] = []
     for (const chainIdAsString in ChainId) {
         const chainId = Number(chainIdAsString)
