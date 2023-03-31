@@ -1,4 +1,4 @@
-import { ChainId, ChainKey, ChainStage } from "../enums"
+import { ChainId, ChainKey, ChainListId, ChainStage } from "../enums"
 
 // @deprecated - use getChainKey
 export function getNetworkNameByEndpointId(endpointId: ChainId | number): ChainKey {
@@ -35,6 +35,15 @@ export function getChainKey(chainId: ChainId): ChainKey {
     const chainKey: ChainKey = ChainKey[key]
     if (chainKey) return chainKey
     throw new Error(`No ChainKey for ${chainId}`)
+}
+
+export function getChainListId(chainId: ChainId): ChainListId {
+    // @ts-ignore
+    const key = ChainId[chainId]
+    // @ts-ignore
+    const chainListId: ChainListId = ChainListId[key]
+    if (chainListId) return chainListId
+    throw new Error(`No ChainListId for ${chainId}`)
 }
 
 export function getChainIdByChainKey(chainKey: ChainKey): ChainId {
