@@ -29,23 +29,19 @@ export function getChainStage(chainId: number): ChainStage {
 }
 
 export function getChainKey(chainId: ChainId): ChainKey {
-    for (const [key, chainIdOrString] of Object.entries(ChainId)) {
-        if (chainIdOrString === chainId) {
-            //@ts-ignore
-            const chainKey: ChainKey = ChainKey[key]
-            if (chainKey) return chainKey
-        }
-    }
+    // @ts-ignore
+    const key = ChainId[chainId]
+    // @ts-ignore
+    const chainKey: ChainKey = ChainKey[key]
+    if (chainKey) return chainKey
     throw new Error(`No ChainKey for ${chainId}`)
 }
 
-export function getChainIdByChainKey(chainKey: ChainKey) {
-    for (const [key, value] of Object.entries(ChainKey)) {
-        if (value === chainKey) {
-            //@ts-ignore
-            const chainId: ChainId = ChainId[key]
-            if (chainId !== undefined) return chainId
-        }
-    }
-    throw new Error(`No ChainId for ${chainKey}`)
+export function getChainIdByChainKey(chainKey: ChainKey): ChainId {
+    // @ts-ignore
+    const key = ChainKey[chainKey]
+    // @ts-ignore
+    const chainId: ChainId = ChainId[key]
+    if (chainId) return chainId
+    throw new Error(`No chainId for ${chainKey}`)
 }
