@@ -1,5 +1,6 @@
 import { ChainId } from "../enums"
 
+// in seconds
 // keep list sorted alphabetically
 export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]: number } = {
     [ChainId.APTOS_TESTNET_SANDBOX]: 1,
