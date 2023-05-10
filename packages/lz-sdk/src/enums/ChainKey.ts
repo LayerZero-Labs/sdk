@@ -18,6 +18,7 @@ export enum ChainKey {
     AURORA_TESTNET = "aurora-testnet",
     AURORA_TESTNET_SANDBOX = "aurora-testnet-sandbox",
     AVALANCHE = "avalanche",
+    BASE = "base",
     BASE_TESTNET = "base-testnet",
     BOBA = "boba",
     BOBA_TESTNET = "boba-testnet",
