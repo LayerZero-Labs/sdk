@@ -85,4 +85,6 @@ export enum ChainListId {
     ZKPOLYGON_TESTNET = 1442,
     ZKSYNC = 324,
     ZKSYNC_TESTNET = 280,
+    BASE = 8453,
+    BASE_TESTNET = 84531,
 }
