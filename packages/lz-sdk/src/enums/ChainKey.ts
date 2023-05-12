@@ -1,5 +1,6 @@
 // keep list sorted alphabetically
 export enum ChainKey {
+    AAVEGOTCHI_TESTNET = "aavegotchi-testnet",
     APTOS = "aptos",
     APTOS_TESTNET = "aptos-testnet",
     APTOS_TESTNET_SANDBOX = "aptos-testnet-sandbox",

@@ -2,6 +2,7 @@ import { ChainKey } from "../enums"
 
 // keep keys sorted alphabetically
 export const LZ_ADDRESS: { [chainKey in ChainKey]?: string } = {
+    [ChainKey.AAVEGOTCHI_TESTNET]: "0x6098e96a28E02f27B1e6BD381f870F1C8Bd169d3",
     [ChainKey.ARBITRUM_GOERLI]: "0x6aB5Ae6822647046626e83ee6dB8187151E1d5ab",
     [ChainKey.ARBITRUM_RINKEBY_SANDBOX]: "0x207f970Fbc193386D9d3a95163bD569ab1d10c0c",
     [ChainKey.ARBITRUM_RINKEBY]: "0x4D747149A57923Beb89f22E6B7B97f7D8c087A00",
