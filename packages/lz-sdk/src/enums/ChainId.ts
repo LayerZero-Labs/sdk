@@ -1,5 +1,6 @@
 // keep list sorted alphabetically
 export enum ChainId {
+    AAVEGOTCHI_TESTNET = 10169,
     APTOS = 108,
     APTOS_TESTNET = 10108,
     APTOS_TESTNET_SANDBOX = 20308,
@@ -73,7 +74,7 @@ export enum ChainId {
     MOONBEAM = 126,
     MOONBEAM_TESTNET = 10126,
     MOONBEAM_TESTNET_SANDBOX = 20126,
-    MOONRIVER = 166,
+    MOONRIVER = 167,
     MOONRIVER_TESTNET = 10166,
     MUMBAI = 10109,
     MUMBAI_SANDBOX = 20109,

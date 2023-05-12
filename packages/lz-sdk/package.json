@@ -1,6 +1,6 @@
 {
   "name": "@layerzerolabs/lz-sdk",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "license": "BUSL-1.1",
   "description": "LayerZero SDK",
   "main": "dist/index.js",
