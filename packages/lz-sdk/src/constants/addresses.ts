@@ -117,7 +117,7 @@ export const LZ_RELAYER: { [chainKey in ChainKey]?: string } = {
 }
 
 export const LZ_RELAYER_V2: { [chainKey in ChainKey]?: string } = {
-    // [ChainKey.AAVEGOTCHI_TESTNET]: "0x145C041566B21Bec558B2A37F1a5Ff261aB55998", // we don't have chainId
+    [ChainKey.AAVEGOTCHI_TESTNET]: "0x145C041566B21Bec558B2A37F1a5Ff261aB55998", // we don't have chainId
     [ChainKey.ARBITRUM_GOERLI]: "0x79c2127C2cF1c41cdd0E24e6Ba70b6F3308B7B79",
     [ChainKey.ARBITRUM_RINKEBY]: "0xb225e20e0E9c0e9DDCb63b58b0289F8f0B949165",
     [ChainKey.ARBITRUM]: "0x177d36dBE2271A4DdB2Ad8304d82628eb921d790",
@@ -251,6 +251,7 @@ export const LZ_ULTRA_LIGHT_NODE_V1: { [chainKey in ChainKey]?: string } = {
 }
 
 export const LZ_ULTRA_LIGHT_NODE_V2: { [chainKey in ChainKey]?: string } = {
+    [ChainKey.AAVEGOTCHI_TESTNET]: "0x88866E5A296FffA511EF8011CB1BBd4d01Cd094F",
     [ChainKey.APTOS_TESTNET_SANDBOX]: "",
     [ChainKey.APTOS_TESTNET]: "",
     [ChainKey.APTOS]: "",
