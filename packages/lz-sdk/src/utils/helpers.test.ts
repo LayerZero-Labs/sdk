@@ -29,6 +29,8 @@ describe("getChainListId", () => {
         ChainId.SEPOLIA_TESTNET,
         ChainId.SHRAPNEL_TESTNET,
         ChainId.SHRAPNEL,
+        ChainId.SOLANA_TESTNET,
+        ChainId.SOLANA,
         ChainId.ZKCONSENSYS_TESTNET,
         ChainId.ZKPOLYGON_TESTNET,
         ChainId.ZKPOLYGON,

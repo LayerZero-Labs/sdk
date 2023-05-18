@@ -98,6 +98,8 @@ export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]: number } = {
     [ChainId.SEPOLIA]: 13,
     [ChainId.SHRAPNEL_TESTNET]: 1,
     [ChainId.SHRAPNEL]: 1,
+    [ChainId.SOLANA_TESTNET]: 1,
+    [ChainId.SOLANA]: 1,
     [ChainId.SWIMMER_TESTNET_SANDBOX]: 5,
     [ChainId.SWIMMER_TESTNET]: 5,
     [ChainId.SWIMMER]: 5,

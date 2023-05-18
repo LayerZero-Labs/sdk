@@ -96,6 +96,8 @@ export enum ChainKey {
     SEPOLIA_TESTNET = "sepolia-testnet",
     SHRAPNEL = "shrapnel",
     SHRAPNEL_TESTNET = "shrapnel-testnet",
+    SOLANA = "solana",
+    SOLANA_TESTNET = "solana-testnet",
     SWIMMER = "swimmer",
     SWIMMER_TESTNET = "swimmer-testnet",
     SWIMMER_TESTNET_SANDBOX = "swimmer-testnet-sandbox",
