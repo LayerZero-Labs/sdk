@@ -1,17 +1,24 @@
 {
   "name": "@layerzerolabs/sg-sdk",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "license": "BUSL-1.1",
   "description": "Stargate SDK",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.mjs"
+  },
   "files": [
-    "dist"
+    "dist/*"
   ],
   "scripts": {
-    "build": "tsdx build",
-    "start": "tsdx watch",
-    "test": "tsdx test"
+    "build": "npx tsup",
+    "dev": "npx tsup --watch",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
@@ -25,14 +32,14 @@
   "devDependencies": {
     "@ethersproject/address": "^5.0.2",
     "@layerzerolabs/lz-sdk": "latest",
-    "@layerzerolabs/ui-core": "^0.0.1",
-    "@types/jest": "^24.0.25",
-    "tsdx": "^0.14.1"
+    "@layerzerolabs/tsup-config": "~0.0.4",
+    "@layerzerolabs/ui-core": "~0.0.8",
+    "vitest": "^0.31.2"
   },
   "peerDependencies": {
     "@ethersproject/address": "^5.0.2",
     "@layerzerolabs/lz-sdk": "*",
-    "@layerzerolabs/ui-core": "^0.0.1",
+    "@layerzerolabs/ui-core": "~0.0.8",
     "jsbi": "^3.1.4"
   },
   "engines": {

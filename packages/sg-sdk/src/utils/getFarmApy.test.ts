@@ -5,6 +5,7 @@ import { ChainId } from "@layerzerolabs/lz-sdk"
 import { USDC, LPTOKEN, STG } from "../constants/token"
 import { PoolId } from "../enums"
 import JSBI from "jsbi"
+import { describe, it, expect } from "vitest"
 
 function approx(a: number, b: number, precision: number = 1e-10) {
     if (a == b && a == 0) {

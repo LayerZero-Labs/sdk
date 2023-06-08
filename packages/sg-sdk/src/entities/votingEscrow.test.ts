@@ -3,6 +3,7 @@ import { STG, VESTG } from "../constants/token"
 import { ChainId } from "@layerzerolabs/lz-sdk"
 import { CurrencyAmount } from "."
 import JSBI from "jsbi"
+import { describe, it, expect } from "vitest"
 
 describe("VotingEscrow", () => {
     const WEEK = 604800

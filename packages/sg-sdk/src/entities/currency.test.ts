@@ -1,4 +1,5 @@
 import { Token } from "./index"
+import { describe, it, expect } from "vitest"
 
 describe("Currency", () => {
     const ADDRESS_ZERO = "0x0000000000000000000000000000000000000000"

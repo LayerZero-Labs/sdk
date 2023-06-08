@@ -1,4 +1,5 @@
 import { validateAndParseAddress } from "./validateAndParseAddress"
+import { describe, it, expect } from "vitest"
 
 describe("#validateAndParseAddress", () => {
     it("returns same address if already checksummed", () => {

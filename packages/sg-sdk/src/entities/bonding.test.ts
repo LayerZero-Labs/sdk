@@ -4,6 +4,7 @@ import { CurrencyAmount, Fraction, Token } from "."
 import { USDC, STG } from "../constants/token"
 import { Bonding } from "./bonding"
 import { TokenSymbol } from "../enums"
+import { describe, it, expect } from "vitest"
 
 describe("Bonding", () => {
     const chainId = ChainId.FUJI_SANDBOX
