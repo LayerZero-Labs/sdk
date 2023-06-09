@@ -1,6 +1,7 @@
 import { getChainIdByChainKey, getChainKey, getChainListId } from "./helpers"
 import { ChainId } from "../enums/ChainId"
 import { ChainKey } from "../enums/ChainKey"
+import { describe, it, expect } from "vitest"
 
 const chainIds: ChainId[] = Object.values(ChainId)
     .map((string) => Number(string))
