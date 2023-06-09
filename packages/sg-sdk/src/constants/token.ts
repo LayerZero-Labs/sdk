@@ -1,6 +1,5 @@
 import { ChainId } from "@layerzerolabs/lz-sdk"
 import { TokenSymbol } from "../enums/TokenSymbol"
-import { Token } from "../entities/token"
 import {
     DAI_ADDRESS,
     STG_ADDRESS,
@@ -29,6 +28,7 @@ import {
     DAI_SHARE_DECIMALS,
     MAI_SHARE_DECIMALS,
 } from "./pool"
+import { Token } from "@layerzerolabs/ui-core"
 
 export const BUSD: { [chainId: number]: Token } = {
     [ChainId.BSC]: new Token(ChainId.BSC, BUSD_ADDRESS[ChainId.BSC], 18, "BUSD", "BUSD Coin"),

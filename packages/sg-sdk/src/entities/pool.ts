@@ -1,12 +1,10 @@
-import { Token } from "./token"
-import { CurrencyAmount, Fraction } from "./fractions"
 import { ChainId } from "@layerzerolabs/lz-sdk"
 import { PoolId } from "../enums"
 import JSBI from "jsbi"
 import { SHARE_DECIMALS } from "../constants/pool"
 import { invariant as assert } from "../utils/invariantHelper"
 import { FeeObj, FeeV01, FeeV02 } from "./fee"
-import { Currency } from "./currency"
+import { Currency, CurrencyAmount, Fraction, Token } from "@layerzerolabs/ui-core"
 
 //Pool Fee
 export interface PoolFee {

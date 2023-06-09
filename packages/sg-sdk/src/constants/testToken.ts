@@ -1,7 +1,7 @@
 import { ChainId } from "@layerzerolabs/lz-sdk"
 import { PoolId, TokenSymbol } from "../enums"
-import { Token } from "../entities/token"
 import { DAI_ADDRESS, POOL_ADDRESS, STG_ADDRESS, USDC_ADDRESS, USDT_ADDRESS, WETH_ADDRESS } from "./addresses"
+import { Token } from "@layerzerolabs/ui-core"
 
 export const DAI: { [chainId: number]: Token } = {
     [ChainId.RINKEBY_SANDBOX]: new Token(ChainId.RINKEBY_SANDBOX, DAI_ADDRESS[ChainId.RINKEBY_SANDBOX], 6, "DAI", "DAT"),

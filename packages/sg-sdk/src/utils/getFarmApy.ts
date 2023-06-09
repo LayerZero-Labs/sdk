@@ -1,6 +1,5 @@
+import { CurrencyAmount, Percent, Token } from "@layerzerolabs/ui-core"
 import { YEAR } from "./constants"
-import { CurrencyAmount, Percent } from "../entities/fractions"
-import { Token } from "../entities/token"
 import JSBI from "jsbi"
 
 /**
@@ -23,7 +22,7 @@ export function getFarmApr(
     avgBlockTime: number,
     totalLiquidity: CurrencyAmount<Token>,
     totalFarmLp: CurrencyAmount<Token>,
-    totalPoolLp: CurrencyAmount<Token>,
+    totalPoolLp: CurrencyAmount<Token>
 ) {
     const rewardPerBlock = stgPerBlock.multiply(new Percent(allocPoint * 10000, totalAllocPoint * 10000))
     const tvl = totalLiquidity.multiply(totalFarmLp).divide(totalPoolLp)
@@ -53,7 +52,7 @@ export function getFarmApy(
     avgBlockTime: number,
     totalLiquidity: CurrencyAmount<Token>,
     totalFarmLp: CurrencyAmount<Token>,
-    totalPoolLp: CurrencyAmount<Token>,
+    totalPoolLp: CurrencyAmount<Token>
 ) {
     const apr = getFarmApr(rewardPrice, stgPerBlock, allocPoint, totalAllocPoint, avgBlockTime, totalLiquidity, totalFarmLp, totalPoolLp)
     const apy = Math.E ** apr - 1
@@ -88,7 +87,7 @@ export function getTokenFarmApr(
     const tvl = totalLiquidity.multiply(totalFarmLp).divide(totalPoolLp)
     const blocksPerYear = JSBI.BigInt(Math.floor(YEAR / avgBlockTime))
     const tvlUsd = tvl.multiply(tokenPrice)
-    const roiPerBlockUsd =  rewardPerBlock.multiply(rewardPrice).divide(tvlUsd)
+    const roiPerBlockUsd = rewardPerBlock.multiply(rewardPrice).divide(tvlUsd)
     const roiPerYear = roiPerBlockUsd.multiply(blocksPerYear)
     return parseFloat(roiPerYear.toExact())
 }
@@ -114,9 +113,19 @@ export function getTokenFarmApy(
     totalLiquidity: CurrencyAmount<Token>,
     totalFarmLp: CurrencyAmount<Token>,
     totalPoolLp: CurrencyAmount<Token>,
-    tokenPrice: CurrencyAmount<Token>,
+    tokenPrice: CurrencyAmount<Token>
 ) {
-    const apr = getTokenFarmApr(rewardPrice, stgPerBlock, allocPoint, totalAllocPoint, avgBlockTime, totalLiquidity, totalFarmLp, totalPoolLp, tokenPrice)
+    const apr = getTokenFarmApr(
+        rewardPrice,
+        stgPerBlock,
+        allocPoint,
+        totalAllocPoint,
+        avgBlockTime,
+        totalLiquidity,
+        totalFarmLp,
+        totalPoolLp,
+        tokenPrice
+    )
     const apy = Math.E ** apr - 1
     return apy
 }

@@ -1,7 +1,6 @@
-import { CurrencyAmount, Fraction } from "./fractions"
+import { Currency, CurrencyAmount, Fraction } from "@layerzerolabs/ui-core"
 import { invariant as assert } from "../utils/invariantHelper"
 import JSBI from "jsbi"
-import { Currency } from "./currency"
 
 export interface FeeObj {
     eqFee: CurrencyAmount
