@@ -1,29 +1,37 @@
 {
   "name": "@layerzerolabs/lz-sdk",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "license": "BUSL-1.1",
   "description": "LayerZero SDK",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.mjs"
+  },
   "files": [
-    "dist"
+    "dist/*"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
-    "build": "tsdx build",
-    "start": "tsdx watch",
-    "test": "tsdx test --passWithNoTests"
+    "build": "npx tsup",
+    "dev": "npx tsup --watch",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/LayerZero-Labs/sdk.git",
     "directory": "packages/lz-sdk"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "devDependencies": {
-    "tsdx": "^0.14.1"
+    "@layerzerolabs/tsup-config": "~0.0.4",
+    "vitest": "^0.31.2"
   },
   "engines": {
     "node": ">=10"
