@@ -1,9 +1,8 @@
 import { FeeLibraryV02Defaults, FeeV01, FeeV02 } from "./fee"
-import { CurrencyAmount, Fraction } from "./fractions"
-import { Token } from "./token"
 import { TokenSymbol } from "../enums"
 import JSBI from "jsbi"
 import { describe, it, expect } from "vitest"
+import { Fraction, Token, CurrencyAmount } from "@layerzerolabs/ui-core"
 
 const fraction = new Fraction(100, 10000) // 1%
 const token = new Token(0, "0x0000000000000000000000000000000000000000", 18, TokenSymbol.USDC)

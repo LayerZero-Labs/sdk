@@ -1,7 +1,6 @@
 import JSBI from "jsbi"
-import { CurrencyAmount, Fraction } from "./fractions"
 import { invariant as assert } from "../utils/invariantHelper"
-import { Currency } from "./currency"
+import { Currency, Fraction, CurrencyAmount } from "@layerzerolabs/ui-core"
 
 const ZERO: JSBI = JSBI.BigInt(0)
 const TWO: JSBI = JSBI.BigInt(2)

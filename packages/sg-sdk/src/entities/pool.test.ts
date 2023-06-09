@@ -1,15 +1,14 @@
 import { ChainPaths, Pool, PoolFee } from "./pool"
-import { CurrencyAmount, Fraction } from "./fractions"
-import { Token } from "./token"
 import { TokenSymbol } from "../enums"
 import { ChainId } from "@layerzerolabs/lz-sdk"
 import JSBI from "jsbi"
 import { FeeV01 } from "./fee"
 import { describe, it, expect } from "vitest"
+import { Token, Fraction, CurrencyAmount } from "@layerzerolabs/ui-core"
 
 describe("Pool", () => {
     const chainId = ChainId.FUJI_SANDBOX
-    const dstChainId = 1
+    const dstChainId = ChainId.ETHEREUM
     const dstPoolId = 1
     const token = new Token(chainId, "0x0000000000000000000000000000000000000000", 18, TokenSymbol.USDC)
     const liquidityToken = new Token(chainId, "0x0000000000000000000000000000000000000000", 6, TokenSymbol.SLP)
@@ -71,7 +70,7 @@ describe("Pool", () => {
                 pool.getSwapOutputAmount(
                     inputAmount,
                     minAmount,
-                    1,
+                    ChainId.ETHEREUM,
                     1,
                     CurrencyAmount.fromRawAmount(pool.token, JSBI.BigInt(0)),
                     CurrencyAmount.fromRawAmount(pool.liquidityToken, JSBI.BigInt(0)),
@@ -108,7 +107,7 @@ describe("Pool", () => {
                     .getSwapOutputAmount(
                         inputAmount,
                         minAmount,
-                        1,
+                        ChainId.ETHEREUM,
                         1,
                         CurrencyAmount.fromRawAmount(pool.token, JSBI.BigInt(0)),
                         CurrencyAmount.fromRawAmount(pool.liquidityToken, JSBI.BigInt(0)),

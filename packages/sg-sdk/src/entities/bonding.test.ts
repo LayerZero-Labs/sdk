@@ -1,10 +1,10 @@
 import JSBI from "jsbi"
 import { ChainId } from "@layerzerolabs/lz-sdk"
-import { CurrencyAmount, Fraction, Token } from "."
 import { USDC, STG } from "../constants/token"
 import { Bonding } from "./bonding"
 import { TokenSymbol } from "../enums"
 import { describe, it, expect } from "vitest"
+import { CurrencyAmount, Fraction, Token } from "@layerzerolabs/ui-core"
 
 describe("Bonding", () => {
     const chainId = ChainId.FUJI_SANDBOX

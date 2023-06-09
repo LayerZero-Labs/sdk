@@ -1,7 +1,6 @@
-import { CurrencyAmount } from "./fractions"
+import { Currency, CurrencyAmount } from "@layerzerolabs/ui-core"
 import { invariant as assert } from "../utils/invariantHelper"
 import JSBI from "jsbi"
-import { Currency } from "./currency"
 
 const WEEK = 604800
 const MAXTIME = JSBI.BigInt(94608000)

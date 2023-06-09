@@ -1,6 +1,6 @@
 {
   "name": "@layerzerolabs/sg-sdk",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "license": "BUSL-1.1",
   "description": "Stargate SDK",
   "type": "module",
@@ -31,14 +31,14 @@
   },
   "devDependencies": {
     "@ethersproject/address": "^5.0.2",
-    "@layerzerolabs/lz-sdk": "latest",
+    "@layerzerolabs/lz-sdk": "~0.0.24",
     "@layerzerolabs/tsup-config": "~0.0.4",
     "@layerzerolabs/ui-core": "~0.0.8",
     "vitest": "^0.31.2"
   },
   "peerDependencies": {
     "@ethersproject/address": "^5.0.2",
-    "@layerzerolabs/lz-sdk": "*",
+    "@layerzerolabs/lz-sdk": "~0.0.24",
     "@layerzerolabs/ui-core": "~0.0.8",
     "jsbi": "^3.1.4"
   },
