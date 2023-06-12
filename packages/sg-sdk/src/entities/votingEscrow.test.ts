@@ -1,9 +1,8 @@
 import { VotingEscrow } from "./votingEscrow"
 import { STG, VESTG } from "../constants/token"
 import { ChainId } from "@layerzerolabs/lz-sdk"
-import { CurrencyAmount } from "."
-import JSBI from "jsbi"
 import { describe, it, expect } from "vitest"
+import { CurrencyAmount } from "@layerzerolabs/ui-core"
 
 describe("VotingEscrow", () => {
     const WEEK = 604800
@@ -24,16 +23,16 @@ describe("VotingEscrow", () => {
         })
 
         it("Should not return negative if unlock time is negative", () => {
-            const amount = JSBI.BigInt(stgAmount.toFixed().split(".")[0])
-            const amountPerSec = JSBI.divide(amount, JSBI.BigInt(MAXTIME))
-            const expectedAmount = JSBI.multiply(amountPerSec, JSBI.BigInt(0))
+            const amount = BigInt(stgAmount.toFixed().split(".")[0])
+            const amountPerSec = amount / BigInt(MAXTIME)
+            const expectedAmount = amountPerSec * BigInt(0)
             expect(votingEscrow.estimateVe(stgAmount, -100000).equalTo(expectedAmount))
         })
 
         it("Should return around the expected value", () => {
-            const amount = JSBI.BigInt(stgAmount.toFixed().split(".")[0])
-            const amountPerSec = JSBI.divide(amount, JSBI.BigInt(MAXTIME))
-            const expectedAmount = JSBI.multiply(amountPerSec, JSBI.BigInt(unlockInSec))
+            const amount = BigInt(stgAmount.toFixed().split(".")[0])
+            const amountPerSec = amount / BigInt(MAXTIME)
+            const expectedAmount = amountPerSec * BigInt(unlockInSec)
             expect(votingEscrow.estimateVe(stgAmount, unlockInSec).equalTo(expectedAmount))
         })
 

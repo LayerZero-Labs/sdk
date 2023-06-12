@@ -1,6 +1,5 @@
 import { CurrencyAmount, Percent, Token } from "@layerzerolabs/ui-core"
 import { YEAR } from "./constants"
-import JSBI from "jsbi"
 
 /**
  * Get APR for a Farm
@@ -27,7 +26,7 @@ export function getFarmApr(
     const rewardPerBlock = stgPerBlock.multiply(new Percent(allocPoint * 10000, totalAllocPoint * 10000))
     const tvl = totalLiquidity.multiply(totalFarmLp).divide(totalPoolLp)
     const roiPerBlock = rewardPerBlock.multiply(rewardPrice).divide(tvl)
-    const blocksPerYear = JSBI.BigInt(Math.floor(YEAR / avgBlockTime))
+    const blocksPerYear = BigInt(Math.floor(YEAR / avgBlockTime))
     const roiPerYear = roiPerBlock.multiply(blocksPerYear)
     return parseFloat(roiPerYear.toExact())
 }
@@ -85,7 +84,7 @@ export function getTokenFarmApr(
 ) {
     const rewardPerBlock = stgPerBlock.multiply(new Percent(allocPoint * 10000, totalAllocPoint * 10000))
     const tvl = totalLiquidity.multiply(totalFarmLp).divide(totalPoolLp)
-    const blocksPerYear = JSBI.BigInt(Math.floor(YEAR / avgBlockTime))
+    const blocksPerYear = BigInt(Math.floor(YEAR / avgBlockTime))
     const tvlUsd = tvl.multiply(tokenPrice)
     const roiPerBlockUsd = rewardPerBlock.multiply(rewardPrice).divide(tvlUsd)
     const roiPerYear = roiPerBlockUsd.multiply(blocksPerYear)

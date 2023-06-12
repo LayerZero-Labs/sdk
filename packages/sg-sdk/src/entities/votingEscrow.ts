@@ -1,9 +1,8 @@
 import { Currency, CurrencyAmount } from "@layerzerolabs/ui-core"
 import { invariant as assert } from "../utils/invariantHelper"
-import JSBI from "jsbi"
 
 const WEEK = 604800
-const MAXTIME = JSBI.BigInt(94608000)
+const MAXTIME = BigInt(94608000)
 
 export class VotingEscrow {
     public readonly token: Currency
@@ -26,7 +25,7 @@ export class VotingEscrow {
         if (_unlock_time < 0) {
             unlock_time = 0
         }
-        const ve_amount = _amount.divide(JSBI.BigInt(MAXTIME)).multiply(JSBI.BigInt(unlock_time))
+        const ve_amount = _amount.divide(BigInt(MAXTIME)).multiply(BigInt(unlock_time))
         return CurrencyAmount.fromFractionalAmount(this.veToken, ve_amount.numerator, ve_amount.denominator)
     }
 

@@ -1,9 +1,8 @@
-import JSBI from "jsbi"
 import { invariant as assert } from "../utils/invariantHelper"
 import { Currency, Fraction, CurrencyAmount } from "@layerzerolabs/ui-core"
 
-const ZERO: JSBI = JSBI.BigInt(0)
-const TWO: JSBI = JSBI.BigInt(2)
+const ZERO: bigint = BigInt(0)
+const TWO: bigint = BigInt(2)
 
 export class Bonding {
     public readonly stargateToken: Currency
@@ -13,7 +12,7 @@ export class Bonding {
     public readonly totalStargateForBonding: CurrencyAmount
     public readonly totalStargateBonded: CurrencyAmount
     public readonly quota: CurrencyAmount
-    public readonly convertRate: JSBI
+    public readonly convertRate: bigint
 
     public constructor(
         _stargateToken: Currency,
@@ -40,7 +39,7 @@ export class Bonding {
         this.totalStargateBonded = _totalStargateBonded
 
         this.quota = this.totalStargateForBonding.subtract(this.totalStargateBonded)
-        this.convertRate = JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(this.stargateToken.decimals - this.stableCoinToken.decimals))
+        this.convertRate = BigInt(10) ** BigInt(this.stargateToken.decimals - this.stableCoinToken.decimals)
     }
 
     public computeCostFromQuantity(_quantity: CurrencyAmount): CurrencyAmount {
@@ -58,7 +57,7 @@ export class Bonding {
         return CurrencyAmount.fromFractionalAmount(
             this.stableCoinToken,
             this.toStableCoinDecimals(avgPrice.multiply(quantity)).quotient,
-            JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(this.stargateToken.decimals))
+            BigInt(10) ** BigInt(this.stargateToken.decimals)
         )
     }
 
@@ -73,12 +72,8 @@ export class Bonding {
 
         const quantity = CurrencyAmount.fromRawAmount(
             this.stargateToken,
-            JSBI.multiply(
-                JSBI.BigInt(
-                    parseInt(((Math.sqrt(startPrice ** 2 + 2 * slope * cost) - startPrice) / slope).toFixed(this.stableCoinToken.decimals))
-                ),
-                JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(this.stargateToken.decimals))
-            )
+            BigInt(parseInt(((Math.sqrt(startPrice ** 2 + 2 * slope * cost) - startPrice) / slope).toFixed(this.stableCoinToken.decimals))) *
+                BigInt(10) ** BigInt(this.stargateToken.decimals)
         )
 
         if (quantity.greaterThan(this.quota)) {

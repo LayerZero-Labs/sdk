@@ -1799,14 +1799,13 @@
     esbuild-node-externals "^1.7.0"
     tsup "^6.7.0"
 
-"@layerzerolabs/ui-core@~0.0.8":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@layerzerolabs/ui-core/-/ui-core-0.0.9.tgz#f466ccc8b1ee89d9407142a81dd5e7188804b76f"
-  integrity sha512-1x1wyaM+kFZKzhG1NcBUdVlysnCPqrrP3BDMHIMBbtesHS5XdEAtrQE825sQtUVE4JHWBzw2QpsV/zj2pkyecw==
+"@layerzerolabs/ui-core@~0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@layerzerolabs/ui-core/-/ui-core-0.1.0.tgz#0cbd821d509e7d05e6d6cdee53958098c06381df"
+  integrity sha512-Nnq/K9lzA/ZZuabw700o1ozDfS1wZl35+s97UoLgvHxpzw8YLztFVRRX4w0I0EePJ46kQcUsVdkeNDT7ZGTPsA==
   dependencies:
     big.js "^5.2.2"
     decimal.js-light "^2.5.0"
-    jsbi "^3.1.4"
     toformat "^2.0.0"
 
 "@lerna/add@4.0.0":
@@ -8044,11 +8043,6 @@ js-yaml@^4.1.0:
   integrity sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==
   dependencies:
     argparse "^2.0.1"
-
-jsbi@^3.1.4:
-  version "3.2.5"
-  resolved "https://registry.yarnpkg.com/jsbi/-/jsbi-3.2.5.tgz#b37bb90e0e5c2814c1c2a1bcd8c729888a2e37d6"
-  integrity sha512-aBE4n43IPvjaddScbvWRA2YlTzKEynHzu7MqOyTipdHucf/VxS63ViCjxYRg86M8Rxwbt/GfzHl1kKERkt45fQ==
 
 jsbn@~0.1.0:
   version "0.1.1"

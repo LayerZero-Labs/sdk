@@ -1,6 +1,5 @@
 import { ChainId } from "@layerzerolabs/lz-sdk"
 import { PoolId } from "../enums"
-import JSBI from "jsbi"
 import { SHARE_DECIMALS } from "../constants/pool"
 import { invariant as assert } from "../utils/invariantHelper"
 import { FeeObj, FeeV01, FeeV02 } from "./fee"
@@ -53,14 +52,14 @@ export class Pool {
     amountLDtoSD(amountLD: CurrencyAmount): CurrencyAmount {
         return CurrencyAmount.fromRawAmount(
             this.liquidityToken,
-            amountLD.multiply(JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(SHARE_DECIMALS))).divide(amountLD.decimalScale).quotient
+            amountLD.multiply(BigInt(10) ** BigInt(SHARE_DECIMALS)).divide(amountLD.decimalScale).quotient
         )
     }
 
     amountSDtoLD(amountSD: CurrencyAmount): CurrencyAmount {
         return CurrencyAmount.fromRawAmount(
             this.token,
-            amountSD.multiply(JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(this.token.decimals))).divide(amountSD.decimalScale).quotient
+            amountSD.multiply(BigInt(10) ** BigInt(this.token.decimals)).divide(amountSD.decimalScale).quotient
         )
     }
 
@@ -93,10 +92,10 @@ export class Pool {
         }
 
         const amount = inputAmount.subtract(fee.eqFee).subtract(fee.protocolFee).subtract(fee.lpFee)
-        assert(JSBI.greaterThanOrEqual(amount.add(fee.eqReward).quotient, minAmount.quotient), "SLIPPAGE_TOO_HIGH")
+        assert(amount.add(fee.eqReward).quotient >= minAmount.quotient, "SLIPPAGE_TOO_HIGH")
 
         const lkbRemove = this.amountLDtoSD(inputAmount.subtract(fee.lpFee))
-        assert(JSBI.greaterThanOrEqual(cp.balance.quotient, lkbRemove.quotient), "DST_BALANCE_TOO_LOW")
+        assert(cp.balance.quotient >= lkbRemove.quotient, "DST_BALANCE_TOO_LOW")
 
         return {
             outputAmount: amount.add(fee.eqReward),
@@ -117,13 +116,13 @@ export class Pool {
 
         let amountSD = this.amountLDtoSD(tokenAmount).quotient
         if (feeOn) {
-            const mintFee = JSBI.divide(JSBI.multiply(amountSD, this.poolFee.mintFeeRate.numerator), this.poolFee.mintFeeRate.denominator)
-            amountSD = JSBI.subtract(amountSD, mintFee)
+            const mintFee = (amountSD * this.poolFee.mintFeeRate.numerator) / this.poolFee.mintFeeRate.denominator
+            amountSD = amountSD - mintFee
         }
 
         let amountLPTokens = amountSD
-        if (JSBI.notEqual(totalSupply.quotient, JSBI.BigInt(0))) {
-            amountLPTokens = JSBI.divide(JSBI.multiply(amountSD, totalSupply.quotient), totalLiquidity.quotient)
+        if (totalSupply.quotient !== BigInt(0)) {
+            amountLPTokens = (amountSD * totalSupply.quotient) / totalLiquidity.quotient
         }
         return CurrencyAmount.fromRawAmount(this.liquidityToken, amountLPTokens)
     }
@@ -143,7 +142,7 @@ export class Pool {
 
         let amountLP = lpTokenAmount
         let amountSD = lpTokenAmount.multiply(totalLiquidity).divide(totalSupply)
-        if (JSBI.lessThanOrEqual(deltaCredit.quotient, amountSD.quotient)) {
+        if (deltaCredit.quotient <= amountSD.quotient) {
             amountSD = deltaCredit
             amountLP = amountSD.multiply(totalSupply).divide(totalLiquidity)
         }
@@ -174,7 +173,7 @@ export class Pool {
 
         //check that pool has enough liquidity
         assert(
-            JSBI.greaterThanOrEqual(totalLiquidity.quotient, lpTokenAmount.multiply(totalLiquidity).divide(totalSupply).quotient),
+            totalLiquidity.quotient >= lpTokenAmount.multiply(totalLiquidity).divide(totalSupply).quotient,
             "POOL DOES NOT HAVE ENOUGH LIQUIDITY"
         )
 
@@ -211,7 +210,7 @@ export class Pool {
         assert(cp, "NO_CHAIN_PATH")
         let amountSD = lpTokenAmount.multiply(totalLiquidity).divide(totalSupply)
         const available = cp.lkb.add(cp.credit)
-        if (JSBI.greaterThanOrEqual(amountSD.quotient, available.quotient)) {
+        if (amountSD.quotient >= available.quotient) {
             amountSD = available
         }
         const lpAmount = amountSD.multiply(totalSupply).divide(totalLiquidity)
@@ -244,9 +243,6 @@ export class Pool {
      */
     public static getPriceStatic(totalSupply: CurrencyAmount, totalLiquidity: CurrencyAmount, lpTokenAmount: CurrencyAmount, token: Currency) {
         const lpPrice = totalLiquidity.multiply(lpTokenAmount).divide(totalSupply)
-        return CurrencyAmount.fromRawAmount(
-            token,
-            lpPrice.multiply(JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(token.decimals))).divide(lpPrice.decimalScale).quotient
-        )
+        return CurrencyAmount.fromRawAmount(token, lpPrice.multiply(BigInt(10) ** BigInt(token.decimals)).divide(lpPrice.decimalScale).quotient)
     }
 }
