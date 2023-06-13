@@ -11,7 +11,7 @@
     "prebuild": "ts-node ./scripts/generateSDK.ts",
     "build": "tsdx build",
     "start": "tsdx watch",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "keywords": [],
   "author": "",

@@ -1,11 +1,10 @@
 import { getFarmApr, getFarmApy, getTokenFarmApr, getTokenFarmApy } from "./getFarmApy"
 import farmingData from "./data/farming.json"
-import { CurrencyAmount } from "../entities/fractions"
 import { ChainId } from "@layerzerolabs/lz-sdk"
 import { USDC, LPTOKEN, STG } from "../constants/token"
 import { PoolId } from "../enums"
-import JSBI from "jsbi"
 import { describe, it, expect } from "vitest"
+import { CurrencyAmount } from "@layerzerolabs/ui-core"
 
 function approx(a: number, b: number, precision: number = 1e-10) {
     if (a == b && a == 0) {
@@ -25,19 +24,19 @@ describe("getApy", () => {
             // total allocation is 1 per pool contract per chain
             const { stgPrice, stgPerBlock, avgBlockTime, alloc, expectedApr, totalLiquidity, totalFarmLp, totalLp } = testCase
 
-            const rewardPrice = CurrencyAmount.fromRawAmount(USDC[chainId], JSBI.BigInt(stgPrice * 10 ** 6))
+            const rewardPrice = CurrencyAmount.fromRawAmount(USDC[chainId], BigInt(stgPrice * 10 ** 6))
 
-            const rewardPerBlock = CurrencyAmount.fromRawAmount(STG[chainId], JSBI.BigInt(stgPerBlock * 10 ** 18))
+            const rewardPerBlock = CurrencyAmount.fromRawAmount(STG[chainId], BigInt(stgPerBlock * 10 ** 18))
 
-            const totalLiq = CurrencyAmount.fromRawAmount(USDC[chainId], JSBI.BigInt(Math.round(totalLiquidity * 10 ** 6)))
-            const totalFLp = CurrencyAmount.fromRawAmount(LPTOKEN[chainId][poolId], JSBI.BigInt(Math.round(totalFarmLp * 10 ** 6)))
-            const totalPLp = CurrencyAmount.fromRawAmount(LPTOKEN[chainId][poolId], JSBI.BigInt(Math.round(totalLp * 10 ** 6)))
+            const totalLiq = CurrencyAmount.fromRawAmount(USDC[chainId], BigInt(Math.round(totalLiquidity * 10 ** 6)))
+            const totalFLp = CurrencyAmount.fromRawAmount(LPTOKEN[chainId][poolId], BigInt(Math.round(totalFarmLp * 10 ** 6)))
+            const totalPLp = CurrencyAmount.fromRawAmount(LPTOKEN[chainId][poolId], BigInt(Math.round(totalLp * 10 ** 6)))
             const apr = getFarmApr(rewardPrice, rewardPerBlock, alloc, 1, avgBlockTime, totalLiq, totalFLp, totalPLp)
             expect(approx(apr, expectedApr, 2)).toBeTruthy()
         })
     })
 
-    it.only("Expected Apr should match NEW", () => {
+    it("Expected Apr should match NEW", () => {
         // total allocation is 1 per pool contract per chain
         // const {stgPrice, stgPerBlock, avgBlockTime, alloc, expectedApr, totalLiquidity, totalFarmLp, totalLp} = testCase
         const ethPoolTestCases = [
@@ -92,15 +91,15 @@ describe("getApy", () => {
             const totalFarmLp = testCase.lpBalance
             const totalLp = testCase.totalSupply
 
-            const tokenPriceSD = CurrencyAmount.fromRawAmount(USDC[testCase.chainId], JSBI.BigInt(testCase.tokenPrice))
+            const tokenPriceSD = CurrencyAmount.fromRawAmount(USDC[testCase.chainId], BigInt(testCase.tokenPrice))
 
-            const rewardPrice = CurrencyAmount.fromRawAmount(USDC[testCase.chainId], JSBI.BigInt(testCase.rewardPrice * 10 ** 6))
+            const rewardPrice = CurrencyAmount.fromRawAmount(USDC[testCase.chainId], BigInt(testCase.rewardPrice * 10 ** 6))
 
-            const rewardPerBlock = CurrencyAmount.fromRawAmount(STG[testCase.chainId], JSBI.BigInt(Math.round(testCase.stgPerBlock * 10 ** 18)))
+            const rewardPerBlock = CurrencyAmount.fromRawAmount(STG[testCase.chainId], BigInt(Math.round(testCase.stgPerBlock * 10 ** 18)))
 
-            const totalLiq = CurrencyAmount.fromRawAmount(USDC[testCase.chainId], JSBI.BigInt(Math.round(testCase.totalLiquidity * 10 ** 6)))
-            const totalFLp = CurrencyAmount.fromRawAmount(LPTOKEN[testCase.chainId][poolId], JSBI.BigInt(Math.round(totalFarmLp * 10 ** 6)))
-            const totalPLp = CurrencyAmount.fromRawAmount(LPTOKEN[testCase.chainId][poolId], JSBI.BigInt(Math.round(totalLp * 10 ** 6)))
+            const totalLiq = CurrencyAmount.fromRawAmount(USDC[testCase.chainId], BigInt(Math.round(testCase.totalLiquidity * 10 ** 6)))
+            const totalFLp = CurrencyAmount.fromRawAmount(LPTOKEN[testCase.chainId][poolId], BigInt(Math.round(totalFarmLp * 10 ** 6)))
+            const totalPLp = CurrencyAmount.fromRawAmount(LPTOKEN[testCase.chainId][poolId], BigInt(Math.round(totalLp * 10 ** 6)))
             const apr = getTokenFarmApr(
                 rewardPrice,
                 rewardPerBlock,
@@ -133,12 +132,12 @@ describe("getApy", () => {
             // total allocation is 1 per pool contract per chain
             const { stgPrice, stgPerBlock, avgBlockTime, alloc, expectedApy, totalLiquidity, totalFarmLp, totalLp } = testCase
 
-            const rewardPrice = CurrencyAmount.fromRawAmount(USDC[chainId], JSBI.BigInt(stgPrice * 10 ** 6))
-            const rewardPerBlock = CurrencyAmount.fromRawAmount(STG[chainId], JSBI.BigInt(stgPerBlock * 10 ** 18))
+            const rewardPrice = CurrencyAmount.fromRawAmount(USDC[chainId], BigInt(stgPrice * 10 ** 6))
+            const rewardPerBlock = CurrencyAmount.fromRawAmount(STG[chainId], BigInt(stgPerBlock * 10 ** 18))
 
-            const totalLiq = CurrencyAmount.fromRawAmount(USDC[chainId], JSBI.BigInt(totalLiquidity * 10 ** 6))
-            const totalFLp = CurrencyAmount.fromRawAmount(LPTOKEN[chainId][poolId], JSBI.BigInt(Math.round(totalFarmLp * 10 ** 6)))
-            const totalPLp = CurrencyAmount.fromRawAmount(LPTOKEN[chainId][poolId], JSBI.BigInt(Math.round(totalLp * 10 ** 6)))
+            const totalLiq = CurrencyAmount.fromRawAmount(USDC[chainId], BigInt(totalLiquidity * 10 ** 6))
+            const totalFLp = CurrencyAmount.fromRawAmount(LPTOKEN[chainId][poolId], BigInt(Math.round(totalFarmLp * 10 ** 6)))
+            const totalPLp = CurrencyAmount.fromRawAmount(LPTOKEN[chainId][poolId], BigInt(Math.round(totalLp * 10 ** 6)))
 
             const apy = getFarmApy(rewardPrice, rewardPerBlock, alloc, 1, avgBlockTime, totalLiq, totalFLp, totalPLp)
             expect(approx(apy, expectedApy, 2)).toBeTruthy()

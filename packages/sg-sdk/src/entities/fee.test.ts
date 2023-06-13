@@ -1,6 +1,5 @@
 import { FeeLibraryV02Defaults, FeeV01, FeeV02 } from "./fee"
 import { TokenSymbol } from "../enums"
-import JSBI from "jsbi"
 import { describe, it, expect } from "vitest"
 import { Fraction, Token, CurrencyAmount } from "@layerzerolabs/ui-core"
 
@@ -133,7 +132,7 @@ describe("Fee", () => {
             lpToken
         )
 
-        const amount = CurrencyAmount.fromRawAmount(token, JSBI.BigInt(100))
+        const amount = CurrencyAmount.fromRawAmount(token, BigInt(100))
         const amount_1perc = amount.multiply(fraction)
         expect(fee.getFees(amount)).toEqual({
             protocolFee: amount_1perc,
@@ -153,28 +152,28 @@ describe("Fee", () => {
         )
 
         it("equilibrium fee should be correct", function () {
-            const idealBalance = CurrencyAmount.fromRawAmount(lpToken, JSBI.BigInt(100e6))
-            const beforeBalance = CurrencyAmount.fromRawAmount(lpToken, JSBI.BigInt(100e6))
-            const poolTokenBalance = CurrencyAmount.fromRawAmount(token, JSBI.BigInt(0))
-            const poolTotalLiquidity = CurrencyAmount.fromRawAmount(lpToken, JSBI.BigInt(0))
-            const eqFeePool = CurrencyAmount.fromRawAmount(lpToken, JSBI.BigInt(0))
+            const idealBalance = CurrencyAmount.fromRawAmount(lpToken, BigInt(100e6))
+            const beforeBalance = CurrencyAmount.fromRawAmount(lpToken, BigInt(100e6))
+            const poolTokenBalance = CurrencyAmount.fromRawAmount(token, BigInt(0))
+            const poolTotalLiquidity = CurrencyAmount.fromRawAmount(lpToken, BigInt(0))
+            const eqFeePool = CurrencyAmount.fromRawAmount(lpToken, BigInt(0))
             for (let i = 1; i < 100; i++) {
-                let swapAmount = CurrencyAmount.fromRawAmount(token, JSBI.multiply(JSBI.BigInt(i), JSBI.BigInt(1e18)))
+                let swapAmount = CurrencyAmount.fromRawAmount(token, BigInt(i) * BigInt(1e18))
                 let { eqFee } = fee.getFees(idealBalance, beforeBalance, poolTokenBalance, poolTotalLiquidity, eqFeePool, swapAmount)
                 expect(approx(parseFloat(eqFee.toExact()), parseFloat(expectedEqFee[i]))).toBeTruthy()
             }
         })
 
         describe("equilibrium reward", function () {
-            const idealBalance = CurrencyAmount.fromRawAmount(lpToken, JSBI.BigInt(100e6))
-            const beforeBalance = CurrencyAmount.fromRawAmount(lpToken, JSBI.BigInt(100e6))
+            const idealBalance = CurrencyAmount.fromRawAmount(lpToken, BigInt(100e6))
+            const beforeBalance = CurrencyAmount.fromRawAmount(lpToken, BigInt(100e6))
 
             it("no reward if pool has no deficit", function () {
                 // token balance > total liquidity, no deficit
-                const poolTokenBalance = CurrencyAmount.fromRawAmount(token, JSBI.BigInt(100e18))
-                const poolTotalLiquidity = CurrencyAmount.fromRawAmount(lpToken, JSBI.BigInt(0))
-                const eqFeePool = CurrencyAmount.fromRawAmount(lpToken, JSBI.BigInt(0))
-                const swapAmount = CurrencyAmount.fromRawAmount(token, JSBI.BigInt(10e18))
+                const poolTokenBalance = CurrencyAmount.fromRawAmount(token, BigInt(100e18))
+                const poolTotalLiquidity = CurrencyAmount.fromRawAmount(lpToken, BigInt(0))
+                const eqFeePool = CurrencyAmount.fromRawAmount(lpToken, BigInt(0))
+                const swapAmount = CurrencyAmount.fromRawAmount(token, BigInt(10e18))
 
                 let { eqReward } = fee.getFees(idealBalance, beforeBalance, poolTokenBalance, poolTotalLiquidity, eqFeePool, swapAmount)
                 expect(eqReward.currency).toEqual(token)
@@ -184,10 +183,10 @@ describe("Fee", () => {
             it("reward capped at eqFeePool", function () {
                 // in a deficit of 90
                 // swap amount of 100, 10 greater than deficit
-                const poolTokenBalance = CurrencyAmount.fromRawAmount(token, JSBI.BigInt(10e18))
-                const poolTotalLiquidity = CurrencyAmount.fromRawAmount(lpToken, JSBI.BigInt(100e6))
-                const eqFeePool = CurrencyAmount.fromRawAmount(lpToken, JSBI.BigInt(100e6))
-                const swapAmount = CurrencyAmount.fromRawAmount(token, JSBI.BigInt(100e18))
+                const poolTokenBalance = CurrencyAmount.fromRawAmount(token, BigInt(10e18))
+                const poolTotalLiquidity = CurrencyAmount.fromRawAmount(lpToken, BigInt(100e6))
+                const eqFeePool = CurrencyAmount.fromRawAmount(lpToken, BigInt(100e6))
+                const swapAmount = CurrencyAmount.fromRawAmount(token, BigInt(100e18))
 
                 let { eqReward } = fee.getFees(idealBalance, beforeBalance, poolTokenBalance, poolTotalLiquidity, eqFeePool, swapAmount)
                 expect(eqReward.currency).toEqual(token)
@@ -197,10 +196,10 @@ describe("Fee", () => {
             it("should work as % of eqFeePool", function () {
                 // in a deficit of 90
                 // swap amount of 9, 10% of deficit
-                const poolTokenBalance = CurrencyAmount.fromRawAmount(token, JSBI.BigInt(10e18))
-                const poolTotalLiquidity = CurrencyAmount.fromRawAmount(lpToken, JSBI.BigInt(100e6))
-                const eqFeePool = CurrencyAmount.fromRawAmount(lpToken, JSBI.BigInt(100e6))
-                const swapAmount = CurrencyAmount.fromRawAmount(token, JSBI.BigInt(9e18))
+                const poolTokenBalance = CurrencyAmount.fromRawAmount(token, BigInt(10e18))
+                const poolTotalLiquidity = CurrencyAmount.fromRawAmount(lpToken, BigInt(100e6))
+                const eqFeePool = CurrencyAmount.fromRawAmount(lpToken, BigInt(100e6))
+                const swapAmount = CurrencyAmount.fromRawAmount(token, BigInt(9e18))
 
                 let { eqReward } = fee.getFees(idealBalance, beforeBalance, poolTokenBalance, poolTotalLiquidity, eqFeePool, swapAmount)
                 expect(eqReward.currency).toEqual(token)

@@ -1,7 +1,5 @@
-import JSBI from "jsbi"
-
 // exports for external consumption
-export type BigintIsh = JSBI | string | number
+export type BigintIsh = bigint | string | number
 
 export enum Rounding {
     ROUND_DOWN,
@@ -9,7 +7,7 @@ export enum Rounding {
     ROUND_UP,
 }
 
-export const MaxUint256 = JSBI.BigInt("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")
+export const MaxUint256 = BigInt("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")
 export * from "./constants/addresses"
 export * from "./constants/token"
 export * from "./constants/pool"

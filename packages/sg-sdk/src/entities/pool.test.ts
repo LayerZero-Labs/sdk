@@ -1,7 +1,6 @@
 import { ChainPaths, Pool, PoolFee } from "./pool"
 import { TokenSymbol } from "../enums"
 import { ChainId } from "@layerzerolabs/lz-sdk"
-import JSBI from "jsbi"
 import { FeeV01 } from "./fee"
 import { describe, it, expect } from "vitest"
 import { Token, Fraction, CurrencyAmount } from "@layerzerolabs/ui-core"
@@ -19,7 +18,7 @@ describe("Pool", () => {
     }
 
     const chainPaths: ChainPaths = {
-        1: {
+        [ChainId.ETHEREUM]: {
             1: {
                 chainId: dstChainId,
                 poolId: dstPoolId,
@@ -72,9 +71,9 @@ describe("Pool", () => {
                     minAmount,
                     ChainId.ETHEREUM,
                     1,
-                    CurrencyAmount.fromRawAmount(pool.token, JSBI.BigInt(0)),
-                    CurrencyAmount.fromRawAmount(pool.liquidityToken, JSBI.BigInt(0)),
-                    CurrencyAmount.fromRawAmount(pool.liquidityToken, JSBI.BigInt(0))
+                    CurrencyAmount.fromRawAmount(pool.token, BigInt(0)),
+                    CurrencyAmount.fromRawAmount(pool.liquidityToken, BigInt(0)),
+                    CurrencyAmount.fromRawAmount(pool.liquidityToken, BigInt(0))
                 )
             ).toThrow("SLIPPAGE_TOO_HIGH")
         })
@@ -109,9 +108,9 @@ describe("Pool", () => {
                         minAmount,
                         ChainId.ETHEREUM,
                         1,
-                        CurrencyAmount.fromRawAmount(pool.token, JSBI.BigInt(0)),
-                        CurrencyAmount.fromRawAmount(pool.liquidityToken, JSBI.BigInt(0)),
-                        CurrencyAmount.fromRawAmount(pool.liquidityToken, JSBI.BigInt(0))
+                        CurrencyAmount.fromRawAmount(pool.token, BigInt(0)),
+                        CurrencyAmount.fromRawAmount(pool.liquidityToken, BigInt(0)),
+                        CurrencyAmount.fromRawAmount(pool.liquidityToken, BigInt(0))
                     )
                     .outputAmount.toExact()
             ).toEqual(CurrencyAmount.fromRawAmount(token, 98e18).toExact())
@@ -218,8 +217,8 @@ describe("Pool", () => {
                         totalLiquidity,
                         lpTokenAmount,
                         minAmount,
-                        CurrencyAmount.fromRawAmount(pool.token, JSBI.BigInt(0)),
-                        CurrencyAmount.fromRawAmount(pool.liquidityToken, JSBI.BigInt(0))
+                        CurrencyAmount.fromRawAmount(pool.token, BigInt(0)),
+                        CurrencyAmount.fromRawAmount(pool.liquidityToken, BigInt(0))
                     )[0]
                     .toExact()
             ).toEqual(CurrencyAmount.fromRawAmount(token, 98e18).toExact())
@@ -254,8 +253,8 @@ describe("Pool", () => {
                         totalLiquidity,
                         lpTokenAmount,
                         minAmount,
-                        CurrencyAmount.fromRawAmount(pool.token, JSBI.BigInt(0)),
-                        CurrencyAmount.fromRawAmount(pool.liquidityToken, JSBI.BigInt(0))
+                        CurrencyAmount.fromRawAmount(pool.token, BigInt(0)),
+                        CurrencyAmount.fromRawAmount(pool.liquidityToken, BigInt(0))
                     )[0]
                     .toExact()
             ).toEqual(CurrencyAmount.fromRawAmount(token, 98e18).toExact())
@@ -299,8 +298,6 @@ describe("Pool", () => {
                 )
             })
         })
-
-        describe("Fee Library V02", () => {})
     })
 
     describe("getPrice", function () {
@@ -309,14 +306,14 @@ describe("Pool", () => {
         const totalLiquidity = CurrencyAmount.fromRawAmount(pool.liquidityToken, 1000e6)
         const lpTokenAmount = CurrencyAmount.fromRawAmount(pool.liquidityToken, 10e6)
         const fiatValue = pool.getPrice(totalSupply, totalLiquidity, lpTokenAmount)
-        const result = JSBI.BigInt(fiatValue.toFixed(0))
+        const result = BigInt(fiatValue.toFixed(0))
         it("Should be > 0", () => {
-            expect(JSBI.greaterThan(result, JSBI.BigInt(0))).toBeTruthy()
+            expect(result > BigInt(0)).toBeTruthy()
         })
 
         it("Should should return expected value", () => {
             // 10 % of pool sharing $1000 should equal $100
-            expect(JSBI.equal(result, JSBI.BigInt(100))).toBeTruthy()
+            expect(result === BigInt(100)).toBeTruthy()
         })
 
         it("Should return the original token", () => {
@@ -332,14 +329,14 @@ describe("Pool", () => {
         const totalLiquidity = CurrencyAmount.fromRawAmount(pool.liquidityToken, 1000e6)
         const lpTokenAmount = CurrencyAmount.fromRawAmount(pool.liquidityToken, 10e6)
         const fiatValue = Pool.getPriceStatic(totalSupply, totalLiquidity, lpTokenAmount, token)
-        const result = JSBI.BigInt(fiatValue.toFixed(0))
+        const result = BigInt(fiatValue.toFixed(0))
         it("Should be > 0", () => {
-            expect(JSBI.greaterThan(result, JSBI.BigInt(0))).toBeTruthy()
+            expect(result > BigInt(0)).toBeTruthy()
         })
 
         it("Should should return expected value", () => {
             // 10 % of pool sharing $1000 should equal $100
-            expect(JSBI.equal(result, JSBI.BigInt(100))).toBeTruthy()
+            expect(result === BigInt(100)).toBeTruthy()
         })
 
         it("Should return the original token", () => {

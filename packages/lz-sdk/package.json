@@ -22,7 +22,7 @@
   "scripts": {
     "build": "npx tsup",
     "dev": "npx tsup --watch",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "repository": {
     "type": "git",

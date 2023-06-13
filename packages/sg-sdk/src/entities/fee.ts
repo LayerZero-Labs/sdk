@@ -1,6 +1,5 @@
 import { Currency, CurrencyAmount, Fraction } from "@layerzerolabs/ui-core"
 import { invariant as assert } from "../utils/invariantHelper"
-import JSBI from "jsbi"
 
 export interface FeeObj {
     eqFee: CurrencyAmount
@@ -83,7 +82,7 @@ abstract class Fee {
     amountSDtoLD(amountSD: CurrencyAmount): CurrencyAmount {
         return CurrencyAmount.fromRawAmount(
             this.token,
-            amountSD.multiply(JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(this.token.decimals))).divide(amountSD.decimalScale).quotient
+            amountSD.multiply(BigInt(10) ** BigInt(this.token.decimals)).divide(amountSD.decimalScale).quotient
         )
     }
 }
@@ -205,7 +204,7 @@ function getEquilibriumReward(
         }
         return eqRewards
     }
-    return CurrencyAmount.fromRawAmount(_amount.currency, JSBI.BigInt(0))
+    return CurrencyAmount.fromRawAmount(_amount.currency, BigInt(0))
 }
 
 function getEquilibriumFee(
@@ -223,8 +222,8 @@ function getEquilibriumFee(
     const proxyBeforeBalanceCurrency = _beforeBalance.lessThan(safeZoneMax) ? _beforeBalance : safeZoneMax
     const proxyBeforeBalance = new Fraction(proxyBeforeBalanceCurrency.numerator, proxyBeforeBalanceCurrency.denominator)
 
-    let eqFee = CurrencyAmount.fromRawAmount(_amount.currency, JSBI.BigInt(0))
-    let protocolSubsidy = CurrencyAmount.fromRawAmount(_amount.currency, JSBI.BigInt(0))
+    let eqFee = CurrencyAmount.fromRawAmount(_amount.currency, BigInt(0))
+    let protocolSubsidy = CurrencyAmount.fromRawAmount(_amount.currency, BigInt(0))
 
     if (afterBalance.greaterThan(safeZoneMax) || afterBalance.equalTo(safeZoneMax)) {
         // no fee zone, protocol subsidezes it
