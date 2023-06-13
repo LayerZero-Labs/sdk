@@ -16,7 +16,7 @@ describe("VotingEscrow", () => {
     const stgAmount = CurrencyAmount.fromRawAmount(stargateToken, 10000e18)
     const result = votingEscrow.estimateVe(stgAmount, unlockInSec)
 
-    describe.only("estimateVe", () => {
+    describe("estimateVe", () => {
         it("Should return VESTG given STG for currency", () => {
             expect(result.currency.symbol === "VESTG")
             expect(result.currency.name === "veStargateToken")
@@ -36,7 +36,7 @@ describe("VotingEscrow", () => {
             expect(votingEscrow.estimateVe(stgAmount, unlockInSec).equalTo(expectedAmount))
         })
 
-        it.only("Should should properly estimate", () => {
+        it("Should should properly estimate", () => {
             const rawAmount = CurrencyAmount.fromRawAmount(stargateToken, 160000e18)
             const d = 86400
             const m = d * 30
