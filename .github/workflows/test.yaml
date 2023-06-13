@@ -1,0 +1,43 @@
+name: Run smoke tests
+
+on: pull_request
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          # Since we only want to run tests & build on the affected packages, we'll
+          # need to use the --since turbo CLI option which requires the whole range
+          # of commits between the base and the head to be present
+          #
+          # In order to do that we'll fetch all the commits from this PR (and add 1 to account for the base)
+          fetch-depth: $(( ${{ github.event.pull_request.commits }} + 1 ))
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        id: install
+        run: yarn install --frozen-lockfile --prefer-offline
+
+      - name: Build
+        id: build
+        run: yarn build
+
+      - name: Test
+        id: test
+        run: yarn test
