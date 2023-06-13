@@ -36,7 +36,7 @@ describe("getApy", () => {
         })
     })
 
-    it.only("Expected Apr should match NEW", () => {
+    it("Expected Apr should match NEW", () => {
         // total allocation is 1 per pool contract per chain
         // const {stgPrice, stgPerBlock, avgBlockTime, alloc, expectedApr, totalLiquidity, totalFarmLp, totalLp} = testCase
         const ethPoolTestCases = [
