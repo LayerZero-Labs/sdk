@@ -2,7 +2,7 @@ import { ChainKey } from "../enums"
 
 // keep keys sorted alphabetically
 export const LZ_ADDRESS: { [chainKey in ChainKey]?: string } = {
-    [ChainKey.AAVEGOTCHI_TESTNET]: "0x8b14D287B4150Ff22Ac73DF8BE720e933f659abc",
+    [ChainKey.AAVEGOTCHI_TESTNET]: "0xae92d5aD7583AD66E49A0c67BAd18F6ba52dDDc1",
     [ChainKey.ARBITRUM_GOERLI]: "0x6aB5Ae6822647046626e83ee6dB8187151E1d5ab",
     [ChainKey.ARBITRUM_RINKEBY_SANDBOX]: "0x207f970Fbc193386D9d3a95163bD569ab1d10c0c",
     [ChainKey.ARBITRUM_RINKEBY]: "0x4D747149A57923Beb89f22E6B7B97f7D8c087A00",
@@ -117,7 +117,7 @@ export const LZ_RELAYER: { [chainKey in ChainKey]?: string } = {
 }
 
 export const LZ_RELAYER_V2: { [chainKey in ChainKey]?: string } = {
-    [ChainKey.AAVEGOTCHI_TESTNET]: "0x3aCAAf60502791D199a5a5F0B173D78229eBFe32",
+    [ChainKey.AAVEGOTCHI_TESTNET]: "0x88866E5A296FffA511EF8011CB1BBd4d01Cd094F",
     [ChainKey.ARBITRUM_GOERLI]: "0x79c2127C2cF1c41cdd0E24e6Ba70b6F3308B7B79",
     [ChainKey.ARBITRUM_RINKEBY]: "0xb225e20e0E9c0e9DDCb63b58b0289F8f0B949165",
     [ChainKey.ARBITRUM]: "0x177d36dBE2271A4DdB2Ad8304d82628eb921d790",
@@ -251,7 +251,7 @@ export const LZ_ULTRA_LIGHT_NODE_V1: { [chainKey in ChainKey]?: string } = {
 }
 
 export const LZ_ULTRA_LIGHT_NODE_V2: { [chainKey in ChainKey]?: string } = {
-    [ChainKey.AAVEGOTCHI_TESTNET]: "0x88866E5A296FffA511EF8011CB1BBd4d01Cd094F",
+    [ChainKey.AAVEGOTCHI_TESTNET]: "0x4e08B1F1AC79898569CfB999FB92B5495FB18A2B",
     [ChainKey.APTOS_TESTNET_SANDBOX]: "",
     [ChainKey.APTOS_TESTNET]: "",
     [ChainKey.APTOS]: "",

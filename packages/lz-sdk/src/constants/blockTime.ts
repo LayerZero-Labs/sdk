@@ -108,4 +108,6 @@ export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]: number } = {
     [ChainId.ZKPOLYGON]: 2,
     [ChainId.ZKSYNC_TESTNET]: 1.4,
     [ChainId.ZKSYNC]: 1.6,
+    [ChainId.BLOCKGEN_TESTNET]: 1,
+    [ChainId.MERITCIRCLE_TESTNET]: 1,
 }

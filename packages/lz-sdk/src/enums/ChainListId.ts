@@ -1,5 +1,5 @@
 export enum ChainListId {
-    AAVEGOTCHI_TESTNET = 2001,
+    AAVEGOTCHI_TESTNET = 2007,
     APTOS = 1,
     APTOS_TESTNET = 2,
     APTOS_TESTNET_SANDBOX = 3,
