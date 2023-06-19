@@ -147,4 +147,5 @@ export const RPCS: { [chainId in ChainId]?: string[] } = {
     [ChainId.METIS_TESTNET]: ["https://goerli.gateway.metisdevops.link"],
     [ChainId.COREDAO_TESTNET]: ["https://rpc.test.btcs.network"],
     [ChainId.COREDAO]: ["https://rpc.coredao.org"],
+    [ChainId.AAVEGOTCHI_TESTNET]: ["https://edge.testnet-rc.gotchichain.com/"],
 }

@@ -1,6 +1,8 @@
 // keep list sorted alphabetically
 export enum ChainId {
-    AAVEGOTCHI_TESTNET = 10175,
+    AAVEGOTCHI_TESTNET = 10179,
+    BLOCKGEN_TESTNET = 10177,
+    MERITCIRCLE_TESTNET = 10178,
     APTOS = 108,
     APTOS_TESTNET = 10108,
     APTOS_TESTNET_SANDBOX = 20308,
