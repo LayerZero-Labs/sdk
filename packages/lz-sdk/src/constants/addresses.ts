@@ -61,6 +61,8 @@ export const LZ_ADDRESS: { [chainKey in ChainKey]?: string } = {
     [ChainKey.SWIMMER_TESTNET_SANDBOX]: "",
     [ChainKey.SWIMMER_TESTNET]: "0x9DFdB0FC5b3454f43Bc76B693b75CFf2eccfAd13",
     [ChainKey.SWIMMER]: "0x9740FF91F1985D8d2B71494aE1A2f723bb3Ed9E4",
+    [ChainKey.TENET]: "0x2D61DCDD36F10b22176E0433B86F74567d529aAa",
+    [ChainKey.TENET_TESTNET]: "0x6aB5Ae6822647046626e83ee6dB8187151E1d5ab",
 }
 
 export const LZ_RELAYER: { [chainKey in ChainKey]?: string } = {
@@ -184,6 +186,8 @@ export const LZ_RELAYER_V2: { [chainKey in ChainKey]?: string } = {
     [ChainKey.ZKPOLYGON]: "0xA658742d33ebd2ce2F0bdFf73515Aa797Fd161D9",
     [ChainKey.ZKSYNC_TESTNET]: "0xD5eE0055c37dDfaF7e2e0CA3dECb60f365848Bd5",
     [ChainKey.ZKSYNC]: "0x9923573104957bF457a3C4DF0e21c8b389Dd43df",
+    [ChainKey.TENET]: "0xAaB5A48CFC03Efa9cC34A2C1aAcCCB84b4b770e4",
+    [ChainKey.TENET_TESTNET]: "0x35AdD9321507A87471a11EBd4aE4f592d531e620",
 }
 
 export const LZ_ULTRA_LIGHT_NODE_V1: { [chainKey in ChainKey]?: string } = {
@@ -349,6 +353,8 @@ export const LZ_ULTRA_LIGHT_NODE_V2: { [chainKey in ChainKey]?: string } = {
     [ChainKey.SWIMMER_TESTNET_SANDBOX]: "",
     [ChainKey.SWIMMER_TESTNET]: "",
     [ChainKey.SWIMMER]: "",
+    [ChainKey.TENET]: "0xFe7C30860D01e28371D40434806F4A8fcDD3A098",
+    [ChainKey.TENET_TESTNET]: "0x2cA20802fd1Fd9649bA8Aa7E50F0C82b479f35fe",
     [ChainKey.ZKCONSENSYS_TESTNET]: "",
     [ChainKey.ZKPOLYGON_TESTNET]: "",
     [ChainKey.ZKPOLYGON]: "",

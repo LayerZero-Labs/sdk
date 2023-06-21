@@ -103,6 +103,8 @@ export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]: number } = {
     [ChainId.SWIMMER_TESTNET_SANDBOX]: 5,
     [ChainId.SWIMMER_TESTNET]: 5,
     [ChainId.SWIMMER]: 5,
+    [ChainId.TENET]: 3.5,
+    [ChainId.TENET_TESTNET]: 3.7,
     [ChainId.ZKCONSENSYS_TESTNET]: 1,
     [ChainId.ZKPOLYGON_TESTNET]: 2,
     [ChainId.ZKPOLYGON]: 2,

@@ -148,4 +148,6 @@ export const RPCS: { [chainId in ChainId]?: string[] } = {
     [ChainId.COREDAO_TESTNET]: ["https://rpc.test.btcs.network"],
     [ChainId.COREDAO]: ["https://rpc.coredao.org"],
     [ChainId.AAVEGOTCHI_TESTNET]: ["https://edge.testnet-rc.gotchichain.com/"],
+    [ChainId.TENET]: ["https://rpc.tenet.org"],
+    [ChainId.TENET_TESTNET]: ["https://rpc.testnet.tenet.org"],
 }
