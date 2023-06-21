@@ -1,6 +1,6 @@
 {
   "name": "@layerzerolabs/lz-sdk",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "license": "BUSL-1.1",
   "description": "LayerZero SDK",
   "type": "module",
