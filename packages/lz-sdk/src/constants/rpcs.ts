@@ -164,4 +164,17 @@ export const RPCS: { [chainId in ChainId]?: string[] } = {
         "https://1rpc.io/zkevm",
         "https://rpc.polygon-zkevm.gateway.fm",
     ],
+    [ChainId.KLAYTN]: [
+        "https://1rpc.io/klay",
+        "https://klaytn.blockpi.network/v1/rpc/public",
+        "https://public-node-api.klaytnapi.com/v1/cypress",
+        "https://klaytn.api.onfinality.io/public",
+    ],
+    [ChainId.OKX]: ["https://exchainrpc.okex.org"],
+    [ChainId.METER]: ["https://meter.blockpi.network/v1/rpc/public", "https://rpc.meter.io"],
+    [ChainId.MOONRIVER]: [
+        "https://rpc.api.moonriver.moonbeam.network",
+        "https://moonriver.public.blastapi.io",
+        "https://moonriver.api.onfinality.io/public",
+    ],
 }
