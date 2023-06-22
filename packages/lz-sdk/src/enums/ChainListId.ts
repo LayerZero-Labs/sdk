@@ -68,6 +68,7 @@ export enum ChainListId {
     MOONRIVER = 1285,
     MUMBAI = 80001,
     MUMBAI_SANDBOX = 80001,
+    NOVA = 42170,
     OKX = 66,
     OPTIMISM = 10,
     OPTIMISM_GOERLI = 420,

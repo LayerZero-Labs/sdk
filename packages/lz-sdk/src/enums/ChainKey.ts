@@ -83,6 +83,7 @@ export enum ChainKey {
     MOONRIVER_TESTNET = "moonriver-testnet",
     MUMBAI = "mumbai",
     MUMBAI_SANDBOX = "mumbai-sandbox",
+    NOVA = "nova",
     OKX = "okx",
     OKX_TESTNET = "okx-testnet",
     OPTIMISM = "optimism",

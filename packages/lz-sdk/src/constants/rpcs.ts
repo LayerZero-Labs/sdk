@@ -147,6 +147,12 @@ export const RPCS: { [chainId in ChainId]?: string[] } = {
     [ChainId.APTOS_TESTNET_SANDBOX]: ["https://fullnode.devnet.aptoslabs.com/v1"],
     [ChainId.METIS]: ["https://andromeda.metis.io/?owner=1088"],
     [ChainId.METIS_TESTNET]: ["https://goerli.gateway.metisdevops.link"],
+    [ChainId.NOVA]: [
+        "https://nova.arbitrum.io/rpc",
+        "https://arbitrum-nova.blockpi.network/v1/rpc/public",
+        "https://arbitrum-nova.publicnode.com",
+        "https://arbitrum-nova.public.blastapi.io",
+    ],
     [ChainId.COREDAO_TESTNET]: ["https://rpc.test.btcs.network"],
     [ChainId.COREDAO]: ["https://rpc.coredao.org"],
     [ChainId.AAVEGOTCHI_TESTNET]: ["https://edge.testnet-rc.gotchichain.com/"],

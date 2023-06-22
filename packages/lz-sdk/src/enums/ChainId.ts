@@ -82,6 +82,7 @@ export enum ChainId {
     MOONRIVER_TESTNET = 10166,
     MUMBAI = 10109,
     MUMBAI_SANDBOX = 20109,
+    NOVA = 175,
     OKX = 155,
     OKX_TESTNET = 10155,
     OPTIMISM = 111,

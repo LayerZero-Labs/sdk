@@ -83,6 +83,7 @@ export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]: number } = {
     [ChainId.MOONRIVER]: 15,
     [ChainId.MUMBAI_SANDBOX]: 3.5,
     [ChainId.MUMBAI]: 3.5,
+    [ChainId.NOVA]: 1,
     [ChainId.OKX_TESTNET]: 1,
     [ChainId.OKX]: 1,
     [ChainId.OPTIMISM_GOERLI_SANDBOX]: 1,
