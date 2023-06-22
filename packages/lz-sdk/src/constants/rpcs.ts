@@ -177,4 +177,17 @@ export const RPCS: { [chainId in ChainId]?: string[] } = {
         "https://moonriver.public.blastapi.io",
         "https://moonriver.api.onfinality.io/public",
     ],
+    [ChainId.GNOSIS]: [
+        "https://rpc.gnosischain.com",
+        "https://xdai-rpc.gateway.pokt.network",
+        "https://xdai-archive.blockscout.com",
+        "https://rpc.gnosis.gateway.fm",
+        "https://gnosis-mainnet.public.blastapi.io",
+        "https://rpc.ankr.com/gnosis",
+        "https://rpc.ap-southeast-1.gateway.fm/v4/gnosis/non-archival/mainnet",
+        "https://gnosis.blockpi.network/v1/rpc/public",
+        "https://gnosis.api.onfinality.io/public",
+        "https://gnosischain-rpc.gateway.pokt.network",
+        "https://web3endpoints.com/gnosischain-mainnet",
+    ],
 }
