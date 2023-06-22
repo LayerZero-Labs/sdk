@@ -44,6 +44,8 @@ export const RPCS: { [chainId in ChainId]?: string[] } = {
         "https://data-seed-prebsc-1-s2.binance.org:8545",
         "https://data-seed-prebsc-2-s2.binance.org:8545",
     ],
+    [ChainId.CANTO]: ["https://mainnode.plexnode.org:8545", "https://canto.neobase.one", "https://canto.slingshot.finance"],
+    [ChainId.CANTO_TESTNET]: ["https://eth.plexnode.wtf"],
     [ChainId.AVALANCHE]: ["https://api.avax.network/ext/bc/C/rpc"],
     [ChainId.FUJI]: ["https://api.avax-test.network/ext/bc/C/rpc"],
     [ChainId.FUJI_SANDBOX]: ["https://api.avax-test.network/ext/bc/C/rpc"],
