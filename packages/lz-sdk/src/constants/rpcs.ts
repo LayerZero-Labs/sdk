@@ -158,4 +158,10 @@ export const RPCS: { [chainId in ChainId]?: string[] } = {
     [ChainId.AAVEGOTCHI_TESTNET]: ["https://edge.testnet-rc.gotchichain.com/"],
     [ChainId.TENET]: ["https://rpc.tenet.org"],
     [ChainId.TENET_TESTNET]: ["https://rpc.testnet.tenet.org"],
+    [ChainId.ZKPOLYGON]: [
+        "https://zkevm-rpc.com",
+        "https://rpc.ankr.com/polygon_zkevm",
+        "https://1rpc.io/zkevm",
+        "https://rpc.polygon-zkevm.gateway.fm",
+    ],
 }
