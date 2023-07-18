@@ -22,6 +22,7 @@ export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]: number } = {
     [ChainId.AURORA_TESTNET]: 2,
     [ChainId.AURORA]: 2,
     [ChainId.AVALANCHE]: 2.1,
+    [ChainId.BASE]: 1,
     [ChainId.BASE_TESTNET]: 1,
     [ChainId.BOBA_TESTNET_SANDBOX]: 2,
     [ChainId.BOBA_TESTNET]: 2,
