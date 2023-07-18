@@ -110,6 +110,7 @@ export enum ChainKey {
     SWIMMER_TESTNET_SANDBOX = "swimmer-testnet-sandbox",
     TENET = "tenet",
     TENET_TESTNET = "tenet-testnet",
+    ZKCONSENSYS = "zkconsensys",
     ZKCONSENSYS_TESTNET = "zkconsensys-testnet",
     ZKPOLYGON = "zkpolygon",
     ZKPOLYGON_TESTNET = "zkpolygon-testnet",
