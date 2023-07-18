@@ -67,6 +67,8 @@ export enum ChainKey {
     INTAIN = "intain",
     INTAIN_TESTNET = "intain-testnet",
     INTAIN_TESTNET_SANDBOX = "intain-testnet-sandbox",
+    KAVA = "kava",
+    KAVA_TESTNET = "kava-testnet",
     KLAYTN = "klaytn",
     KLAYTN_TESTNET = "klaytn-testnet",
     KOVAN = "kovan",

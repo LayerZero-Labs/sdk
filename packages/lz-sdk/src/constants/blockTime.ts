@@ -69,6 +69,8 @@ export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]: number } = {
     [ChainId.INTAIN_TESTNET_SANDBOX]: 1,
     [ChainId.INTAIN_TESTNET]: 1,
     [ChainId.INTAIN]: 1,
+    [ChainId.KAVA]: 1,
+    [ChainId.KAVA_TESTNET]: 1,
     [ChainId.KLAYTN_TESTNET]: 1,
     [ChainId.KLAYTN]: 1,
     [ChainId.KOVAN_SANDBOX]: 4.2,
