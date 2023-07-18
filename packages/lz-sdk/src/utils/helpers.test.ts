@@ -34,7 +34,7 @@ describe("getChainListId", () => {
         ChainId.SHRAPNEL,
         ChainId.SOLANA_TESTNET,
         ChainId.SOLANA,
-        ChainId.ZKCONSENSYS_TESTNET,
+        ChainId.ZKCONSENSYS,
         ChainId.ZKPOLYGON_TESTNET,
         ChainId.ZKPOLYGON,
     ]
