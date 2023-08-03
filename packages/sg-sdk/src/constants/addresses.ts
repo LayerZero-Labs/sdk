@@ -21,6 +21,7 @@ export const ROUTER_ADDRESS: { [chainId: number]: string } = {
     [ChainId.FANTOM_TESTNET]: "0xa73b0a56B29aD790595763e71505FCa2c1abb77f",
     [ChainId.METIS]: "0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590",
     [ChainId.METIS_TESTNET]: "0x62273145f80EB808EeF539Ed3ea21f4440CEBB18",
+    [ChainId.BASE]: "0x45f1A95A4D3f3836523F5c83673c797f4d4d263B",
 }
 
 export const ROUTER_ETH_ADDRESS: { [chainId: number]: string } = {
@@ -31,6 +32,7 @@ export const ROUTER_ETH_ADDRESS: { [chainId: number]: string } = {
     [ChainId.ARBITRUM_RINKEBY]: "0x1450e45e7345c4f6967b2A7DD91d9b0D3f65ff83",
     [ChainId.OPTIMISM]: "0xB49c4e680174E331CB0A7fF3Ab58afC9738d5F8b",
     [ChainId.OPTIMISM_KOVAN]: "0x8637D51086D1a7A9d25b8dc233551C54fF8Ee49A",
+    [ChainId.BASE]: "0x8731d54E9D02c286767d56ac03e8037C07e01e98",
 }
 
 // Stargate Bridge.sol addresses
@@ -51,6 +53,7 @@ export const BRIDGE_ADDRESS: { [chainId: number]: string } = {
     [ChainId.FANTOM]: "0x45A01E4e04F14f7A4a6702c74187c5F6222033cd",
     [ChainId.FANTOM_TESTNET]: "0xb97948ad8805174e0CB27cAf0115e5eA5e02F3A7",
     [ChainId.METIS]: "0x45f1A95A4D3f3836523F5c83673c797f4d4d263B",
+    [ChainId.BASE]: "0xAF54BE5B6eEc24d6BFACf1cce4eaF680A8239398",
 }
 
 // StargateToken.sol instances
@@ -70,6 +73,7 @@ export const STG_ADDRESS: { [chainId: number]: string } = {
     [ChainId.OPTIMISM_KOVAN]: "0x5951C53cd09D8aCC1ad1ce222F2c0E08434dC4C3",
     [ChainId.FANTOM]: "0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590",
     [ChainId.FANTOM_TESTNET]: "0x8678A0cF61896CdAF4e3cD60c57D23d22B519B80",
+    [ChainId.BASE]: "0xE3B53AF74a4BF62Ae5511055290838050bf764Df",
 }
 
 // LPStaking.sol contract addresses (This does emissions)
@@ -100,6 +104,7 @@ export const FARM_TIME_ADDRESS: { [chainId: number]: string } = {
     [ChainId.BSC_TESTNET]: "0x7C9D5A7A483a803b3Beeb456fF36F0A52871052b",
     [ChainId.METIS]: "0x45A01E4e04F14f7A4a6702c74187c5F6222033cd",
     [ChainId.METIS_TESTNET]: "0x8f337D230a5088E2a448515Eab263735181A9039",
+    [ChainId.BASE]: "0x06Eb48763f117c7Be887296CDcdfad2E4092739C",
 }
 
 export const BONDING_ADDRESS: { [tokenSymbol in TokenSymbol]?: { [chainId: number]: string } } = {
