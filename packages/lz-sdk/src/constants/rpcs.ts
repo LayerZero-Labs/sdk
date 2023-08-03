@@ -111,6 +111,8 @@ export const RPCS: { [chainId in ChainId]?: string[] } = {
     [ChainId.CELO]: ["https://forno.celo.org", "https://rpc.ankr.com/celo"],
     [ChainId.CELO_TESTNET]: ["https://alfajores-forno.celo-testnet.org"],
     [ChainId.CELO_TESTNET_SANDBOX]: ["https://alfajores-forno.celo-testnet.org"],
+    [ChainId.MANTLE]: ["https://rpc.mantle.xyz", "https://mantle.publicnode.com"],
+    [ChainId.MANTLE_TESTNET]: ["https://rpc.testnet.mantle.xyz"],
     [ChainId.MOONBEAM]: [
         "https://moonbeam.public.blastapi.io",
         "https://moonbeam-rpc.dwellir.com",

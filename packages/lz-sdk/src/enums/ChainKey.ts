@@ -74,6 +74,8 @@ export enum ChainKey {
     KOVAN = "kovan",
     KOVAN_SANDBOX = "kovan-sandbox",
     MERITCIRCLE_TESTNET = "meritcircle-testnet",
+    MANTLE = "mantle",
+    MANTLE_TESTNET = "mantle-testnet",
     METER = "meter",
     METER_TESTNET = "meter-testnet",
     METIS = "metis",
