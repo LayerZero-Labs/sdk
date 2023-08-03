@@ -60,6 +60,8 @@ export enum ChainListId {
     KLAYTN_TESTNET = 1001,
     KOVAN = 42,
     KOVAN_SANDBOX = 42,
+    MANTLE = 5000,
+    MANTLE_TESTNET = 5001,
     METER = 82,
     METER_TESTNET = 83,
     METIS = 1088,
