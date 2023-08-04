@@ -20,6 +20,7 @@ export const REVERT_REDEEM_LOCAL: { [chainId in ChainId]?: number } = {
     [ChainId.METIS]: 120000,
     [ChainId.METIS_TESTNET]: 120000,
     [ChainId.GOERLI]: 120000,
+    [ChainId.BASE]: 120000,
 }
 
 export const ERC20_TRANSFER: { [chainId in ChainId]?: number } = {
@@ -41,6 +42,7 @@ export const ERC20_TRANSFER: { [chainId in ChainId]?: number } = {
     [ChainId.FANTOM_TESTNET]: 65000,
     [ChainId.METIS]: 65000,
     [ChainId.METIS_TESTNET]: 65000,
+    [ChainId.BASE]: 65000,
 }
 
 export const ERC20_APPROVE: { [chainId in ChainId]?: number } = {
@@ -62,4 +64,5 @@ export const ERC20_APPROVE: { [chainId in ChainId]?: number } = {
     [ChainId.FANTOM_TESTNET]: 47000,
     [ChainId.METIS]: 47000,
     [ChainId.METIS_TESTNET]: 47000,
+    [ChainId.BASE]: 47000,
 }
