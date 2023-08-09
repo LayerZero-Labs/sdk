@@ -74,6 +74,7 @@ export const LZ_ADDRESS: { [chainKey in ChainKey]?: string } = {
     [ChainKey.TENET_TESTNET]: "0x6aB5Ae6822647046626e83ee6dB8187151E1d5ab",
     [ChainKey.ZKCONSENSYS]: "0xb6319cC6c8c27A8F5dAF0dD3DF91EA35C4720dd7",
     [ChainKey.ZKCONSENSYS_TESTNET]: "0x6aB5Ae6822647046626e83ee6dB8187151E1d5ab",
+    [ChainKey.MERITCIRCLE_TESTNET]: "0xae92d5aD7583AD66E49A0c67BAd18F6ba52dDDc1",
 }
 
 export const LZ_RELAYER: { [chainKey in ChainKey]?: string } = {
@@ -208,6 +209,7 @@ export const LZ_RELAYER_V2: { [chainKey in ChainKey]?: string } = {
     [ChainKey.ZKSYNC]: "0x9923573104957bF457a3C4DF0e21c8b389Dd43df",
     [ChainKey.TENET]: "0xAaB5A48CFC03Efa9cC34A2C1aAcCCB84b4b770e4",
     [ChainKey.TENET_TESTNET]: "0x35AdD9321507A87471a11EBd4aE4f592d531e620",
+    [ChainKey.MERITCIRCLE_TESTNET]: "0x88866E5A296FffA511EF8011CB1BBd4d01Cd094F",
 }
 
 export const LZ_ULTRA_LIGHT_NODE_V1: { [chainKey in ChainKey]?: string } = {
@@ -389,4 +391,5 @@ export const LZ_ULTRA_LIGHT_NODE_V2: { [chainKey in ChainKey]?: string } = {
     [ChainKey.ZKPOLYGON]: "",
     [ChainKey.ZKSYNC_TESTNET]: "",
     [ChainKey.ZKSYNC]: "",
+    [ChainKey.MERITCIRCLE_TESTNET]: "0x4e08B1F1AC79898569CfB999FB92B5495FB18A2B",
 }
