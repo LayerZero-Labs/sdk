@@ -1789,6 +1789,13 @@
   resolved "https://registry.yarnpkg.com/@jsdevtools/ono/-/ono-7.1.3.tgz#9df03bbd7c696a5c58885c34aa06da41c8543796"
   integrity sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg==
 
+"@layerzerolabs/lz-definitions@^1.5.32":
+  version "1.5.33"
+  resolved "https://registry.yarnpkg.com/@layerzerolabs/lz-definitions/-/lz-definitions-1.5.33.tgz#f769dbd0f0241aa81e734631aaea2ac1cad5b56a"
+  integrity sha512-UgYjLXruuO07VMKBph0OuD9+dVmC+taM0X7AuTfNaf4HA30/4hyFKvwq259n0WXqefRoN6gIR1/FvqUZz9nZyA==
+  dependencies:
+    tiny-invariant "^1.3.1"
+
 "@layerzerolabs/tsup-config@~0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@layerzerolabs/tsup-config/-/tsup-config-0.0.4.tgz#49fabde8235fc32bd218c7abd70046e10a6b08dc"
@@ -1799,11 +1806,12 @@
     esbuild-node-externals "^1.7.0"
     tsup "^6.7.0"
 
-"@layerzerolabs/ui-core@~0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@layerzerolabs/ui-core/-/ui-core-0.1.0.tgz#0cbd821d509e7d05e6d6cdee53958098c06381df"
-  integrity sha512-Nnq/K9lzA/ZZuabw700o1ozDfS1wZl35+s97UoLgvHxpzw8YLztFVRRX4w0I0EePJ46kQcUsVdkeNDT7ZGTPsA==
+"@layerzerolabs/ui-core@~0.2.5":
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@layerzerolabs/ui-core/-/ui-core-0.2.10.tgz#6eab425c62186287dd86547751ec43117091f464"
+  integrity sha512-79vtrjyPoqGprExYLiOimq7yGo9gLWdbgJV/Mo34IstPagTnkFm8kZhjeuhWXkOi33G10L32KW9mX1mMCpGgXw==
   dependencies:
+    "@layerzerolabs/lz-definitions" "^1.5.32"
     big.js "^5.2.2"
     decimal.js-light "^2.5.0"
     toformat "^2.0.0"
@@ -11663,6 +11671,11 @@ tiny-glob@^0.2.6:
   dependencies:
     globalyzer "0.1.0"
     globrex "^0.1.2"
+
+tiny-invariant@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.3.1.tgz#8560808c916ef02ecfd55e66090df23a4b7aa642"
+  integrity sha512-AD5ih2NlSssTCwsMznbvwMZpJ1cbhkGd2uueNxzv2jDlEeZdU04JQfRnggJQ8DrcVBGjAsCKwFBbDlVNtEMlzw==
 
 tinybench@^2.5.0:
   version "2.5.0"
