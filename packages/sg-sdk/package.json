@@ -33,13 +33,13 @@
     "@ethersproject/address": "^5.0.2",
     "@layerzerolabs/lz-sdk": "~0.0.33",
     "@layerzerolabs/tsup-config": "~0.0.4",
-    "@layerzerolabs/ui-core": "~0.2.5",
+    "@layerzerolabs/ui-core": "~0.2.12",
     "vitest": "^0.31.2"
   },
   "peerDependencies": {
     "@ethersproject/address": "^5.0.2",
     "@layerzerolabs/lz-sdk": "~0.0.33",
-    "@layerzerolabs/ui-core": "~0.2.5"
+    "@layerzerolabs/ui-core": "~0.2.12"
   },
   "engines": {
     "node": ">=10"
