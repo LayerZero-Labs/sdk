@@ -23,6 +23,7 @@ export const ROUTER_ADDRESS: { [chainId: number]: string } = {
     [ChainId.METIS_TESTNET]: "0x62273145f80EB808EeF539Ed3ea21f4440CEBB18",
     [ChainId.BASE]: "0x45f1A95A4D3f3836523F5c83673c797f4d4d263B",
     [ChainId.ZKCONSENSYS]: "0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590",
+    [ChainId.KAVA]: "0x2F6F07CDcf3588944Bf4C42aC74ff24bF56e7590",
 }
 
 export const ROUTER_ETH_ADDRESS: { [chainId: number]: string } = {
@@ -57,6 +58,7 @@ export const BRIDGE_ADDRESS: { [chainId: number]: string } = {
     [ChainId.METIS]: "0x45f1A95A4D3f3836523F5c83673c797f4d4d263B",
     [ChainId.BASE]: "0xAF54BE5B6eEc24d6BFACf1cce4eaF680A8239398",
     [ChainId.ZKCONSENSYS]: "0x45f1A95A4D3f3836523F5c83673c797f4d4d263B",
+    [ChainId.KAVA]: "0x45f1A95A4D3f3836523F5c83673c797f4d4d263B",
 }
 
 // StargateToken.sol instances
@@ -78,6 +80,7 @@ export const STG_ADDRESS: { [chainId: number]: string } = {
     [ChainId.FANTOM_TESTNET]: "0x8678A0cF61896CdAF4e3cD60c57D23d22B519B80",
     [ChainId.BASE]: "0xE3B53AF74a4BF62Ae5511055290838050bf764Df",
     [ChainId.ZKCONSENSYS]: "0x808d7c71ad2ba3FA531b068a2417C63106BC0949",
+    [ChainId.KAVA]: "0x83c30eb8bc9ad7C56532895840039E62659896ea",
 }
 
 // LPStaking.sol contract addresses (This does emissions)
@@ -110,6 +113,7 @@ export const FARM_TIME_ADDRESS: { [chainId: number]: string } = {
     [ChainId.METIS_TESTNET]: "0x8f337D230a5088E2a448515Eab263735181A9039",
     [ChainId.BASE]: "0x06Eb48763f117c7Be887296CDcdfad2E4092739C",
     [ChainId.ZKCONSENSYS]: "0x4a364f8c717cAAD9A442737Eb7b8A55cc6cf18D8",
+    [ChainId.KAVA]: "0x35F78Adf283Fe87732AbC9747d9f6630dF33276C",
 }
 
 export const BONDING_ADDRESS: { [tokenSymbol in TokenSymbol]?: { [chainId: number]: string } } = {
