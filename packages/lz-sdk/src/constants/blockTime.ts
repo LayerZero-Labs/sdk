@@ -76,6 +76,8 @@ export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]: number } = {
     [ChainId.KLAYTN]: 1,
     [ChainId.KOVAN_SANDBOX]: 4.2,
     [ChainId.KOVAN]: 4.2,
+    [ChainId.LOOT]: 2,
+    [ChainId.LOOT_TESTNET]: 2,
     [ChainId.MANTLE]: 5,
     [ChainId.MANTLE_TESTNET]: 7,
     [ChainId.METER_TESTNET]: 1,
@@ -112,8 +114,10 @@ export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]: number } = {
     [ChainId.SWIMMER_TESTNET_SANDBOX]: 5,
     [ChainId.SWIMMER_TESTNET]: 5,
     [ChainId.SWIMMER]: 5,
+    [ChainId.TELOS_TESTNET]: 1, // They don't actually produce blocks at regular intervals
     [ChainId.TENET]: 3.5,
     [ChainId.TENET_TESTNET]: 3.7,
+    [ChainId.TOMO_TESTNET]: 3,
     [ChainId.ZKCONSENSYS]: 1,
     [ChainId.ZKCONSENSYS_TESTNET]: 1,
     [ChainId.ZKPOLYGON_TESTNET]: 2,
@@ -123,4 +127,5 @@ export const AVERAGE_BLOCK_TIME: { [chainId in ChainId]: number } = {
     [ChainId.BLOCKGEN_TESTNET]: 1,
     [ChainId.BEAM]: 1,
     [ChainId.BEAM_TESTNET]: 1,
+    [ChainId.ZORA_TESTNET]: 1.8,
 }

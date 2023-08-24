@@ -192,4 +192,10 @@ export const RPCS: { [chainId in ChainId]?: string[] } = {
         "https://gnosischain-rpc.gateway.pokt.network",
         "https://web3endpoints.com/gnosischain-mainnet",
     ],
+    [ChainId.BEAM]: ["https://subnets.avax.network/beam/mainnet/rpc"],
+    [ChainId.TELOS_TESTNET]: ["https://testnet15a.telos.net/evm"],
+    [ChainId.TOMO_TESTNET]: ["https://rpc.testnet.tomochain.com"],
+    [ChainId.LOOT]: ["https://rpc.lootchain.com/http", "https://rpc.lootchain.com/replica-http"],
+    [ChainId.LOOT_TESTNET]: ["https://testnet.rpc.lootchain.com/http"],
+    [ChainId.ZORA_TESTNET]: ["https://testnet.rpc.zora.energy"],
 }
